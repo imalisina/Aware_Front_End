@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+// UI Screens
+import 'package:sample/screens/LoginPage/login_screen.dart';
 import 'package:sample/screens/WelcomePage/welcome_screen.dart';
 
 void main() {
@@ -16,11 +19,12 @@ class MyApp extends StatelessWidget {
       builder: (context, Widget? child) => GetCupertinoApp(
         // Specify the routes in the application
         getPages: [
-          GetPage(name: "/", page: () => const WelcomePage()),
+          GetPage(name: "/intro", page: () => const WelcomePage()),
+          GetPage(name: "/login", page: () => const LoginPage()),
         ],
         debugShowCheckedModeBanner: false,
         title: 'Aware',
-        initialRoute: "/",
+        initialRoute: "/intro",
       ),
       // Setting the design size
       designSize: const Size(412, 915),

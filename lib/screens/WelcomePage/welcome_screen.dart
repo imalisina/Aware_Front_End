@@ -27,7 +27,7 @@ class WelcomePage extends StatelessWidget {
               onPageChanged: (index) => {
                     if (index == 3) {welcomeController.lastPageSetter()}
                   },
-              children: [
+              children: const [
                 IntroductionSlideOne(),
                 IntroductionSlideTwo(),
                 IntroductionSlideThree(),

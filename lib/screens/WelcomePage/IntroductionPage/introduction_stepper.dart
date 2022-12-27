@@ -64,7 +64,7 @@ class IntroductionStepper extends StatelessWidget {
                           color: PRIMARY_COLOR, fontWeight: FontWeight.w700),
                     ),
                     onPressed: () {
-                      // WRITE GO TO LOGIN PAGE ....
+                      Get.toNamed("/login");
                     }),
           )
         ],
