@@ -7,7 +7,7 @@ class IntroductionSlideThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Image.asset("assets/images/third_slide.png", height: 250, width: 250,),
+      child: Image.asset("assets/images/third_slide.gif", height: 250, width: 250,),
       color: PRIMARY_COLOR,
     );
   }
