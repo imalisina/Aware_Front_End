@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sample/screens/WelcomePage/WelcomePage.dart';
+import 'package:sample/screens/WelcomePage/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());

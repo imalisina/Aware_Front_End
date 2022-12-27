@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sample/screens/WelcomePage/IntroductionPage/TextSlogan.dart';
-import 'package:sample/utils/SpaceBox.dart';
+import 'package:sample/screens/WelcomePage/IntroductionPage/slide_text_content.dart';
+import 'package:sample/utils/space_box_container.dart';
 
 // Last introduction slide
 class IntroductionSlideLast extends StatelessWidget {

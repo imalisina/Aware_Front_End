@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:sample/constants/constants.dart';
-import 'package:sample/screens/WelcomePage/WelcomePageController.dart';
+import 'package:sample/screens/WelcomePage/welcome_controller.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 // Introduction slide bullets
