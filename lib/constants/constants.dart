@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Define application color theme
 const MAIN_COLOR = Color.fromARGB(225, 211, 8, 62);

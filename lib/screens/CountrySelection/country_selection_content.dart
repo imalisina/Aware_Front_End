@@ -1,22 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sample/constants/constants.dart';
+import 'package:sample/screens/CountrySelection/CountryList/country_list.dart';
 
 // Other packages
-import 'package:sample/constants/constants.dart';
-import 'package:sample/constants/countries.dart';
 import 'package:sample/utils/space_box_container.dart';
 
-class CountrySelectionContent extends StatefulWidget {
-  CountrySelectionContent({super.key});
-
-  @override
-  State<CountrySelectionContent> createState() =>
-      _CountrySelectionContentState();
-}
-
-class _CountrySelectionContentState extends State<CountrySelectionContent> {
-  // final countrySelector = Get.put(CountrySelectionController());
-  List<Country> countries = allCountries;
+class CountrySelectionContent extends StatelessWidget {
+  const CountrySelectionContent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +42,9 @@ class _CountrySelectionContentState extends State<CountrySelectionContent> {
                         child: Column(
                           children: [
                             CupertinoButton(
-                              child: const Text("Close"),
+                              child: const Text(
+                                "Close",
+                              ),
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
@@ -59,20 +52,11 @@ class _CountrySelectionContentState extends State<CountrySelectionContent> {
                             Padding(
                               padding:
                                   const EdgeInsets.only(left: 20, right: 20).w,
-                              child: CupertinoSearchTextField(),
+                              child: const CupertinoSearchTextField(),
                             ),
-                            Expanded(
-                                child: ListView.builder(
-                              itemCount: countries.length,
-                              itemBuilder: (context, index) {
-                                final country = countries[index];
-                                return Container(
-                                  child: SingleChildScrollView(
-                                    child: ,
-                                  ),
-                                );
-                              },
-                            ))
+                            const Expanded(
+                              child: CountryList(),
+                            )
                           ],
                         ),
                       ),
@@ -87,3 +71,5 @@ class _CountrySelectionContentState extends State<CountrySelectionContent> {
     );
   }
 }
+
+// countries

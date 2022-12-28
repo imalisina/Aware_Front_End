@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+// Other packages
 import 'package:sample/constants/constants.dart';
 import 'package:sample/screens/CountrySelection/country_selection_content.dart';
 
@@ -12,20 +14,21 @@ class SelectCountry extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: CupertinoPageScaffold(
-          navigationBar: CupertinoNavigationBar(
-            backgroundColor: BACKGROUND_COLOR,
-            automaticallyImplyLeading: enabledBackButton,
-            border: navigationBorder,
-            padding: EdgeInsetsDirectional.only(top: 9.0.h),
-            middle: Text(
-              titleText,
-              style: GoogleFonts.pacifico(
-                  color: MAIN_COLOR,
-                  fontSize: titleFontSize.sp,
-                  fontWeight: titleFontWeight),
-            ),
+        navigationBar: CupertinoNavigationBar(
+          backgroundColor: BACKGROUND_COLOR,
+          automaticallyImplyLeading: enabledBackButton,
+          border: navigationBorder,
+          padding: EdgeInsetsDirectional.only(top: 9.0.h),
+          middle: Text(
+            titleText,
+            style: GoogleFonts.pacifico(
+                color: MAIN_COLOR,
+                fontSize: titleFontSize.sp,
+                fontWeight: titleFontWeight),
           ),
-          child: CountrySelectionContent()),
+        ),
+        child: const CountrySelectionContent(),
+      ),
     );
   }
 }
