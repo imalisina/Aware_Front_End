@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sample/constants/constants.dart';
+import 'package:sample/screens/Auth/title_content.dart';
 
 // Login page container
 class LoginPage extends StatelessWidget {
@@ -24,8 +25,9 @@ class LoginPage extends StatelessWidget {
           ),
         ),
         child: Column(
+          // ignore: prefer_const_literals_to_create_immutables
           children: [
-            // PUT OTHER PARTS OF LOGIN PAGE HERE . . .
+            const TitleContent("Login", "Login to "),
           ],
         ),
       ),
