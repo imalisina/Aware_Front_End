@@ -45,7 +45,7 @@ class IntroductionStepper extends StatelessWidget {
           ),
           // Obx state checker to show "Next" or "Done" buttons
           Obx(
-            () => welcomeController.isLastPage.value
+            () => !welcomeController.isLastPage.value
                 ? CupertinoButton(
                     // ignore: prefer_const_constructors
                     child: Text(

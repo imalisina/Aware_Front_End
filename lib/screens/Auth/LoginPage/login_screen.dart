@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+// Other packages
 import 'package:sample/constants/constants.dart';
-import 'package:sample/screens/Auth/LoginPage/LoginForm/login_contents.dart';
+import 'package:sample/screens/Auth/LoginPage/login_contents.dart';
 import 'package:sample/screens/Auth/title_content.dart';
 import 'package:sample/utils/space_box_container.dart';
 
@@ -29,15 +31,17 @@ class LoginPage extends StatelessWidget {
         ),
         // ignore: prefer_const_literals_to_create_immutables
         child: SizedBox(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              VerticalSpaceBox(25.h),
-              const TitleContent(
-                  "Login", "Login to your existing Aware account"),
-              VerticalSpaceBox(30.h),
-              const LoginContents(),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                VerticalSpaceBox(50.h),
+                const TitleContent(
+                    "Login", "Login to your existing Aware account"),
+                VerticalSpaceBox(40.h),
+                LoginContents(),
+              ],
+            ),
           ),
         ),
       ),
