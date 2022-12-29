@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// Other packages
 import 'package:sample/constants/constants.dart';
 import 'package:sample/utils/space_box_container.dart';
 

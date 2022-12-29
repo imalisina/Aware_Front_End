@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sample/constants/constants.dart';
+import 'package:sample/screens/Auth/LoginPage/LoginForm/login_contents.dart';
 import 'package:sample/screens/Auth/title_content.dart';
+import 'package:sample/utils/space_box_container.dart';
 
 // Login page container
 class LoginPage extends StatelessWidget {
@@ -16,6 +18,7 @@ class LoginPage extends StatelessWidget {
           backgroundColor: BACKGROUND_COLOR,
           automaticallyImplyLeading: enabledBackButton,
           border: navigationBorder,
+          padding: EdgeInsetsDirectional.only(top: 9.0.h),
           middle: Text(
             titleText,
             style: GoogleFonts.pacifico(
@@ -24,11 +27,18 @@ class LoginPage extends StatelessWidget {
                 fontWeight: titleFontWeight),
           ),
         ),
-        child: Column(
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            const TitleContent("Login", "Login to "),
-          ],
+        // ignore: prefer_const_literals_to_create_immutables
+        child: SizedBox(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              VerticalSpaceBox(25.h),
+              const TitleContent(
+                  "Login", "Login to your existing Aware account"),
+              VerticalSpaceBox(30.h),
+              const LoginContents(),
+            ],
+          ),
         ),
       ),
     );

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 // UI Screens
+import 'package:sample/screens/Auth/LoginPage/login_screen.dart';
 import 'package:sample/screens/CountrySelection/select_country_screen.dart';
 import 'package:sample/screens/WelcomePage/welcome_screen.dart';
 
@@ -22,10 +23,11 @@ class MyApp extends StatelessWidget {
         getPages: [
           GetPage(name: "/intro", page: () => const WelcomePage()),
           GetPage(name: "/country", page: () => const SelectCountry()),
+          GetPage(name: "/auth/login", page: () => const LoginPage()),
         ],
         debugShowCheckedModeBanner: false,
         title: 'Aware',
-        initialRoute: "/country",
+        initialRoute: "/auth/login",
       ),
       // Setting the design size
       designSize: const Size(412, 915),

@@ -27,6 +27,7 @@ class CountryList extends StatelessWidget {
           onPressed: () {
             // Getting the selected countries ID and store it in the controller
             countryController.setSelectCountry(index);
+            Get.toNamed("/auth/login");
           },
           child: Column(
             children: [

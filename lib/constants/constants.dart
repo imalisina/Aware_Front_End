@@ -5,6 +5,7 @@ const MAIN_COLOR = Color.fromARGB(225, 211, 8, 62);
 const BACKGROUND_COLOR = Color.fromARGB(255, 255, 255, 255);
 const PRIMARY_COLOR = Color.fromARGB(255, 27, 32, 33);
 const SECONDARY_COLOR = Color.fromARGB(255, 146, 147, 157);
+const INPUT_PLACEHOLDER = Color.fromARGB(255, 188, 189, 199);
 const GHOST_COLOR = Color.fromARGB(255, 226, 226, 235);
 
 // Define application navigation bar title details

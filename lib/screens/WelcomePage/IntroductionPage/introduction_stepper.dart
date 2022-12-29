@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+
+// Other packages
 import 'package:sample/constants/constants.dart';
 import 'package:sample/screens/WelcomePage/welcome_controller.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -43,7 +45,7 @@ class IntroductionStepper extends StatelessWidget {
           ),
           // Obx state checker to show "Next" or "Done" buttons
           Obx(
-            () => !welcomeController.isLastPage.value
+            () => welcomeController.isLastPage.value
                 ? CupertinoButton(
                     // ignore: prefer_const_constructors
                     child: Text(
