@@ -25,3 +25,15 @@ class HorizontalSpaceBox extends StatelessWidget {
     return SizedBox(width: width);
   }
 }
+
+class EmptyBox extends StatelessWidget {
+  const EmptyBox({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox(
+      height: 0,
+      width: 0,
+    );
+  }
+}

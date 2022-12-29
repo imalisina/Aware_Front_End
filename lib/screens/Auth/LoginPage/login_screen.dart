@@ -39,7 +39,7 @@ class LoginPage extends StatelessWidget {
                 const TitleContent(
                     "Login", "Login to your existing Aware account"),
                 VerticalSpaceBox(40.h),
-                LoginContents(),
+                const LoginContents(),
               ],
             ),
           ),
