@@ -1,52 +1,49 @@
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController {
-  // Define a global key for login form
-  final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
-  // Define Text controller for each input - Email and password
-  late TextEditingController emailController, passwordController;
-  // Declare two variables to store the value of each input
-  var email = "";
-  var password = "";
+  // Define variables to store input values
+  var email = "".obs;
+  var password = "".obs;
 
-  // Create an instances of TextEditingController
-  @override
-  void onInit() {
-    super.onInit();
-    emailController = TextEditingController();
-    passwordController = TextEditingController();
+  // Define variables to handle errors for each input
+  var emailHasError = false.obs;
+  var passwordHasError = false.obs;
+
+  // Define middleware for redirection
+  var hasPermission = false.obs;
+
+  // Store the entered email value
+  void storeEmail(String enteredEmail) {
+    email.value = enteredEmail;
   }
 
-  // Dispose the controllers
-  // @override
-  // void onClose() {
-  //   emailController.dispose();
-  //   passwordController.dispose();
-  // }
+  // Store the entered password value
+  void storePassword(String enteredPassword) {
+    password.value = enteredPassword;
+  }
 
-  // Validate the entered email
+  // Validate email input
   void validateEmail() {
-    if (!GetUtils.isEmail(email)) {
-      print("invalid email!");
+    if (!GetUtils.isEmail(email.value)) {
+      emailHasError.value = true;
     } else {
-      print("THANKS");
+      emailHasError.value = false;
     }
   }
 
-  // Validate the entered password
+  // Validate password input
   void validatePassword() {
-    if (password.length < 8) {
-      print("invalid password");
+    if (password.value.length < 8) {
+      passwordHasError.value = true;
     } else {
-      print("THANKS FOR PASSWORD");
+      passwordHasError.value = false;
     }
   }
 
-  // Perform the login operation
-  void performLogin() {
-    loginFormKey.currentState!.save();
-    print(email);
-    print(password);
+  // Change the status of redirection middleware
+  void setAuthorized() {
+    if (emailHasError.isFalse && passwordHasError.isFalse) {
+      hasPermission.value = true;
+    }
   }
 }

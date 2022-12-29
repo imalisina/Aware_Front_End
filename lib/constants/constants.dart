@@ -13,6 +13,8 @@ const SECONDARY_COLOR = Color.fromARGB(255, 146, 147, 157);
 const INPUT_PLACEHOLDER = Color.fromARGB(255, 188, 189, 199);
 // ignore: constant_identifier_names
 const GHOST_COLOR = Color.fromARGB(255, 226, 226, 235);
+// ignore: constant_identifier_names
+const ERROR_COLOR = Color.fromARGB(255, 196, 28, 2);
 
 // Define application navigation bar title details
 const enabledBackButton = false;
