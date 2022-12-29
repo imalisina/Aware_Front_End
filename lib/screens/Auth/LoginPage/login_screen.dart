@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 // Other packages
 import 'package:sample/constants/constants.dart';
 import 'package:sample/screens/Auth/LoginPage/login_contents.dart';
+import 'package:sample/screens/Auth/LoginPage/social_media_login.dart';
+import 'package:sample/screens/Auth/bottom_help_menu.dart';
 import 'package:sample/screens/Auth/title_content.dart';
 import 'package:sample/utils/space_box_container.dart';
 
@@ -36,10 +38,24 @@ class LoginPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 VerticalSpaceBox(50.h),
+
+                // Title and sub-title
                 const TitleContent(
                     "Login", "Login to your existing Aware account"),
+
                 VerticalSpaceBox(40.h),
+
+                // Login input fields and button
                 const LoginContents(),
+
+                VerticalSpaceBox(30.h),
+
+                // Social media login options
+                const SocialMediaLogin(),
+
+                // VerticalSpaceBox(330.h),
+                // Bottom helper menu
+                // const BottomHelpMenu(),
               ],
             ),
           ),

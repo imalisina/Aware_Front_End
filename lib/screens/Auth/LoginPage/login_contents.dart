@@ -8,8 +8,8 @@ import 'package:get/get.dart';
 import 'package:sample/constants/constants.dart';
 import 'package:sample/screens/Auth/LoginPage/password_field_controller.dart';
 import 'package:sample/screens/Auth/LoginPage/login_controller.dart';
+import 'package:sample/screens/HomePage/home_screen.dart';
 import 'package:sample/utils/space_box_container.dart';
-import 'package:sample/screens/Auth/bottom_help_menu.dart';
 
 class LoginContents extends StatelessWidget {
   const LoginContents({super.key});
@@ -145,16 +145,34 @@ class LoginContents extends StatelessWidget {
 
                 // Redirect to home screen
                 if (loginController.hasPermission.isTrue) {
-                  // WRITE THE HOME PAGE GETX ROUTE . . .
+                  // ignore: prefer_const_constructors
+                  Get.off(HomeScreen());
                 }
               },
             ),
           ),
 
-          VerticalSpaceBox(390.h),
-
-          // Bottom helper menu
-          const BottomHelpMenu(),
+          // Register route
+          SizedBox(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Haven't an account ?",
+                    style: TextStyle(color: PRIMARY_COLOR, fontSize: 13.sp)),
+                CupertinoButton(
+                  padding: const EdgeInsets.all(0),
+                  child: Text(
+                    " Register now",
+                    style: TextStyle(
+                        fontSize: 13.sp,
+                        decoration: TextDecoration.underline,
+                        color: MAIN_COLOR),
+                  ),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
