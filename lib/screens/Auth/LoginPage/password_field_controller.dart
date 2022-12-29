@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class InputFieldController extends GetxController {
-  var isPassword = false.obs;
+class PasswordFiledController extends GetxController {
+  var isPassword = true.obs;
 
   // To toggle between password's visibility
   togglePassword() {

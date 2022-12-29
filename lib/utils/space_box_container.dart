@@ -4,6 +4,7 @@ class VerticalSpaceBox extends StatelessWidget {
   // Define height
   final double height;
   // Getting state from other components
+  // ignore: use_key_in_widget_constructors
   const VerticalSpaceBox(this.height);
 
   @override
@@ -16,6 +17,7 @@ class HorizontalSpaceBox extends StatelessWidget {
   // Define height
   final double width;
   // Getting state from other components
+  // ignore: use_key_in_widget_constructors
   const HorizontalSpaceBox(this.width);
 
   @override
