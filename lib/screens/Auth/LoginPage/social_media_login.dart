@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/constants/constants.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sample/utils/space_box_container.dart';
 
 class SocialMediaLogin extends StatelessWidget {
   const SocialMediaLogin({super.key});
@@ -24,20 +26,118 @@ class SocialMediaLogin extends StatelessWidget {
           ],
         ),
 
+        VerticalSpaceBox(15.h),
+
         // Login alternatives section
-        CupertinoButton(
-          onPressed: () {},
-          child: Container(
-            width: double.maxFinite,
-            padding: EdgeInsets.only(top: 10.h, bottom: 10.h),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(5).r,
-              border: Border.all(
-                color: INPUT_PLACEHOLDER,
-                style: BorderStyle.solid,
-              ),
+
+        // Google login
+        SizedBox(
+          width: 400.w,
+          height: 60.h,
+          child: CupertinoButton(
+            onPressed: () {},
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  "assets/images/icons/google_login.svg",
+                  width: 22.w,
+                  height: 22.h,
+                ),
+                HorizontalSpaceBox(10.w),
+                const Text(
+                  "Continue with Google",
+                  style: TextStyle(color: PRIMARY_COLOR),
+                ),
+              ],
             ),
-            child: const Text("Login Option One"),
+          ),
+        ),
+
+        SizedBox(
+          width: 100.w,
+          child: const Divider(),
+        ),
+
+        // TikTok login
+        SizedBox(
+          width: 400.w,
+          height: 60.h,
+          child: CupertinoButton(
+            onPressed: () {},
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  "assets/images/icons/tiktok_login.svg",
+                  width: 22.w,
+                  height: 22.h,
+                ),
+                HorizontalSpaceBox(10.w),
+                const Text(
+                  "Continue with TikTok",
+                  style: TextStyle(color: PRIMARY_COLOR),
+                ),
+              ],
+            ),
+          ),
+        ),
+
+        SizedBox(
+          width: 100.w,
+          child: const Divider(),
+        ),
+
+        // TikTok login
+        SizedBox(
+          width: 400.w,
+          height: 60.h,
+          child: CupertinoButton(
+            onPressed: () {},
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  "assets/images/icons/insta_login.svg",
+                  width: 22.w,
+                  height: 22.h,
+                ),
+                HorizontalSpaceBox(10.w),
+                const Text(
+                  "Continue with TikTok",
+                  style: TextStyle(color: PRIMARY_COLOR),
+                ),
+              ],
+            ),
+          ),
+        ),
+
+        SizedBox(
+          width: 100.w,
+          child: const Divider(),
+        ),
+
+        // Twitter login
+        SizedBox(
+          width: 400.w,
+          height: 60.h,
+          child: CupertinoButton(
+            onPressed: () {},
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  "assets/images/icons/twitter_login.svg",
+                  width: 22.w,
+                  height: 22.h,
+                ),
+                HorizontalSpaceBox(10.w),
+                const Text(
+                  "Continue with Twitter",
+                  style: TextStyle(color: PRIMARY_COLOR),
+                ),
+              ],
+            ),
           ),
         ),
       ],
