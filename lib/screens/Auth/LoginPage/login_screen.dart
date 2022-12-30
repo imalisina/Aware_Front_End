@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sample/constants/constants.dart';
 import 'package:sample/screens/Auth/LoginPage/login_contents.dart';
 import 'package:sample/screens/Auth/LoginPage/social_media_login.dart';
-import 'package:sample/screens/Auth/bottom_help_menu.dart';
+import 'package:sample/screens/Auth/LoginPage/support_button.dart';
 import 'package:sample/screens/Auth/title_content.dart';
 import 'package:sample/utils/space_box_container.dart';
 
@@ -22,7 +22,7 @@ class LoginPage extends StatelessWidget {
           backgroundColor: BACKGROUND_COLOR,
           automaticallyImplyLeading: enabledBackButton,
           border: navigationBorder,
-          padding: EdgeInsetsDirectional.only(top: 9.0.h),
+          padding: EdgeInsetsDirectional.only(top: 9.h),
           middle: Text(
             titleText,
             style: GoogleFonts.pacifico(
@@ -53,9 +53,8 @@ class LoginPage extends StatelessWidget {
                 // Social media login options
                 const SocialMediaLogin(),
 
-                // VerticalSpaceBox(330.h),
-                // Bottom helper menu
-                // const BottomHelpMenu(),
+                // Support Icon
+                const SupportButton(),
               ],
             ),
           ),

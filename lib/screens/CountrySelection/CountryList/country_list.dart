@@ -12,6 +12,7 @@ import 'package:sample/utils/space_box_container.dart';
 class CountryList extends StatelessWidget {
   const CountryList({super.key});
 
+  // Get countries state from GetX
   static final countryController = Get.put(SelectCountryController());
 
   @override
