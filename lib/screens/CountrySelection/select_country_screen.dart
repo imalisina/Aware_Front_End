@@ -16,14 +16,14 @@ class SelectCountry extends StatelessWidget {
       child: CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
           backgroundColor: BACKGROUND_COLOR,
-          automaticallyImplyLeading: enabledBackButton,
+          automaticallyImplyLeading: disableBackButton,
           border: navigationBorder,
           padding: EdgeInsetsDirectional.only(top: 9.0.h),
           middle: Text(
             titleText,
             style: GoogleFonts.pacifico(
                 color: MAIN_COLOR,
-                fontSize: titleFontSize.sp,
+                fontSize: titleFontSize,
                 fontWeight: titleFontWeight),
           ),
         ),

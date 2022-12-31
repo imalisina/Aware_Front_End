@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 
 // Other packages
 import 'package:sample/constants/constants.dart';
-import 'package:sample/screens/Auth/LoginPage/password_field_controller.dart';
 import 'package:sample/screens/Auth/LoginPage/login_controller.dart';
+import 'package:sample/screens/Auth/password_field_controller.dart';
 import 'package:sample/screens/HomePage/home_screen.dart';
 import 'package:sample/utils/space_box_container.dart';
 
@@ -22,7 +22,7 @@ class LoginContents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30, right: 30).w,
+      padding: EdgeInsets.only(left: 30.w, right: 30.w),
       child: Column(
         children: [
           // Email input field
@@ -43,8 +43,7 @@ class LoginContents extends StatelessWidget {
                     )
                   : const EmptyBox()),
               textInputAction: TextInputAction.next,
-              placeholderStyle: const TextStyle(
-                  color: INPUT_PLACEHOLDER, fontWeight: FontWeight.w300),
+              placeholderStyle: inputPlaceholderStyle,
             ),
           ),
 
@@ -103,8 +102,7 @@ class LoginContents extends StatelessWidget {
                         ),
                       )
                     : const EmptyBox()),
-                placeholderStyle: const TextStyle(
-                    color: INPUT_PLACEHOLDER, fontWeight: FontWeight.w300),
+                placeholderStyle: inputPlaceholderStyle,
               ),
             ),
           ),
@@ -168,7 +166,9 @@ class LoginContents extends StatelessWidget {
                         decoration: TextDecoration.underline,
                         color: MAIN_COLOR),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed("/auth/register");
+                  },
                 ),
               ],
             ),

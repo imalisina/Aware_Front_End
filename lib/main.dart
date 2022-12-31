@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 // UI Screens
 import 'package:sample/screens/Auth/LoginPage/login_screen.dart';
+import 'package:sample/screens/Auth/RegisterPage/register_screen.dart';
 import 'package:sample/screens/CountrySelection/select_country_screen.dart';
 import 'package:sample/screens/HomePage/home_screen.dart';
 import 'package:sample/screens/WelcomePage/welcome_screen.dart';
@@ -25,11 +26,12 @@ class MyApp extends StatelessWidget {
           GetPage(name: "/intro", page: () => const WelcomePage()),
           GetPage(name: "/country", page: () => const SelectCountry()),
           GetPage(name: "/auth/login", page: () => const LoginPage()),
+          GetPage(name: "/auth/register", page: () => const RegisterScreen()),
           GetPage(name: "/home", page: () => const HomeScreen()),
         ],
         debugShowCheckedModeBanner: false,
         title: 'Aware',
-        initialRoute: "/auth/login",
+        initialRoute: "/intro",
       ),
       // Setting the design size
       designSize: const Size(412, 915),

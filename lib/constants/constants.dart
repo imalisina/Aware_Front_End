@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Define application color theme
 // ignore: constant_identifier_names
@@ -17,8 +18,11 @@ const GHOST_COLOR = Color.fromARGB(255, 226, 226, 235);
 const ERROR_COLOR = Color.fromARGB(255, 196, 28, 2);
 
 // Define application navigation bar title details
-const enabledBackButton = false;
+const disableBackButton = false;
+const enableBackButton = true;
 const navigationBorder = Border(bottom: BorderSide(color: BACKGROUND_COLOR));
 const titleText = "Aware";
-const double titleFontSize = 25.0;
+double titleFontSize = 25.0.sp;
 const titleFontWeight = FontWeight.w500;
+const inputPlaceholderStyle =
+    TextStyle(color: INPUT_PLACEHOLDER, fontWeight: FontWeight.w300);
