@@ -87,7 +87,7 @@ class LoginContents extends StatelessWidget {
                               ? CupertinoIcons.eye
                               : CupertinoIcons.eye_slash,
                           color: SECONDARY_COLOR,
-                          size: 21,
+                          size: 21.sp,
                         ),
                         onPressed: () {
                           // Toggles between show/hide password text

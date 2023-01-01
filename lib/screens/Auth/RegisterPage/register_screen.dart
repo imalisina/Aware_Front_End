@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 // Other packages
 import 'package:sample/constants/constants.dart';
 import 'package:sample/screens/Auth/RegisterPage/register_contents.dart';
-import 'package:sample/screens/Auth/title_content.dart';
+import 'package:sample/utils/title_content.dart';
 import 'package:sample/utils/space_box_container.dart';
 
 class RegisterScreen extends StatelessWidget {

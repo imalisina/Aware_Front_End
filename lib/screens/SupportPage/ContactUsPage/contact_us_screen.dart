@@ -4,12 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 // Other packages
 import 'package:sample/constants/constants.dart';
-import 'package:sample/screens/SupportPage/support_menu.dart';
+import 'package:sample/screens/SupportPage/ContactUsPage/contact_us_form.dart';
 import 'package:sample/utils/space_box_container.dart';
 import 'package:sample/utils/title_content.dart';
 
-class SupportScreen extends StatelessWidget {
-  const SupportScreen({super.key});
+class ContactUsScreen extends StatelessWidget {
+  const ContactUsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,34 +29,22 @@ class SupportScreen extends StatelessWidget {
           ),
         ),
         child: SizedBox(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              VerticalSpaceBox(50.h),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                VerticalSpaceBox(50.h),
 
-              // Title and sub-title
-              const TitleContent(
-                  "Need Help ?", "Please select one support option"),
+                // Title and sub-title
+                const TitleContent(
+                    "Contact Us", "Describe your problem to our team"),
 
-              VerticalSpaceBox(40.h),
+                VerticalSpaceBox(40.h),
 
-              // Support menu
-              const SupportMenu(),
-
-              VerticalSpaceBox(100.h),
-
-              // Support image
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    "assets/images/support.gif",
-                    width: 400.w,
-                    height: 400.h,
-                  ),
-                ],
-              ),
-            ],
+                // Contact us input fields and button
+                const ContactUsForm(),
+              ],
+            ),
           ),
         ),
       ),

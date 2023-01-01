@@ -7,7 +7,7 @@ import 'package:sample/constants/constants.dart';
 import 'package:sample/screens/Auth/LoginPage/login_contents.dart';
 import 'package:sample/screens/Auth/LoginPage/social_media_login.dart';
 import 'package:sample/screens/Auth/LoginPage/support_button.dart';
-import 'package:sample/screens/Auth/title_content.dart';
+import 'package:sample/utils/title_content.dart';
 import 'package:sample/utils/space_box_container.dart';
 
 // Login page container

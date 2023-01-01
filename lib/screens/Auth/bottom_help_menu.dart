@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+// GetX package
+import 'package:get/get.dart';
+
 // Other packages
 import 'package:sample/constants/constants.dart';
 
@@ -22,7 +25,9 @@ class BottomHelpMenu extends StatelessWidget {
               "Support",
               style: TextStyle(fontSize: 15.sp, color: INPUT_PLACEHOLDER),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed("/support/menu");
+            },
           ),
         ),
 
