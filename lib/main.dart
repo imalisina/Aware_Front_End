@@ -7,6 +7,7 @@ import 'package:sample/screens/Auth/LoginPage/login_screen.dart';
 import 'package:sample/screens/Auth/RegisterPage/register_screen.dart';
 import 'package:sample/screens/CountrySelection/select_country_screen.dart';
 import 'package:sample/screens/HomePage/home_screen.dart';
+import 'package:sample/screens/SupportPage/support_screen.dart';
 import 'package:sample/screens/WelcomePage/welcome_screen.dart';
 
 void main() {
@@ -27,11 +28,12 @@ class MyApp extends StatelessWidget {
           GetPage(name: "/country", page: () => const SelectCountry()),
           GetPage(name: "/auth/login", page: () => const LoginPage()),
           GetPage(name: "/auth/register", page: () => const RegisterScreen()),
+          GetPage(name: "/support/menu", page: () => const SupportScreen()),
           GetPage(name: "/home", page: () => const HomeScreen()),
         ],
         debugShowCheckedModeBanner: false,
         title: 'Aware',
-        initialRoute: "/intro",
+        initialRoute: "/support/menu",
       ),
       // Setting the design size
       designSize: const Size(412, 915),

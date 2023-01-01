@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -7,6 +9,7 @@ import 'package:get/get.dart';
 // Other packages
 import 'package:sample/constants/constants.dart';
 import 'package:sample/screens/Auth/RegisterPage/register_controller.dart';
+import 'package:sample/screens/Auth/bottom_help_menu.dart';
 import 'package:sample/screens/Auth/password_field_controller.dart';
 import 'package:sample/screens/CountrySelection/select_country_controller.dart';
 import 'package:sample/screens/HomePage/home_screen.dart';
@@ -126,7 +129,7 @@ class RegisterContents extends StatelessWidget {
                 registerController.storePhoneNumber(value);
               },
               placeholder:
-                  "Enter your phone number : +${countries.selectedCountryCode}56756",
+                  "Enter your phone number : +${countries.selectedCountryCode}5675686",
               prefix: Obx(() => registerController.phoneNumberHasError.value
                   ? Container(
                       margin: EdgeInsets.only(left: 10.w),
@@ -181,7 +184,7 @@ class RegisterContents extends StatelessWidget {
                               ? CupertinoIcons.eye
                               : CupertinoIcons.eye_slash,
                           color: SECONDARY_COLOR,
-                          size: 21,
+                          size: 21.sp,
                         ),
                         onPressed: () {
                           // Toggles between show/hide password text
@@ -225,31 +228,85 @@ class RegisterContents extends StatelessWidget {
                 : const EmptyBox(),
           ),
 
-          VerticalSpaceBox(20.h),
+          VerticalSpaceBox(30.h),
+
+          // Agreement section
+          Text(
+            "By clicking Agree & Join, you agree to the Aware User Agreement, and Privacy Policy",
+            style: TextStyle(color: INPUT_PLACEHOLDER, fontSize: 13.sp),
+            textAlign: TextAlign.center,
+          ),
+
+          VerticalSpaceBox(5.h),
 
           // Login button
           SizedBox(
             width: double.maxFinite,
-            child: CupertinoButton(
-              color: MAIN_COLOR,
-              child: const Text("Join"),
-              onPressed: () {
-                // Perform validation process
-                registerController.validateName();
-                registerController.validatePhoneNumber();
-                registerController.validateEmail();
-                registerController.validatePassword();
-                // Open redirection gateway
-                registerController.setAuthorized();
+            child: Obx(
+              () => CupertinoButton(
+                color: MAIN_COLOR,
+                child: registerController.spinnerStatus.value
+                    ? const CupertinoActivityIndicator(
+                        color: BACKGROUND_COLOR,
+                      )
+                    : const Text("Agree & Join"),
+                onPressed: () {
+                  // Perform validation process
+                  registerController.validateName();
+                  registerController.validatePhoneNumber();
+                  registerController.validateEmail();
+                  registerController.validatePassword();
+                  // Open redirection gateway
+                  registerController.setAuthorized();
 
-                // Redirect to home screen
-                if (registerController.hasPermission.isTrue) {
-                  // ignore: prefer_const_constructors
-                  Get.off(HomeScreen());
-                }
-              },
+                  // Redirect to home screen
+                  if (registerController.hasPermission.isTrue) {
+                    // Toggle method to display spinner during API calls
+                    registerController.toggleLoading();
+                    Timer(
+                      const Duration(seconds: 3),
+                      () {
+                        registerController.toggleLoading();
+
+                        // Redirection route
+                        // ignore: prefer_const_constructors
+                        Get.off(HomeScreen());
+                      },
+                    );
+                  }
+                },
+              ),
             ),
           ),
+
+          // Register route
+          SizedBox(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Already on Aware ?",
+                    style: TextStyle(color: PRIMARY_COLOR, fontSize: 13.sp)),
+                CupertinoButton(
+                  padding: const EdgeInsets.all(0),
+                  child: Text(
+                    " Login now",
+                    style: TextStyle(
+                        fontSize: 13.sp,
+                        decoration: TextDecoration.underline,
+                        color: MAIN_COLOR),
+                  ),
+                  onPressed: () {
+                    Get.toNamed("/auth/login");
+                  },
+                ),
+              ],
+            ),
+          ),
+
+          VerticalSpaceBox(160.h),
+
+          // Bottom help menu
+          const BottomHelpMenu(),
         ],
       ),
     );

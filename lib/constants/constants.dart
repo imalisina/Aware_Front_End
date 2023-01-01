@@ -16,6 +16,10 @@ const INPUT_PLACEHOLDER = Color.fromARGB(255, 188, 189, 199);
 const GHOST_COLOR = Color.fromARGB(255, 226, 226, 235);
 // ignore: constant_identifier_names
 const ERROR_COLOR = Color.fromARGB(255, 196, 28, 2);
+// ignore: constant_identifier_names
+const AGREE_COLOR = Color.fromARGB(255, 50, 152, 2);
+// ignore: constant_identifier_names
+const DISAGREE_COLOR = Color.fromARGB(255, 196, 28, 2);
 
 // Define application navigation bar title details
 const disableBackButton = false;
