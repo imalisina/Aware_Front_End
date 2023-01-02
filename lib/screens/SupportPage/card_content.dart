@@ -30,7 +30,6 @@ class CardContent extends StatelessWidget {
               // Menu icon
               Icon(
                 cardIcon,
-                color: MAIN_COLOR,
                 size: 25.sp,
               ),
 
@@ -46,7 +45,6 @@ class CardContent extends StatelessWidget {
           // Goto page arrow
           Icon(
             CupertinoIcons.chevron_forward,
-            color: MAIN_COLOR,
             size: 25.sp,
           ),
         ],

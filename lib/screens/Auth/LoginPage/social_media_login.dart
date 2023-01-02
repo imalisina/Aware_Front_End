@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sample/constants/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+// Other packages
+import 'package:sample/constants/constants.dart';
 import 'package:sample/utils/space_box_container.dart';
 
 class SocialMediaLogin extends StatelessWidget {

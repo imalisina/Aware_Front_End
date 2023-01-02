@@ -4,9 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // GetX package
 import 'package:get/get.dart';
 
-// Other packages
-import 'package:sample/constants/constants.dart';
-
 class SupportButton extends StatelessWidget {
   const SupportButton({super.key});
 
@@ -16,7 +13,6 @@ class SupportButton extends StatelessWidget {
       child: CupertinoButton(
           child: Icon(
             CupertinoIcons.headphones,
-            color: MAIN_COLOR,
             size: 27.w,
           ),
           onPressed: () {

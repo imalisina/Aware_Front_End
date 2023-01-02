@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// GetX package
 import 'package:get/get.dart';
+import 'package:sample/screens/CountrySelection/select_country_controller.dart';
 
 // Other packages
 import 'package:sample/constants/countries.dart';
 import 'package:sample/constants/constants.dart';
-import 'package:sample/screens/CountrySelection/select_country_controller.dart';
 import 'package:sample/utils/space_box_container.dart';
 
 class CountryList extends StatelessWidget {
