@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sample/constants/constants.dart';
 
 // UI Screens
 import 'package:sample/screens/Auth/LoginPage/login_screen.dart';
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
     // Wrap with responsive widget
     return ScreenUtilInit(
       builder: (context, Widget? child) => GetCupertinoApp(
-        theme: const CupertinoThemeData(brightness: Brightness.light),
+        theme: const CupertinoThemeData(
+            brightness: Brightness.light, primaryColor: MAIN_COLOR),
         // Specify the routes in the application
         getPages: [
           GetPage(name: "/intro", page: () => const WelcomePage()),
@@ -30,7 +32,8 @@ class MyApp extends StatelessWidget {
           GetPage(name: "/auth/login", page: () => const LoginPage()),
           GetPage(name: "/auth/register", page: () => const RegisterScreen()),
           GetPage(name: "/support/menu", page: () => const SupportScreen()),
-          GetPage(name: "/support/contact", page: () => const ContactUsScreen()),
+          GetPage(
+              name: "/support/contact", page: () => const ContactUsScreen()),
           GetPage(name: "/home", page: () => const HomeScreen()),
         ],
         debugShowCheckedModeBanner: false,

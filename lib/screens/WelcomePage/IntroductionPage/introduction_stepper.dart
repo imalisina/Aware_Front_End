@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+// GetX package
 import 'package:get/get.dart';
+import 'package:sample/screens/WelcomePage/welcome_controller.dart';
 
 // Other packages
 import 'package:sample/constants/constants.dart';
-import 'package:sample/screens/WelcomePage/welcome_controller.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 // Introduction slide bullets
 class IntroductionStepper extends StatelessWidget {
@@ -50,7 +52,6 @@ class IntroductionStepper extends StatelessWidget {
                     // ignore: prefer_const_constructors
                     child: Text(
                       "Next",
-                      style: const TextStyle(color: MAIN_COLOR),
                     ),
                     onPressed: () {
                       slideController.nextPage(

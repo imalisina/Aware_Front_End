@@ -5,13 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
+import 'package:sample/screens/Auth/password_field_controller.dart';
+import 'package:sample/screens/Auth/RegisterPage/register_controller.dart';
+import 'package:sample/screens/CountrySelection/select_country_controller.dart';
 
 // Other packages
 import 'package:sample/constants/constants.dart';
-import 'package:sample/screens/Auth/RegisterPage/register_controller.dart';
 import 'package:sample/screens/Auth/bottom_help_menu.dart';
-import 'package:sample/screens/Auth/password_field_controller.dart';
-import 'package:sample/screens/CountrySelection/select_country_controller.dart';
 import 'package:sample/screens/HomePage/home_screen.dart';
 import 'package:sample/utils/space_box_container.dart';
 
@@ -35,6 +35,7 @@ class RegisterContents extends StatelessWidget {
           SizedBox(
             height: 55.h,
             child: CupertinoTextField(
+              keyboardType: TextInputType.name,
               onChanged: (value) {
                 registerController.storeName(value);
               },
@@ -80,6 +81,7 @@ class RegisterContents extends StatelessWidget {
           SizedBox(
             height: 55.h,
             child: CupertinoTextField(
+              keyboardType: TextInputType.emailAddress,
               onChanged: (value) {
                 registerController.storeEmail(value);
               },
@@ -125,6 +127,7 @@ class RegisterContents extends StatelessWidget {
           SizedBox(
             height: 55.h,
             child: CupertinoTextField(
+              keyboardType: TextInputType.phone,
               onChanged: (value) {
                 registerController.storePhoneNumber(value);
               },
@@ -172,6 +175,7 @@ class RegisterContents extends StatelessWidget {
             height: 55.h,
             child: Obx(
               () => CupertinoTextField(
+                keyboardType: TextInputType.visiblePassword,
                 onChanged: (value) {
                   registerController.storePassword(value);
                 },
@@ -243,8 +247,7 @@ class RegisterContents extends StatelessWidget {
           SizedBox(
             width: double.maxFinite,
             child: Obx(
-              () => CupertinoButton(
-                color: MAIN_COLOR,
+              () => CupertinoButton.filled(
                 child: registerController.spinnerStatus.value
                     ? const CupertinoActivityIndicator(
                         color: BACKGROUND_COLOR,
@@ -291,9 +294,9 @@ class RegisterContents extends StatelessWidget {
                   child: Text(
                     " Login now",
                     style: TextStyle(
-                        fontSize: 13.sp,
-                        decoration: TextDecoration.underline,
-                        color: MAIN_COLOR),
+                      fontSize: 13.sp,
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
                   onPressed: () {
                     Get.toNamed("/auth/login");

@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sample/constants/constants.dart';
-import 'package:sample/screens/CountrySelection/CountryList/country_list.dart';
 
 // Other packages
+import 'package:sample/constants/constants.dart';
 import 'package:sample/utils/space_box_container.dart';
+import 'package:sample/screens/CountrySelection/CountryList/country_list.dart';
 
 class CountrySelectionContent extends StatelessWidget {
   const CountrySelectionContent({super.key});
@@ -45,6 +45,7 @@ class CountrySelectionContent extends StatelessWidget {
                               CupertinoButton(
                                 child: const Text(
                                   "Close",
+                                  style: TextStyle(color: SECONDARY_COLOR),
                                 ),
                                 onPressed: () {
                                   Navigator.of(context).pop();
@@ -52,7 +53,8 @@ class CountrySelectionContent extends StatelessWidget {
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.only(left: 20, right: 20).w,
+                                    const EdgeInsets.only(left: 20, right: 20)
+                                        .w,
                                 child: const CupertinoSearchTextField(),
                               ),
                               const Expanded(
@@ -65,7 +67,6 @@ class CountrySelectionContent extends StatelessWidget {
                     }),
                 child: const Text(
                   "Select your region",
-                  style: TextStyle(color: MAIN_COLOR),
                 ))
           ],
         ),

@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// GetX package
+import 'package:get/get.dart';
+
 // Other packages
 import 'package:sample/constants/constants.dart';
 import 'package:sample/screens/SupportPage/support_menu.dart';
@@ -17,7 +20,17 @@ class SupportScreen extends StatelessWidget {
       child: CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
           backgroundColor: BACKGROUND_COLOR,
-          automaticallyImplyLeading: disableBackButton,
+          automaticallyImplyLeading: !disableBackButton,
+          leading: CupertinoButton(
+            padding: EdgeInsets.zero,
+            child: Container(
+              margin: EdgeInsets.only(top: 10.h),
+              child: const Icon(CupertinoIcons.chevron_left),
+            ),
+            onPressed: () {
+              Get.back();
+            },
+          ),
           border: navigationBorder,
           padding: EdgeInsetsDirectional.only(top: 9.h),
           middle: Text(
