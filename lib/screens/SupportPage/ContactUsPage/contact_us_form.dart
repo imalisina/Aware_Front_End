@@ -83,6 +83,7 @@ class ContactUsForm extends StatelessWidget {
           SizedBox(
             height: 250.h,
             child: CupertinoTextField(
+              keyboardType: TextInputType.text,
               prefix: Obx(() => contactController.descriptionHasError.value
                   ? Container(
                       margin: EdgeInsets.only(left: 10.w),

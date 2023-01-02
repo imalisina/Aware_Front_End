@@ -31,6 +31,7 @@ class LoginContents extends StatelessWidget {
           SizedBox(
             height: 55.h,
             child: CupertinoTextField(
+              keyboardType: TextInputType.emailAddress,
               onChanged: (value) {
                 loginController.storeEmail(value);
               },
@@ -75,6 +76,7 @@ class LoginContents extends StatelessWidget {
             height: 55.h,
             child: Obx(
               () => CupertinoTextField(
+                keyboardType: TextInputType.visiblePassword,
                 onChanged: (value) {
                   loginController.storePassword(value);
                 },

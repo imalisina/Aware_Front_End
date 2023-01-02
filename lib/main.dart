@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         ],
         debugShowCheckedModeBanner: false,
         title: 'Aware',
-        initialRoute: "/auth/login",
+        initialRoute: "/support/menu",
       ),
       // Setting the design size
       designSize: const Size(412, 915),

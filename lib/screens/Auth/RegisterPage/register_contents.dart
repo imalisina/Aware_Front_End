@@ -35,6 +35,7 @@ class RegisterContents extends StatelessWidget {
           SizedBox(
             height: 55.h,
             child: CupertinoTextField(
+              keyboardType: TextInputType.name,
               onChanged: (value) {
                 registerController.storeName(value);
               },
@@ -80,6 +81,7 @@ class RegisterContents extends StatelessWidget {
           SizedBox(
             height: 55.h,
             child: CupertinoTextField(
+              keyboardType: TextInputType.emailAddress,
               onChanged: (value) {
                 registerController.storeEmail(value);
               },
@@ -125,6 +127,7 @@ class RegisterContents extends StatelessWidget {
           SizedBox(
             height: 55.h,
             child: CupertinoTextField(
+              keyboardType: TextInputType.phone,
               onChanged: (value) {
                 registerController.storePhoneNumber(value);
               },
@@ -172,6 +175,7 @@ class RegisterContents extends StatelessWidget {
             height: 55.h,
             child: Obx(
               () => CupertinoTextField(
+                keyboardType: TextInputType.visiblePassword,
                 onChanged: (value) {
                   registerController.storePassword(value);
                 },
