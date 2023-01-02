@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -85,7 +87,7 @@ class LoginContents extends StatelessWidget {
                               ? CupertinoIcons.eye
                               : CupertinoIcons.eye_slash,
                           color: SECONDARY_COLOR,
-                          size: 21,
+                          size: 21.sp,
                         ),
                         onPressed: () {
                           // Toggles between show/hide password text
@@ -131,22 +133,38 @@ class LoginContents extends StatelessWidget {
           // Login button
           SizedBox(
             width: double.maxFinite,
-            child: CupertinoButton(
-              color: MAIN_COLOR,
-              child: const Text("Login"),
-              onPressed: () {
-                // Perform validation process
-                loginController.validateEmail();
-                loginController.validatePassword();
-                // Open redirection gateway
-                loginController.setAuthorized();
+            child: Obx(
+              () => CupertinoButton(
+                color: MAIN_COLOR,
+                child: loginController.spinnerStatus.value
+                    ? const CupertinoActivityIndicator(
+                        color: BACKGROUND_COLOR,
+                      )
+                    : const Text("Login"),
+                onPressed: () {
+                  // Perform validation process
+                  loginController.validateEmail();
+                  loginController.validatePassword();
+                  // Open redirection gateway
+                  loginController.setAuthorized();
 
-                // Redirect to home screen
-                if (loginController.hasPermission.isTrue) {
-                  // ignore: prefer_const_constructors
-                  Get.off(HomeScreen());
-                }
-              },
+                  // Redirect to home screen
+                  if (loginController.hasPermission.isTrue) {
+                    // Toggle method to display spinner during API calls
+                    loginController.toggleLoading();
+                    Timer(
+                      const Duration(seconds: 3),
+                      () {
+                        loginController.toggleLoading();
+
+                        // Redirection route
+                        // ignore: prefer_const_constructors
+                        Get.off(HomeScreen());
+                      },
+                    );
+                  }
+                },
+              ),
             ),
           ),
 
@@ -155,12 +173,12 @@ class LoginContents extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Haven't an account ?",
+                Text("New to Aware ?",
                     style: TextStyle(color: PRIMARY_COLOR, fontSize: 13.sp)),
                 CupertinoButton(
                   padding: const EdgeInsets.all(0),
                   child: Text(
-                    " Register now",
+                    " Join now",
                     style: TextStyle(
                         fontSize: 13.sp,
                         decoration: TextDecoration.underline,

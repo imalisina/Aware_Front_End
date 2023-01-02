@@ -12,6 +12,14 @@ class LoginController extends GetxController {
   // Define middleware for redirection
   var hasPermission = false.obs;
 
+  // Define variable to handle loading status
+  var spinnerStatus = false.obs;
+
+  // Toggle the spinner status
+  void toggleLoading() {
+    spinnerStatus.value = !spinnerStatus.value;
+  }
+
   // Store the entered email value
   void storeEmail(String enteredEmail) {
     email.value = enteredEmail;

@@ -4,15 +4,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 // Other packages
 import 'package:sample/constants/constants.dart';
-import 'package:sample/screens/Auth/LoginPage/login_contents.dart';
-import 'package:sample/screens/Auth/LoginPage/social_media_login.dart';
-import 'package:sample/screens/Auth/LoginPage/support_button.dart';
-import 'package:sample/utils/title_content.dart';
+import 'package:sample/screens/SupportPage/ContactUsPage/contact_us_form.dart';
 import 'package:sample/utils/space_box_container.dart';
+import 'package:sample/utils/title_content.dart';
 
-// Login page container
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class ContactUsScreen extends StatelessWidget {
+  const ContactUsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,20 +37,12 @@ class LoginPage extends StatelessWidget {
 
                 // Title and sub-title
                 const TitleContent(
-                    "Login", "Login to your existing Aware account"),
+                    "Contact Us", "Describe your problem to our team"),
 
                 VerticalSpaceBox(40.h),
 
-                // Login input fields and button
-                const LoginContents(),
-
-                VerticalSpaceBox(30.h),
-
-                // Social media login options
-                const SocialMediaLogin(),
-
-                // Support Icon
-                const SupportButton(),
+                // Contact us input fields and button
+                const ContactUsForm(),
               ],
             ),
           ),
