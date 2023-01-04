@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// GetX package
 import 'package:get/get.dart';
+
+// Other packages
 import 'package:sample/constants/constants.dart';
 
 // UI Screens
