@@ -131,8 +131,7 @@ class RegisterContents extends StatelessWidget {
               onChanged: (value) {
                 registerController.storePhoneNumber(value);
               },
-              placeholder:
-                  "Enter your phone number : +${countries.selectedCountryCode}5675686",
+              placeholder: "(+${countries.selectedCountryCode}) xxx-xxx-xxxx",
               prefix: Obx(() => registerController.phoneNumberHasError.value
                   ? Container(
                       margin: EdgeInsets.only(left: 10.w),
