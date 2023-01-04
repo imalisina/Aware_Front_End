@@ -40,7 +40,9 @@ class BottomHelpMenu extends StatelessWidget {
               "Forget password",
               style: TextStyle(fontSize: 15.sp, color: INPUT_PLACEHOLDER),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed("/support/password/recovery");
+            },
           ),
         ),
 

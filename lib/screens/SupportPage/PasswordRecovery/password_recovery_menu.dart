@@ -5,8 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // Other packages
 import 'package:sample/screens/SupportPage/card_content.dart';
 
-class SupportMenu extends StatelessWidget {
-  const SupportMenu({super.key});
+class PasswordRecoveryMenu extends StatelessWidget {
+  const PasswordRecoveryMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +15,15 @@ class SupportMenu extends StatelessWidget {
       child: Column(
         children: const [
           SizedBox(
-            child: CardContent("Password Recovery",
-                CupertinoIcons.lock_rotation, "/support/password/recovery"),
+            child: CardContent(
+                "Secure code",
+                CupertinoIcons.shield_lefthalf_fill,
+                "/support/password/recovery/secure_code"),
           ),
           Divider(),
           SizedBox(
-            child: CardContent(
-                "Contact us", CupertinoIcons.text_bubble, "/support/contact"),
+            child: CardContent("Email verification code", CupertinoIcons.mail,
+                "/support/password/recovery/email"),
           ),
         ],
       ),

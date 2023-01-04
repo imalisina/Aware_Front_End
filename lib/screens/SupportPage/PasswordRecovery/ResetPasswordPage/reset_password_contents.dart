@@ -2,24 +2,19 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-// GetX packages
 import 'package:get/get.dart';
-import 'package:sample/screens/Auth/password_field_controller.dart';
-import 'package:sample/screens/Auth/LoginPage/login_controller.dart';
-
-// Other packages
 import 'package:sample/constants/constants.dart';
-import 'package:sample/screens/HomePage/home_screen.dart';
+import 'package:sample/screens/Auth/password_field_controller.dart';
+import 'package:sample/screens/SupportPage/PasswordRecovery/ResetPasswordPage/reset_password_controller.dart';
 import 'package:sample/utils/space_box_container.dart';
 
-class LoginContents extends StatelessWidget {
-  const LoginContents({super.key});
+class ResetPasswordContents extends StatelessWidget {
+  const ResetPasswordContents({super.key});
 
-  // Password controller
+  // Reset password controller
+  static final resetPasswordController = Get.put(ResetPasswordController());
+  // Password visibility controller
   static final passwordController = Get.put(PasswordFiledController());
-  // Input fields controller
-  static final loginController = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
@@ -27,39 +22,59 @@ class LoginContents extends StatelessWidget {
       padding: EdgeInsets.only(left: 30.w, right: 30.w),
       child: Column(
         children: [
-          // Email input field
+          // New password input field
           SizedBox(
             height: 55.h,
-            child: CupertinoTextField(
-              keyboardType: TextInputType.emailAddress,
-              onChanged: (value) {
-                loginController.storeEmail(value);
-              },
-              placeholder: "Enter your email",
-              prefix: Obx(() => loginController.emailHasError.value
-                  ? Container(
-                      margin: EdgeInsets.only(left: 10.w),
-                      child: const Icon(
-                        CupertinoIcons.clear_thick_circled,
-                        color: ERROR_COLOR,
-                      ),
-                    )
-                  : const EmptyBox()),
-              textInputAction: TextInputAction.next,
-              placeholderStyle: inputPlaceholderStyle,
+            child: Obx(
+              () => CupertinoTextField(
+                keyboardType: TextInputType.visiblePassword,
+                onChanged: (value) {
+                  resetPasswordController.storeNewPassword(value);
+                },
+                placeholder: "Enter your new password",
+                obscureText: passwordController.isPassword.value,
+                suffix: passwordController.secureSection
+                    ? CupertinoButton(
+                        child: Icon(
+                          passwordController.isPassword.value
+                              ? CupertinoIcons.eye
+                              : CupertinoIcons.eye_slash,
+                          color: SECONDARY_COLOR,
+                          size: 21.sp,
+                        ),
+                        onPressed: () {
+                          // Toggles between show/hide password text
+                          passwordController.togglePassword();
+                        },
+                      )
+                    : const EmptyBox(),
+                textInputAction: TextInputAction.next,
+                prefix: Obx(
+                  () => resetPasswordController.newPassHasError.value
+                      ? Container(
+                          margin: EdgeInsets.only(left: 10.w),
+                          child: const Icon(
+                            CupertinoIcons.clear_thick_circled,
+                            color: ERROR_COLOR,
+                          ),
+                        )
+                      : const EmptyBox(),
+                ),
+                placeholderStyle: inputPlaceholderStyle,
+              ),
             ),
           ),
 
-          // Email error handler widget
+          // New password error handler widget
           Obx(
-            () => loginController.emailHasError.value
+            () => resetPasswordController.newPassHasError.value
                 ? Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         margin: EdgeInsets.only(top: 6.h),
                         child: Text(
-                          "Enter a valid email !",
+                          "Enter a secure password !",
                           style: TextStyle(
                               color: ERROR_COLOR,
                               fontSize: 12.sp,
@@ -73,16 +88,16 @@ class LoginContents extends StatelessWidget {
 
           VerticalSpaceBox(20.h),
 
-          // Password input field
+          // Passowrd confirmation input field
           SizedBox(
             height: 55.h,
             child: Obx(
               () => CupertinoTextField(
                 keyboardType: TextInputType.visiblePassword,
                 onChanged: (value) {
-                  loginController.storePassword(value);
+                  resetPasswordController.storeNewPasswordConfirmation(value);
                 },
-                placeholder: "Enter your password",
+                placeholder: "Enter the new password again",
                 obscureText: passwordController.isPassword.value,
                 suffix: passwordController.secureSection
                     ? CupertinoButton(
@@ -100,37 +115,38 @@ class LoginContents extends StatelessWidget {
                       )
                     : const EmptyBox(),
                 prefix: Obx(
-                  () => loginController.passwordHasError.value
-                      ? Container(
-                          margin: EdgeInsets.only(left: 10.w),
-                          child: const Icon(
-                            CupertinoIcons.clear_thick_circled,
-                            color: ERROR_COLOR,
-                          ),
-                        )
-                      : const EmptyBox(),
+                  () =>
+                      resetPasswordController.newPassConfirmationHasError.value
+                          ? Container(
+                              margin: EdgeInsets.only(left: 10.w),
+                              child: const Icon(
+                                CupertinoIcons.clear_thick_circled,
+                                color: ERROR_COLOR,
+                              ),
+                            )
+                          : const EmptyBox(),
                 ),
                 placeholderStyle: inputPlaceholderStyle,
               ),
             ),
           ),
 
-          // Password error handler widget
+          // Password confirmation error handler widget
           Obx(
-            () => loginController.passwordHasError.value
+            () => resetPasswordController.newPassConfirmationHasError.value
                 ? Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         margin: EdgeInsets.only(top: 6.h),
                         child: Text(
-                          "Password does not match !",
+                          "Passwords do not match !",
                           style: TextStyle(
                               color: ERROR_COLOR,
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w500),
                         ),
-                      )
+                      ),
                     ],
                   )
                 : const EmptyBox(),
@@ -138,64 +154,40 @@ class LoginContents extends StatelessWidget {
 
           VerticalSpaceBox(20.h),
 
-          // Login button
+          // Update password button
           SizedBox(
             width: double.maxFinite,
             child: Obx(
               () => CupertinoButton.filled(
-                child: loginController.spinnerStatus.value
+                child: resetPasswordController.spinnerStatus.value
                     ? const CupertinoActivityIndicator(
                         color: BACKGROUND_COLOR,
                       )
-                    : const Text("Login"),
+                    : const Text("Update"),
                 onPressed: () {
                   // Perform validation process
-                  loginController.validateEmail();
-                  loginController.validatePassword();
+                  resetPasswordController.validatePassword();
+                  resetPasswordController.validatePasswordConfirmation();
                   // Open redirection gateway
-                  loginController.setAuthorized();
+                  resetPasswordController.setAuthorized();
 
-                  // Redirect to home screen
-                  if (loginController.hasPermission.isTrue) {
+                  // Redirect to success page
+                  if (resetPasswordController.hasPermission.isTrue) {
                     // Toggle method to display spinner during API calls
-                    loginController.toggleLoading();
+                    resetPasswordController.toggleLoading();
                     Timer(
                       const Duration(seconds: 3),
                       () {
-                        loginController.toggleLoading();
+                        resetPasswordController.toggleLoading();
 
                         // Redirection route
                         // ignore: prefer_const_constructors
-                        Get.off(HomeScreen());
+                        Get.toNamed("/auth/login");
                       },
                     );
                   }
                 },
               ),
-            ),
-          ),
-
-          // Register route
-          SizedBox(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("New to Aware ?",
-                    style: TextStyle(color: PRIMARY_COLOR, fontSize: 13.sp)),
-                CupertinoButton(
-                  padding: const EdgeInsets.all(0),
-                  child: Text(
-                    " Join now",
-                    style: TextStyle(
-                      fontSize: 13.sp,
-                      decoration: TextDecoration.underline,
-                    ),
-                  ),
-                  onPressed: () {
-                    Get.toNamed("/auth/register");
-                  },
-                ),
-              ],
             ),
           ),
         ],
