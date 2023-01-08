@@ -51,12 +51,6 @@ class CountrySelectionContent extends StatelessWidget {
                                   Navigator.of(context).pop();
                                 },
                               ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 20, right: 20)
-                                        .w,
-                                child: const CupertinoSearchTextField(),
-                              ),
                               const Expanded(
                                 child: CountryList(),
                               )

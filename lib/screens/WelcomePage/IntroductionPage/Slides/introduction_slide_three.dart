@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Other packages
-import 'package:sample/screens/WelcomePage/IntroductionPage/slide_text_content.dart';
+import 'package:sample/utils/slide_text_content.dart';
 import 'package:sample/utils/space_box_container.dart';
 
 // Introduction slide three
