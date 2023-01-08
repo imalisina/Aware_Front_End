@@ -261,7 +261,7 @@ class RegisterContents extends StatelessWidget {
                   // Open redirection gateway
                   registerController.setAuthorized();
 
-                  // Redirect to home screen
+                  // Redirect to complete profile
                   if (registerController.hasPermission.isTrue) {
                     // Toggle method to display spinner during API calls
                     registerController.toggleLoading();

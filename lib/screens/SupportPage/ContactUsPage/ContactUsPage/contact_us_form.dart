@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // GetX package
 import 'package:get/get.dart';
 
-
 // Other packages
 import 'package:sample/constants/constants.dart';
 import 'package:sample/screens/SupportPage/ContactUsPage/contact_us_controller.dart';
@@ -62,11 +61,13 @@ class ContactUsForm extends StatelessWidget {
                         itemExtent: 35.h,
                         scrollController: FixedExtentScrollController(),
                         children: List<Widget>.generate(
-                            contactController.subjects.length, (int index) {
-                          return Center(
-                            child: Text(contactController.subjects[index]),
-                          );
-                        }),
+                          contactController.subjects.length,
+                          (int index) {
+                            return Center(
+                              child: Text(contactController.subjects[index]),
+                            );
+                          },
+                        ),
                         onSelectedItemChanged: (int value) {
                           contactController.storeSelectedSubjectID(value);
                         },

@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:sample/screens/WelcomePage/welcome_controller.dart';
 
-// Other packages 
+// Other packages
 import 'package:sample/screens/WelcomePage/IntroductionPage/Slides/introduction_slide_last.dart';
 import 'package:sample/screens/WelcomePage/IntroductionPage/Slides/introduction_slide_one.dart';
 import 'package:sample/screens/WelcomePage/IntroductionPage/introduction_stepper.dart';
@@ -27,16 +27,17 @@ class WelcomePage extends StatelessWidget {
           child: Stack(
         children: [
           PageView(
-              controller: _controller,
-              onPageChanged: (index) => {
-                    if (index == 3) {welcomeController.lastPageSetter()}
-                  },
-              children: const [
-                IntroductionSlideOne(),
-                IntroductionSlideTwo(),
-                IntroductionSlideThree(),
-                IntroductionSlideLast()
-              ]),
+            controller: _controller,
+            onPageChanged: (index) => {
+              if (index == 3) {welcomeController.lastPageSetter()}
+            },
+            children: const [
+              IntroductionSlideOne(),
+              IntroductionSlideTwo(),
+              IntroductionSlideThree(),
+              IntroductionSlideLast()
+            ],
+          ),
           // Adding stepper - Step bullets
           IntroductionStepper(_controller)
         ],

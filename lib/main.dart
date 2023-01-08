@@ -6,10 +6,15 @@ import 'package:get/get.dart';
 
 // Other packages
 import 'package:sample/constants/constants.dart';
+import 'package:sample/screens/AppDetails/SubScreens/privacy_policy.dart';
+import 'package:sample/screens/AppDetails/SubScreens/terms_of_use.dart';
+import 'package:sample/screens/AppDetails/SubScreens/user_agreement.dart';
+import 'package:sample/screens/AppDetails/app_details_screen.dart';
 
 // UI Screens
 import 'package:sample/screens/Auth/LoginPage/login_screen.dart';
 import 'package:sample/screens/Auth/RegisterPage/register_screen.dart';
+import 'package:sample/screens/CompleteProfile/ProfileDetails/personal_details_slide.dart';
 import 'package:sample/screens/CountrySelection/select_country_screen.dart';
 import 'package:sample/screens/HomePage/home_screen.dart';
 import 'package:sample/screens/SupportPage/ContactUsPage/contact_us_screen.dart';
@@ -58,11 +63,17 @@ class MyApp extends StatelessWidget {
           GetPage(
               name: "/support/password/reset",
               page: () => const ResetPasswordScreen()),
+          GetPage(name: "/details", page: () => const AppDetailsScreen()),
+          GetPage(name: "/details/terms", page: () => const TermsOfUse()),
+          GetPage(name: "/details/privacy", page: () => const PrivacyPolicy()),
+          GetPage(
+              name: "/details/agreement", page: () => const UserAgreement()),
+              GetPage(name: "/complete/profile", page: () => const PersonalDetailsScreen()),
           GetPage(name: "/home", page: () => const HomeScreen()),
         ],
         debugShowCheckedModeBanner: false,
         title: 'Aware',
-        initialRoute: "/support/password/recovery/email/verification",
+        initialRoute: "/complete/profile",
       ),
       // Setting the design size
       designSize: const Size(412, 915),

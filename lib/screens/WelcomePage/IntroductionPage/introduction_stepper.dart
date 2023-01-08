@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 // GetX package
@@ -21,7 +22,7 @@ class IntroductionStepper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: const Alignment(0, 0.88),
+      alignment: Alignment(0, 0.88.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

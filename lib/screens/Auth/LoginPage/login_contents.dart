@@ -36,15 +36,17 @@ class LoginContents extends StatelessWidget {
                 loginController.storeEmail(value);
               },
               placeholder: "Enter your email",
-              prefix: Obx(() => loginController.emailHasError.value
-                  ? Container(
-                      margin: EdgeInsets.only(left: 10.w),
-                      child: const Icon(
-                        CupertinoIcons.clear_thick_circled,
-                        color: ERROR_COLOR,
-                      ),
-                    )
-                  : const EmptyBox()),
+              prefix: Obx(
+                () => loginController.emailHasError.value
+                    ? Container(
+                        margin: EdgeInsets.only(left: 10.w),
+                        child: const Icon(
+                          CupertinoIcons.clear_thick_circled,
+                          color: ERROR_COLOR,
+                        ),
+                      )
+                    : const EmptyBox(),
+              ),
               textInputAction: TextInputAction.next,
               placeholderStyle: inputPlaceholderStyle,
             ),

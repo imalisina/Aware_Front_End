@@ -55,7 +55,9 @@ class BottomHelpMenu extends StatelessWidget {
               "Agreement",
               style: TextStyle(fontSize: 15.sp, color: INPUT_PLACEHOLDER),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed("/details");
+            },
           ),
         ),
       ],

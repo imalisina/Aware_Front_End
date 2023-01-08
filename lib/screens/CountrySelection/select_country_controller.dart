@@ -8,6 +8,7 @@ class SelectCountryController extends GetxController {
   var selectedCountryName = "";
   var selectedCountryFlag = "";
   var selectedCountryCode = "";
+  var selectedCountryStates = [];
 
   // Store the selected country
   setSelectCountry(int regionID) {
@@ -22,5 +23,6 @@ class SelectCountryController extends GetxController {
     selectedCountryName = selectedCountry.name;
     selectedCountryFlag = selectedCountry.flag;
     selectedCountryCode = selectedCountry.code;
+    selectedCountryStates = selectedCountry.states;
   }
 }
