@@ -37,6 +37,7 @@ class ContactUsForm extends StatelessWidget {
                     children: [
                       Obx(
                         () => Text(
+                          style: dropDownStyleDefault,
                           contactController.subjectName.isEmpty
                               ? "Select the subject"
                               : contactController.subjectName.value,
@@ -46,6 +47,7 @@ class ContactUsForm extends StatelessWidget {
                       Icon(
                         CupertinoIcons.chevron_down,
                         size: 21.sp,
+                        color: PRIMARY_COLOR,
                       ),
                     ],
                   ),
