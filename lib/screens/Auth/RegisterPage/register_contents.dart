@@ -7,12 +7,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sample/screens/Auth/password_field_controller.dart';
 import 'package:sample/screens/Auth/RegisterPage/register_controller.dart';
+import 'package:sample/screens/CompleteProfile/ProfileDetails/personal_details_screen.dart';
 import 'package:sample/screens/CountrySelection/select_country_controller.dart';
 
 // Other packages
 import 'package:sample/constants/constants.dart';
 import 'package:sample/screens/Auth/bottom_help_menu.dart';
-import 'package:sample/screens/HomePage/home_screen.dart';
 import 'package:sample/utils/space_box_container.dart';
 
 class RegisterContents extends StatelessWidget {
@@ -272,7 +272,7 @@ class RegisterContents extends StatelessWidget {
 
                         // Redirection route
                         // ignore: prefer_const_constructors
-                        Get.off(HomeScreen());
+                        Get.off(PersonalDetailsScreen());
                       },
                     );
                   }

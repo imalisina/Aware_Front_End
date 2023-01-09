@@ -430,7 +430,9 @@ class PersonalDetailsContent extends StatelessWidget {
                 child: CupertinoButton(
                   color: GHOST_COLOR,
                   child: const Text("Skip"),
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed("/complete/profile/location");
+                  },
                 ),
               ),
               HorizontalSpaceBox(12.w),
@@ -464,7 +466,7 @@ class PersonalDetailsContent extends StatelessWidget {
                               personalDetailsController.toggleLoading();
 
                               // Redirection route
-                              Get.toNamed("");
+                              Get.toNamed("/complete/profile/location");
                             },
                           );
                         }

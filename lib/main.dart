@@ -14,6 +14,7 @@ import 'package:sample/screens/AppDetails/app_details_screen.dart';
 // UI Screens
 import 'package:sample/screens/Auth/LoginPage/login_screen.dart';
 import 'package:sample/screens/Auth/RegisterPage/register_screen.dart';
+import 'package:sample/screens/CompleteProfile/LocationDetails/location_details_screen.dart';
 import 'package:sample/screens/CompleteProfile/ProfileDetails/personal_details_screen.dart';
 import 'package:sample/screens/CountrySelection/select_country_screen.dart';
 import 'package:sample/screens/HomePage/home_screen.dart';
@@ -80,15 +81,18 @@ class MyApp extends StatelessWidget {
 
           // Complete profile
           GetPage(
-              name: "/complete/profile",
+              name: "/complete/profile/personal",
               page: () => const PersonalDetailsScreen()),
+          GetPage(
+              name: "/complete/profile/location",
+              page: () => const LocationDetailsScreen()),
 
           // Home
           GetPage(name: "/home", page: () => const HomeScreen()),
         ],
         debugShowCheckedModeBanner: false,
         title: 'Aware',
-        initialRoute: "/complete/profile",
+        initialRoute: "/auth/register",
       ),
       // Setting the design size
       designSize: const Size(412, 915),
