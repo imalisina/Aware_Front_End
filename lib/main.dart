@@ -14,7 +14,7 @@ import 'package:sample/screens/AppDetails/app_details_screen.dart';
 // UI Screens
 import 'package:sample/screens/Auth/LoginPage/login_screen.dart';
 import 'package:sample/screens/Auth/RegisterPage/register_screen.dart';
-import 'package:sample/screens/CompleteProfile/ProfileDetails/personal_details_slide.dart';
+import 'package:sample/screens/CompleteProfile/ProfileDetails/personal_details_screen.dart';
 import 'package:sample/screens/CountrySelection/select_country_screen.dart';
 import 'package:sample/screens/HomePage/home_screen.dart';
 import 'package:sample/screens/SupportPage/ContactUsPage/contact_us_screen.dart';
@@ -41,10 +41,17 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.light, primaryColor: MAIN_COLOR),
         // Specify the routes in the application
         getPages: [
+          // Welcome
           GetPage(name: "/intro", page: () => const WelcomePage()),
+
+          // Country selection
           GetPage(name: "/country", page: () => const SelectCountry()),
+
+          // Auth --> Login/Register
           GetPage(name: "/auth/login", page: () => const LoginPage()),
           GetPage(name: "/auth/register", page: () => const RegisterScreen()),
+
+          // Support
           GetPage(name: "/support/menu", page: () => const SupportScreen()),
           GetPage(
               name: "/support/contact", page: () => const ContactUsScreen()),
@@ -63,12 +70,20 @@ class MyApp extends StatelessWidget {
           GetPage(
               name: "/support/password/reset",
               page: () => const ResetPasswordScreen()),
+
+          // More details
           GetPage(name: "/details", page: () => const AppDetailsScreen()),
           GetPage(name: "/details/terms", page: () => const TermsOfUse()),
           GetPage(name: "/details/privacy", page: () => const PrivacyPolicy()),
           GetPage(
               name: "/details/agreement", page: () => const UserAgreement()),
-              GetPage(name: "/complete/profile", page: () => const PersonalDetailsScreen()),
+
+          // Complete profile
+          GetPage(
+              name: "/complete/profile",
+              page: () => const PersonalDetailsScreen()),
+
+          // Home
           GetPage(name: "/home", page: () => const HomeScreen()),
         ],
         debugShowCheckedModeBanner: false,

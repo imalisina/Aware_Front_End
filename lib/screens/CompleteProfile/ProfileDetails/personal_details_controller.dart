@@ -10,6 +10,8 @@ class PersonalDetailsController extends GetxController {
   var birthDay = 0.obs;
   // Define a variable to check the status of birth date
   var isDateSelected = false.obs;
+  // Define variable to handle errors of birth date input
+  var birthDateHasError = false.obs;
 
   // Store the selected birth date
   void storeBirthDate(DateTime selectedBirthDate) {
@@ -17,6 +19,15 @@ class PersonalDetailsController extends GetxController {
     birthMonth.value = selectedBirthDate.month;
     birthDay.value = selectedBirthDate.day;
     isDateSelected.value = true;
+  }
+
+  // Validate birth date input value
+  void validateBirthDate() {
+    if (isDateSelected.isFalse) {
+      birthDateHasError.value = true;
+    } else {
+      birthDateHasError.value = false;
+    }
   }
 
   // ----------------------
@@ -30,6 +41,8 @@ class PersonalDetailsController extends GetxController {
   var genderName = "".obs;
   // Define a variable to check the status of gender
   var isGenderSelected = false.obs;
+  // Define variable to handle errors of gender input
+  var genderHasError = false.obs;
 
   // Store the selected gender
   void storeSelectedGenderID(int selectedGenderID) {
@@ -41,6 +54,15 @@ class PersonalDetailsController extends GetxController {
   // Convert the selected gender ID to gender name
   void convertIdToGenderName() {
     genderName.value = genders[genderID.value];
+  }
+
+  // Validate gender input value
+  void validateGender() {
+    if (isGenderSelected.isFalse) {
+      genderHasError.value = true;
+    } else {
+      genderHasError.value = false;
+    }
   }
 
   // ----------------------
@@ -62,6 +84,8 @@ class PersonalDetailsController extends GetxController {
   var ethnicityName = "".obs;
   // Define variable to check the status of ethnicity
   var isEthnicitySelected = false.obs;
+  // Define variable to handle errors of ethnicity input
+  var ethnicityHasError = false.obs;
 
   // Store the selected ethnicity
   void storeSelectedEthnicityID(int selectedEthnicityID) {
@@ -73,6 +97,15 @@ class PersonalDetailsController extends GetxController {
   // Convert the selected ethnicity ID to ethnicity name
   void convertIdToEthnicityName() {
     ethnicityName.value = ethnicities[ethnicityID.value];
+  }
+
+  // Validate ethnicity input value
+  void validateEthnicity() {
+    if (isEthnicitySelected.isFalse) {
+      ethnicityHasError.value = true;
+    } else {
+      ethnicityHasError.value = false;
+    }
   }
 
   // ----------------------
@@ -92,6 +125,8 @@ class PersonalDetailsController extends GetxController {
   var fashionStyleName = "".obs;
   // Define variable to check the status of fashion style
   var isFashionStyleSelected = false.obs;
+  // Define variable to handle errors of fashion style input
+  var fashionStyleHasErrors = false.obs;
 
   // Store the selected fashion style
   void storeSelectedFashionStyleID(int selectedFashionStyleID) {
@@ -103,6 +138,15 @@ class PersonalDetailsController extends GetxController {
   // Convert the selected fashion style ID to fashion style name
   void convertIdToFashionStyleName() {
     fashionStyleName.value = fashionStyles[fashionStyleID.value];
+  }
+
+  // Validate fashion style input
+  void validateFashionStyle() {
+    if (isFashionStyleSelected.isFalse) {
+      fashionStyleHasErrors.value = true;
+    } else {
+      fashionStyleHasErrors.value = false;
+    }
   }
 
   // ----------------------
@@ -127,7 +171,7 @@ class PersonalDetailsController extends GetxController {
   // Validate weight input
   void validateWeight() {
     if (!GetUtils.isNum(weight.value) ||
-        !GetUtils.isNullOrBlank(weight.value)!) {
+        GetUtils.isNullOrBlank(weight.value)!) {
       weightHasError.value = true;
     } else {
       weightHasError.value = false;
@@ -137,10 +181,33 @@ class PersonalDetailsController extends GetxController {
   // Validate height input
   void validateHeight() {
     if (!GetUtils.isNum(height.value) ||
-        !GetUtils.isNullOrBlank(height.value)!) {
+        GetUtils.isNullOrBlank(height.value)!) {
       heightHasError.value = true;
     } else {
       heightHasError.value = false;
+    }
+  }
+
+  // Loading and validation section
+  // Define middleware for redirection
+  var hasPermission = false.obs;
+  // Define variable to handle loading status
+  var spinnerStatus = false.obs;
+
+  // Toggle the spinner status
+  void toggleLoading() {
+    spinnerStatus.value = !spinnerStatus.value;
+  }
+
+  // change the status of redirection middleware
+  void setAuthorized() {
+    if (weightHasError.isFalse &&
+        heightHasError.isFalse &&
+        birthDateHasError.isFalse &&
+        genderHasError.isFalse &&
+        ethnicityHasError.isFalse &&
+        fashionStyleHasErrors.isFalse) {
+      hasPermission.value = true;
     }
   }
 }
