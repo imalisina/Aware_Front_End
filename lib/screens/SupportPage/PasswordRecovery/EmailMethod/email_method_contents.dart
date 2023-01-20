@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sample/screens/SupportPage/PasswordRecovery/EmailMethod/email_method_controller.dart';
 
-// Other package 
+// Other package
 import 'package:sample/constants/constants.dart';
 import 'package:sample/utils/space_box_container.dart';
 
@@ -92,12 +92,10 @@ class EmailMethodContents extends StatelessWidget {
                     Timer(
                       const Duration(seconds: 3),
                       () {
-                        emailMethodController.toggleLoading();
-
                         // Redirection route
-                        // ignore: prefer_const_constructors
                         Get.toNamed(
                             "/support/password/recovery/email/verification");
+                        emailMethodController.toggleLoading();
                       },
                     );
                   }

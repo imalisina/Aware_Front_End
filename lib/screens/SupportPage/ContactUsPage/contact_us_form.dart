@@ -150,10 +150,9 @@ class ContactUsForm extends StatelessWidget {
                     Timer(
                       const Duration(seconds: 3),
                       () {
-                        contactController.toggleLoading();
-
                         // Redirection route
                         Get.back();
+                        contactController.toggleLoading();
                       },
                     );
                   }

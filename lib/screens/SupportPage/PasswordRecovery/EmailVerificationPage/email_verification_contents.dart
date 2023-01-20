@@ -94,10 +94,7 @@ class EmailVerificationContents extends StatelessWidget {
                     Timer(
                       const Duration(seconds: 3),
                       () {
-                        verificationController.toggleLoading();
-
                         // Redirection route
-                        // ignore: prefer_const_constructors
                         Get.off(ResetPasswordScreen());
                       },
                     );

@@ -164,11 +164,8 @@ class LoginContents extends StatelessWidget {
                     Timer(
                       const Duration(seconds: 3),
                       () {
-                        loginController.toggleLoading();
-
                         // Redirection route
-                        // ignore: prefer_const_constructors
-                        Get.off(HomeScreen());
+                        Get.off(const HomeScreen());
                       },
                     );
                   }
