@@ -199,7 +199,7 @@ class PersonalDetailsController extends GetxController {
     spinnerStatus.value = !spinnerStatus.value;
   }
 
-  // change the status of redirection middleware
+  // Change the status of redirection middleware
   void setAuthorized() {
     if (weightHasError.isFalse &&
         heightHasError.isFalse &&
