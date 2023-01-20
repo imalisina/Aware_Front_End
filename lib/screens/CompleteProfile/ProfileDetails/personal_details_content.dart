@@ -422,7 +422,7 @@ class PersonalDetailsContent extends StatelessWidget {
 
           VerticalSpaceBox(20.h),
 
-          // Next button
+          // Buttons
           Row(
             children: [
               SizedBox(
