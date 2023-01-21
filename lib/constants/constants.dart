@@ -26,7 +26,7 @@ const disableBackButton = false;
 const enableBackButton = true;
 const navigationBorder = Border(bottom: BorderSide(color: BACKGROUND_COLOR));
 const titleText = "Aware";
-double titleFontSize = 24.0.sp;
+double titleFontSize = 25.0.sp;
 const titleFontWeight = FontWeight.w500;
 const inputPlaceholderStyle =
     TextStyle(color: INPUT_PLACEHOLDER, fontWeight: FontWeight.w300);
