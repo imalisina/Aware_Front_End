@@ -95,7 +95,7 @@ class EmailVerificationContents extends StatelessWidget {
                       const Duration(seconds: 3),
                       () {
                         // Redirection route
-                        Get.off(ResetPasswordScreen());
+                        Get.off(const ResetPasswordScreen());
                       },
                     );
                   }
