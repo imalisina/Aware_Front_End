@@ -58,7 +58,7 @@ class ProfileConfirmationScreen extends StatelessWidget {
               SizedBox(
                 width: 300.w,
                 child: Text(
-                  "Your details will be used in Aware fashion contests",
+                  "Your details will be processed & validated by Aware team",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       fontWeight: FontWeight.w300,
