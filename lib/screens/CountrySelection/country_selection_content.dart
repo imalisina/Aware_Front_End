@@ -15,7 +15,6 @@ class CountrySelectionContent extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          // ignore: prefer_const_literals_to_create_immutables
           children: [
             Image.asset(
               "assets/images/country_selection.gif",
@@ -30,7 +29,10 @@ class CountrySelectionContent extends StatelessWidget {
                   color: PRIMARY_COLOR,
                   fontSize: 32.sp),
             ),
-            CupertinoButton(
+            VerticalSpaceBox(20.h),
+
+            // Select country button section
+            CupertinoButton.filled(
                 onPressed: () => showCupertinoModalPopup(
                     context: context,
                     builder: (BuildContext context) {

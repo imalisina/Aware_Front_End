@@ -52,7 +52,7 @@ class LocationDetailsContent extends StatelessWidget {
 
           VerticalSpaceBox(10.h),
 
-          // City dropdown menu section
+          // State dropdown menu section
           SizedBox(
             child: Obx(
               () => Row(
@@ -68,7 +68,7 @@ class LocationDetailsContent extends StatelessWidget {
                           ? 4.w
                           : 0.w),
                   const Text(
-                    "City : ",
+                    "State : ",
                     style: TextStyle(color: INPUT_PLACEHOLDER),
                   ),
                   CupertinoButton(
@@ -80,7 +80,7 @@ class LocationDetailsContent extends StatelessWidget {
                               ? dropDownStyleError
                               : dropDownStyleDefault,
                           !locationDetailsController.isStateSelected.value
-                              ? "Select your city"
+                              ? "Select your state"
                               : locationDetailsController.stateName.value,
                         ),
                         HorizontalSpaceBox(7.w),
@@ -178,10 +178,10 @@ class LocationDetailsContent extends StatelessWidget {
 
           // Address input field
           SizedBox(
-            height: 55.h,
+            height: 80.h,
             child: CupertinoTextField(
               keyboardType: TextInputType.text,
-              onChanged: (value) {
+              onSubmitted: (value) {
                 locationDetailsController.storeAddress(value);
               },
               placeholder: "Enter your home address",
@@ -198,6 +198,7 @@ class LocationDetailsContent extends StatelessWidget {
               ),
               textInputAction: TextInputAction.done,
               placeholderStyle: inputPlaceholderStyle,
+              maxLines: 5,
             ),
           ),
 
