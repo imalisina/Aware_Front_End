@@ -268,11 +268,8 @@ class RegisterContents extends StatelessWidget {
                     Timer(
                       const Duration(seconds: 3),
                       () {
-                        registerController.toggleLoading();
-
                         // Redirection route
-                        // ignore: prefer_const_constructors
-                        Get.off(PersonalDetailsScreen());
+                        Get.off(const PersonalDetailsScreen());
                       },
                     );
                   }

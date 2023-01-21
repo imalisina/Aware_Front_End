@@ -140,11 +140,8 @@ class SecureCodeContents extends StatelessWidget {
                     Timer(
                       const Duration(seconds: 3),
                       () {
-                        secureCodeController.toggleLoading();
-
                         // Redirection route
-                        // ignore: prefer_const_constructors
-                        Get.off(ResetPasswordScreen());
+                        Get.off(const ResetPasswordScreen());
                       },
                     );
                   }

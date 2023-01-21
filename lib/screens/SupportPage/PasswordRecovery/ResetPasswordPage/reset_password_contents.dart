@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sample/constants/constants.dart';
+import 'package:sample/screens/Auth/LoginPage/login_screen.dart';
 import 'package:sample/screens/Auth/password_field_controller.dart';
 import 'package:sample/screens/SupportPage/PasswordRecovery/ResetPasswordPage/reset_password_controller.dart';
 import 'package:sample/utils/space_box_container.dart';
@@ -178,11 +179,8 @@ class ResetPasswordContents extends StatelessWidget {
                     Timer(
                       const Duration(seconds: 3),
                       () {
-                        resetPasswordController.toggleLoading();
-
                         // Redirection route
-                        // ignore: prefer_const_constructors
-                        Get.toNamed("/auth/login");
+                        Get.off(const LoginPage());
                       },
                     );
                   }
