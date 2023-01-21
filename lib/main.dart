@@ -97,7 +97,7 @@ class MyApp extends StatelessWidget {
         ],
         debugShowCheckedModeBanner: false,
         title: 'Aware',
-        initialRoute: "/country",
+        initialRoute: "/complete/profile/location",
       ),
       // Setting the design size
       designSize: const Size(412, 915),
