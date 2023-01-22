@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // Other packages
-import 'package:sample/constants/constants.dart';
-import 'package:sample/screens/CountrySelection/country_selection_content.dart';
+import 'package:sample/configs/color_palette.dart';
+import 'package:sample/screens/countrySelection/country_selection_content.dart';
 
 // Country selection page container
 class SelectCountry extends StatelessWidget {

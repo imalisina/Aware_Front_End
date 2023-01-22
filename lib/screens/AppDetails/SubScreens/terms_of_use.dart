@@ -6,9 +6,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 
 // Other packages
-import 'package:sample/constants/constants.dart';
-import 'package:sample/utils/space_box_container.dart';
-import 'package:sample/utils/title_content.dart';
+import 'package:sample/configs/color_palette.dart';
+import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/packages/title_content.dart';
 
 class TermsOfUse extends StatelessWidget {
   const TermsOfUse({super.key});

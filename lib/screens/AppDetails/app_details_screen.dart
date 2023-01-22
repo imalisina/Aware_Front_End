@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sample/constants/constants.dart';
-import 'package:sample/screens/AppDetails/app_details_menu.dart';
-import 'package:sample/utils/space_box_container.dart';
-import 'package:sample/utils/title_content.dart';
+import 'package:sample/configs/color_palette.dart';
+import 'package:sample/screens/appDetails/app_details_menu.dart';
+import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/packages/title_content.dart';
 
 class AppDetailsScreen extends StatelessWidget {
   const AppDetailsScreen({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sample/screens/SupportPage/card_content.dart';
+import 'package:sample/packages/horizontal_card_button.dart';
 
 class AppDetailsMenu extends StatelessWidget {
   const AppDetailsMenu({super.key});

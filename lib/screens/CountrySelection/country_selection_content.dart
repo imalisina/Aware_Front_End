@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Other packages
-import 'package:sample/constants/constants.dart';
-import 'package:sample/utils/space_box_container.dart';
-import 'package:sample/screens/CountrySelection/CountryList/country_list.dart';
+import 'package:sample/configs/color_palette.dart';
+import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/screens/countrySelection/CountryList/country_list.dart';
 
 class CountrySelectionContent extends StatelessWidget {
   const CountrySelectionContent({super.key});

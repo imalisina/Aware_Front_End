@@ -5,28 +5,29 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 // Other packages
-import 'package:sample/constants/constants.dart';
-import 'package:sample/screens/AppDetails/SubScreens/privacy_policy.dart';
-import 'package:sample/screens/AppDetails/SubScreens/terms_of_use.dart';
-import 'package:sample/screens/AppDetails/SubScreens/user_agreement.dart';
-import 'package:sample/screens/AppDetails/app_details_screen.dart';
+import 'package:sample/configs/color_palette.dart';
+import 'package:sample/screens/appDetails/subScreens/privacy_policy.dart';
+import 'package:sample/screens/appDetails/subScreens/terms_of_use.dart';
+import 'package:sample/screens/appDetails/subScreens/user_agreement.dart';
+import 'package:sample/screens/appDetails/app_details_screen.dart';
+import 'package:sample/screens/auth/register/register_screen.dart';
 
 // UI Screens
-import 'package:sample/screens/Auth/LoginPage/login_screen.dart';
-import 'package:sample/screens/Auth/RegisterPage/register_screen.dart';
-import 'package:sample/screens/CompleteProfile/Confirmation/profile_confirmation_screen.dart';
-import 'package:sample/screens/CompleteProfile/LocationDetails/location_details_screen.dart';
-import 'package:sample/screens/CompleteProfile/ProfileDetails/personal_details_screen.dart';
-import 'package:sample/screens/CountrySelection/select_country_screen.dart';
-import 'package:sample/screens/HomePage/home_screen.dart';
-import 'package:sample/screens/SupportPage/ContactUsPage/contact_us_screen.dart';
-import 'package:sample/screens/SupportPage/PasswordRecovery/EmailMethod/email_method.dart';
-import 'package:sample/screens/SupportPage/PasswordRecovery/EmailVerificationPage/email_verification.dart';
-import 'package:sample/screens/SupportPage/PasswordRecovery/ResetPasswordPage/reset_password_screen.dart';
-import 'package:sample/screens/SupportPage/PasswordRecovery/SecureCodeMethod/secure_code_method.dart';
-import 'package:sample/screens/SupportPage/PasswordRecovery/password_recovery_screen.dart';
-import 'package:sample/screens/SupportPage/support_screen.dart';
+import 'package:sample/screens/completeProfile/Confirmation/profile_confirmation_screen.dart';
+import 'package:sample/screens/completeProfile/LocationDetails/location_details_screen.dart';
+import 'package:sample/screens/completeProfile/ProfileDetails/personal_details_screen.dart';
+import 'package:sample/screens/countrySelection/select_country_screen.dart';
 import 'package:sample/screens/WelcomePage/welcome_screen.dart';
+import 'package:sample/screens/home/home_screen.dart';
+import 'package:sample/screens/support/contactUs/contact_us_screen.dart';
+import 'package:sample/screens/support/passwordRecovery/emailMethod/email_method.dart';
+import 'package:sample/screens/support/passwordRecovery/emailVerification/email_verification.dart';
+import 'package:sample/screens/support/passwordRecovery/password_recovery_screen.dart';
+import 'package:sample/screens/support/passwordRecovery/resetPassword/reset_password_screen.dart';
+import 'package:sample/screens/support/passwordRecovery/secureCodeMethod/secure_code_method.dart';
+import 'package:sample/screens/support/support_screen.dart';
+
+import 'screens/auth/login/login_screen.dart';
 
 void main() {
   runApp(const MyApp());

@@ -5,12 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
-import 'package:sample/screens/CompleteProfile/Confirmation/profile_confirmation_controller.dart';
+import 'package:sample/controllers/completeProfile/profile_confirmation_controller.dart';
 
 // Other packages
-import 'package:sample/constants/constants.dart';
-import 'package:sample/screens/HomePage/home_screen.dart';
-import 'package:sample/utils/space_box_container.dart';
+import 'package:sample/configs/color_palette.dart';
+import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/screens/home/home_screen.dart';
 
 class ProfileConfirmationScreen extends StatelessWidget {
   const ProfileConfirmationScreen({super.key});
