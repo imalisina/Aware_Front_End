@@ -7,9 +7,9 @@ import 'package:get/get.dart';
 
 // Other packages
 import 'package:sample/configs/color_palette.dart';
-import 'package:sample/screens/completeProfile/ProfileDetails/personal_details_content.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
+import 'package:sample/screens/completeProfile/personalDetails/personal_details_content.dart';
 
 class PersonalDetailsScreen extends StatelessWidget {
   const PersonalDetailsScreen({super.key});

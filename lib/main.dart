@@ -15,9 +15,8 @@ import 'package:sample/screens/auth/register/register_screen.dart';
 // UI Screens
 import 'package:sample/screens/completeProfile/Confirmation/profile_confirmation_screen.dart';
 import 'package:sample/screens/completeProfile/LocationDetails/location_details_screen.dart';
-import 'package:sample/screens/completeProfile/ProfileDetails/personal_details_screen.dart';
+import 'package:sample/screens/completeProfile/personalDetails/personal_details_screen.dart';
 import 'package:sample/screens/countrySelection/select_country_screen.dart';
-import 'package:sample/screens/WelcomePage/welcome_screen.dart';
 import 'package:sample/screens/home/home_screen.dart';
 import 'package:sample/screens/support/contactUs/contact_us_screen.dart';
 import 'package:sample/screens/support/passwordRecovery/emailMethod/email_method.dart';
@@ -26,6 +25,7 @@ import 'package:sample/screens/support/passwordRecovery/password_recovery_screen
 import 'package:sample/screens/support/passwordRecovery/resetPassword/reset_password_screen.dart';
 import 'package:sample/screens/support/passwordRecovery/secureCodeMethod/secure_code_method.dart';
 import 'package:sample/screens/support/support_screen.dart';
+import 'package:sample/screens/welcome/welcome_screen.dart';
 
 import 'screens/auth/login/login_screen.dart';
 
