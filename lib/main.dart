@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 // Other packages
-import 'package:sample/configs/color_palette.dart';
+import 'package:sample/configs/theme.dart';
 import 'package:sample/screens/appDetails/subScreens/privacy_policy.dart';
 import 'package:sample/screens/appDetails/subScreens/terms_of_use.dart';
 import 'package:sample/screens/appDetails/subScreens/user_agreement.dart';
@@ -18,6 +18,7 @@ import 'package:sample/screens/completeProfile/LocationDetails/location_details_
 import 'package:sample/screens/completeProfile/personalDetails/personal_details_screen.dart';
 import 'package:sample/screens/countrySelection/select_country_screen.dart';
 import 'package:sample/screens/home/home_screen.dart';
+import 'package:sample/screens/shop/singleProduct/single_product_screen.dart';
 import 'package:sample/screens/support/contactUs/contact_us_screen.dart';
 import 'package:sample/screens/support/passwordRecovery/emailMethod/email_method.dart';
 import 'package:sample/screens/support/passwordRecovery/emailVerification/email_verification.dart';
@@ -95,6 +96,10 @@ class MyApp extends StatelessWidget {
 
           // Home
           GetPage(name: "/home", page: () => const HomeScreen()),
+          // Shop & Products
+          GetPage(
+              name: "/shop/products/single",
+              page: () => const SingleProductScreen())
         ],
         debugShowCheckedModeBanner: false,
         title: 'Aware',

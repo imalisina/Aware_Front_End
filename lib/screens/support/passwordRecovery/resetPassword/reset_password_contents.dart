@@ -2,10 +2,14 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// GetX package
 import 'package:get/get.dart';
-import 'package:sample/configs/color_palette.dart';
 import 'package:sample/controllers/auth/password_field_controller.dart';
 import 'package:sample/controllers/passwordRecovery/reset_password_controller.dart';
+
+// Other packages
+import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/screens/auth/login/login_screen.dart';
 

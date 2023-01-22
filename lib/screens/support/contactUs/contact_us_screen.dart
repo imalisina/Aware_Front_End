@@ -4,9 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 // GetX package
 import 'package:get/get.dart';
+import 'package:sample/configs/theme.dart';
 
 // Other packages
-import 'package:sample/configs/color_palette.dart';
 import 'package:sample/screens/support/contactUs/contact_us_form.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';

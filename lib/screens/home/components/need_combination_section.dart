@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:dotted_border/dotted_border.dart';
 
 // Other packages
-import 'package:sample/configs/color_palette.dart';
+import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class NeedCombinationSection extends StatelessWidget {

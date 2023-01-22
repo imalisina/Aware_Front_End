@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import 'package:sample/controllers/welcome/welcome_controller.dart';
 
 // Other packages
-import 'package:sample/configs/color_palette.dart';
+import 'package:sample/configs/theme.dart';
 
 // Introduction slide bullets
 class IntroductionStepper extends StatelessWidget {

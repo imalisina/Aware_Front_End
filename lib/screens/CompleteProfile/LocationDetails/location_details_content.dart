@@ -9,7 +9,7 @@ import 'package:sample/controllers/countrySelection/select_country_controller.da
 import 'package:sample/controllers/completeProfile/location_details_controller.dart';
 
 // Other package
-import 'package:sample/configs/color_palette.dart';
+import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class LocationDetailsContent extends StatelessWidget {

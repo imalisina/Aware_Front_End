@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 // Other packages
-import 'package:sample/configs/color_palette.dart';
+import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class SocialMediaLogin extends StatelessWidget {

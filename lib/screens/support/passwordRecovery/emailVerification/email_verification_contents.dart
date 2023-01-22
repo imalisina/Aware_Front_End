@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:sample/controllers/passwordRecovery/email_verification_controller.dart';
 
 // Other packages
-import 'package:sample/configs/color_palette.dart';
+import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/screens/support/passwordRecovery/resetPassword/reset_password_screen.dart';
 

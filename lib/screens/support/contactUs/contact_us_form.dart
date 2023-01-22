@@ -5,10 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
+import 'package:sample/configs/theme.dart';
 import 'package:sample/controllers/contactUs/contact_us_controller.dart';
 
 // Other packages
-import 'package:sample/configs/color_palette.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class ContactUsForm extends StatelessWidget {

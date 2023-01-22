@@ -3,10 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // Other packages
-import 'package:sample/configs/color_palette.dart';
+import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/screens/home/components/middle_box_section.dart';
 import 'package:sample/screens/home/components/need_combination_section.dart';
+import 'package:sample/screens/home/components/suggested_products_section.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -28,22 +29,29 @@ class HomeScreen extends StatelessWidget {
                 fontWeight: titleFontWeight),
           ),
         ),
-        child: Container(
-          width: 500.w,
-          padding: EdgeInsets.only(bottom: 20.h, left: 15.w, right: 15.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              VerticalSpaceBox(30.h),
+        child: SingleChildScrollView(
+          child: Container(
+            width: 500.w,
+            padding: EdgeInsets.only(bottom: 20.h, left: 15.w, right: 15.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                VerticalSpaceBox(30.h),
 
-              // Need Combination section
-              const NeedCombinationSection(),
+                // Need Combination section
+                const NeedCombinationSection(),
 
-              VerticalSpaceBox(20.h),
+                VerticalSpaceBox(30.h),
 
-              // Middle boxes section - Daily Quote : Discover Discounts : My Bookmarks
-              const MiddleBoxSection(),
-            ],
+                // Middle boxes section - Daily Quote : Discover Discounts : My Bookmarks
+                const MiddleBoxSection(),
+
+                VerticalSpaceBox(30.h),
+
+                // Suggested Products section - Slider
+                const SuggestedProductsSection(),
+              ],
+            ),
           ),
         ),
       ),

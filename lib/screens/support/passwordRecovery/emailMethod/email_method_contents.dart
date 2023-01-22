@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:sample/controllers/passwordRecovery/email_method_controller.dart';
 
 // Other package
-import 'package:sample/configs/color_palette.dart';
+import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class EmailMethodContents extends StatelessWidget {
