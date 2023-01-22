@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 // Other packages
-import 'package:sample/constants/constants.dart';
+import 'package:sample/configs/color_palette.dart';
 
 // A menu in bottom of Auth screens
 class BottomHelpMenu extends StatelessWidget {

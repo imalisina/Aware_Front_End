@@ -4,13 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
-import 'package:sample/screens/CompleteProfile/Confirmation/profile_confirmation_screen.dart';
-import 'package:sample/screens/CountrySelection/select_country_controller.dart';
-import 'package:sample/screens/CompleteProfile/LocationDetails/location_details_controller.dart';
+import 'package:sample/screens/completeProfile/Confirmation/profile_confirmation_screen.dart';
+import 'package:sample/controllers/countrySelection/select_country_controller.dart';
+import 'package:sample/controllers/completeProfile/location_details_controller.dart';
 
 // Other package
-import 'package:sample/constants/constants.dart';
-import 'package:sample/utils/space_box_container.dart';
+import 'package:sample/configs/color_palette.dart';
+import 'package:sample/packages/space_box_container.dart';
 
 class LocationDetailsContent extends StatelessWidget {
   const LocationDetailsContent({super.key});

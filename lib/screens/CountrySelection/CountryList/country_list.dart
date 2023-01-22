@@ -4,12 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
-import 'package:sample/screens/CountrySelection/select_country_controller.dart';
+import 'package:sample/controllers/countrySelection/select_country_controller.dart';
 
 // Other packages
-import 'package:sample/constants/countries.dart';
-import 'package:sample/constants/constants.dart';
-import 'package:sample/utils/space_box_container.dart';
+import 'package:sample/models/countries.dart';
+import 'package:sample/configs/color_palette.dart';
+import 'package:sample/packages/space_box_container.dart';
 
 class CountryList extends StatelessWidget {
   const CountryList({super.key});

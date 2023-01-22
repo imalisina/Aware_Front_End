@@ -44,6 +44,7 @@ dependencies:
   flutter_svg: ^1.1.6
   lite_rolling_switch: ^1.0.0
   dotted_border: ^2.0.0+3
+  share_plus: ^6.3.0
 
 dev_dependencies:
   flutter_test:
