@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:sample/controllers/completeProfile/profile_confirmation_controller.dart';
 
 // Other packages
-import 'package:sample/configs/color_palette.dart';
+import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/screens/home/home_screen.dart';
 

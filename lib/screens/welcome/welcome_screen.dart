@@ -24,24 +24,25 @@ class WelcomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: CupertinoPageScaffold(
-          child: Stack(
-        children: [
-          PageView(
-            controller: _controller,
-            onPageChanged: (index) => {
-              if (index == 3) {welcomeController.lastPageSetter()}
-            },
-            children: const [
-              IntroductionSlideOne(),
-              IntroductionSlideTwo(),
-              IntroductionSlideThree(),
-              IntroductionSlideLast()
-            ],
-          ),
-          // Adding stepper - Step bullets
-          IntroductionStepper(_controller)
-        ],
-      )),
+        child: Stack(
+          children: [
+            PageView(
+              controller: _controller,
+              onPageChanged: (index) => {
+                if (index == 3) {welcomeController.lastPageSetter()}
+              },
+              children: const [
+                IntroductionSlideOne(),
+                IntroductionSlideTwo(),
+                IntroductionSlideThree(),
+                IntroductionSlideLast()
+              ],
+            ),
+            // Adding stepper - Step bullets
+            IntroductionStepper(_controller)
+          ],
+        ),
+      ),
     );
   }
 }

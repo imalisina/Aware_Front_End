@@ -9,7 +9,7 @@ import 'package:sample/controllers/auth/password_field_controller.dart';
 import 'package:sample/controllers/auth/login/login_controller.dart';
 
 // Other packages
-import 'package:sample/configs/color_palette.dart';
+import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/screens/home/home_screen.dart';
 

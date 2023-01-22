@@ -10,7 +10,7 @@ import 'package:sample/controllers/auth/register/register_controller.dart';
 import 'package:sample/controllers/countrySelection/select_country_controller.dart';
 
 // Other packages
-import 'package:sample/configs/color_palette.dart';
+import 'package:sample/configs/theme.dart';
 import 'package:sample/screens/auth/bottom_help_menu.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/screens/completeProfile/personalDetails/personal_details_screen.dart';

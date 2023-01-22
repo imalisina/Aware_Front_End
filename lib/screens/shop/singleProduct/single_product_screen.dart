@@ -4,12 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
-import 'package:sample/packages/title_content.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/screens/auth/register/register_contents.dart';
+import 'package:sample/services/singleProduct/single_product_content.dart';
 
-class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({super.key});
+class SingleProductScreen extends StatelessWidget {
+  const SingleProductScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class RegisterScreen extends StatelessWidget {
       child: CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
           backgroundColor: BACKGROUND_COLOR,
-          automaticallyImplyLeading: disableBackButton,
+          automaticallyImplyLeading: !disableBackButton,
           border: navigationBorder,
           padding: EdgeInsetsDirectional.only(top: 9.h),
           middle: Text(
@@ -28,21 +27,16 @@ class RegisterScreen extends StatelessWidget {
                 fontWeight: titleFontWeight),
           ),
         ),
-        child: SizedBox(
-          child: SingleChildScrollView(
+        child: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.only(bottom: 20.h, left: 15.w, right: 15.w),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                VerticalSpaceBox(50.h),
+                VerticalSpaceBox(20.h),
 
-                // Title and sub-title
-                const TitleContent(
-                    "Sign up", "Join to Aware by creating a new account !"),
-
-                VerticalSpaceBox(40.h),
-
-                // Register input fields and button
-                const RegisterContents(),
+                // Product details section
+                const SingleProductContent(),
               ],
             ),
           ),

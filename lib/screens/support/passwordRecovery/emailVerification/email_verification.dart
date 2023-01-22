@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 // Other package
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sample/configs/color_palette.dart';
+import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
 import 'package:sample/screens/support/passwordRecovery/emailVerification/email_verification_contents.dart';

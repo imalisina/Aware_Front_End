@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/configs/theme.dart';
 
 // Other packages
-import 'package:sample/configs/color_palette.dart';
+import 'package:sample/packages/space_box_container.dart';
 
 class TextSlogan extends StatelessWidget {
   // Define title and subtitle

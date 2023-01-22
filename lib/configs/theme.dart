@@ -32,3 +32,5 @@ const inputPlaceholderStyle =
     TextStyle(color: INPUT_PLACEHOLDER, fontWeight: FontWeight.w300);
 const dropDownStyleDefault = TextStyle(color: PRIMARY_COLOR);
 const dropDownStyleError = TextStyle(color: ERROR_COLOR);
+TextStyle sectionTitle = TextStyle(
+    color: INPUT_PLACEHOLDER, fontSize: 22.sp, fontWeight: FontWeight.w500);

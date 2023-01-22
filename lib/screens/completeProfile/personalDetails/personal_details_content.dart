@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:sample/controllers/completeProfile/personal_details_controller.dart';
 
 // Other packages
-import 'package:sample/configs/color_palette.dart';
+import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class PersonalDetailsContent extends StatelessWidget {

@@ -10,13 +10,13 @@ class SelectCountryController extends GetxController {
   var selectedCountryCode = "";
   var selectedCountryStates = [];
 
-  // Store the selected country
+  // Store selected country
   setSelectCountry(int regionID) {
     selectedCountryIndex.value = regionID;
     storeSelectedCountryDetails();
   }
 
-  // Find selected country details
+  // Extract selected country details
   void storeSelectedCountryDetails() {
     Country selectedCountry =
         Country.fromJSON(data[selectedCountryIndex.value]);

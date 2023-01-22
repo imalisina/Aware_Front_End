@@ -7,8 +7,8 @@ import 'package:get/get.dart';
 import 'package:sample/controllers/countrySelection/select_country_controller.dart';
 
 // Other packages
+import 'package:sample/configs/theme.dart';
 import 'package:sample/models/countries.dart';
-import 'package:sample/configs/color_palette.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class CountryList extends StatelessWidget {
@@ -43,7 +43,7 @@ class CountryList extends StatelessWidget {
                     children: [
                       // Left side - country flag and name of each country
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(16).w,
+                        borderRadius: BorderRadius.circular(16.r),
                         child: Image.asset(
                           "assets/images/countries/${country.flag}",
                           width: 40.w,

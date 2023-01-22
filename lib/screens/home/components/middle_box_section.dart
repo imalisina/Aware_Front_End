@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:sample/screens/home/components/next_quote_loading.dart';
+import 'package:sample/configs/theme.dart';
+import 'package:sample/services/dailyQuote/next_quote_loading.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -8,8 +9,7 @@ import 'package:get/get.dart';
 import 'package:sample/controllers/dailyQuote/daily_quote_controller.dart';
 
 // Other packages
-import 'package:sample/configs/color_palette.dart';
-import 'package:sample/packages/daily_quote_content.dart';
+import 'package:sample/services/dailyQuote/daily_quote_content.dart';
 import 'package:sample/packages/icon_card_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 
