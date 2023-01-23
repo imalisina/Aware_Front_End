@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
+import 'package:sample/configs/route_names.dart';
 import 'package:sample/controllers/completeProfile/personal_details_controller.dart';
 
 // Other packages
@@ -431,7 +432,7 @@ class PersonalDetailsContent extends StatelessWidget {
                   color: GHOST_COLOR,
                   child: const Text("Skip"),
                   onPressed: () {
-                    Get.toNamed("/complete/profile/location");
+                    Get.toNamed(locationDetails);
                   },
                 ),
               ),
@@ -466,7 +467,7 @@ class PersonalDetailsContent extends StatelessWidget {
                               personalDetailsController.toggleLoading();
 
                               // Redirection route
-                              Get.toNamed("/complete/profile/location");
+                              Get.toNamed(locationDetails);
                             },
                           );
                         }

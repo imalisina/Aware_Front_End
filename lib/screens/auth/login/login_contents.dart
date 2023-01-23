@@ -5,13 +5,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX packages
 import 'package:get/get.dart';
+import 'package:sample/app/app_container.dart';
+import 'package:sample/configs/route_names.dart';
 import 'package:sample/controllers/auth/password_field_controller.dart';
 import 'package:sample/controllers/auth/login/login_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/screens/home/home_screen.dart';
 
 class LoginContents extends StatelessWidget {
   const LoginContents({super.key});
@@ -165,7 +166,7 @@ class LoginContents extends StatelessWidget {
                       const Duration(seconds: 3),
                       () {
                         // Redirection route
-                        Get.off(const HomeScreen());
+                        Get.off(const AppContainer());
                       },
                     );
                   }
@@ -191,7 +192,7 @@ class LoginContents extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Get.toNamed("/auth/register");
+                    Get.toNamed(register);
                   },
                 ),
               ],

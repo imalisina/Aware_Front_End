@@ -259,7 +259,7 @@ class LocationDetailsContent extends StatelessWidget {
                         // Togge method to display spinner during API calls
                         locationDetailsController.toggleLoading();
                         Timer(
-                          const Duration(seconds: 3),
+                          const Duration(seconds: 1),
                           () {
                             locationDetailsController.toggleLoading();
 

@@ -5,12 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
+import 'package:sample/app/app_container.dart';
 import 'package:sample/controllers/completeProfile/profile_confirmation_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/screens/home/home_screen.dart';
 
 class ProfileConfirmationScreen extends StatelessWidget {
   const ProfileConfirmationScreen({super.key});
@@ -84,9 +84,9 @@ class ProfileConfirmationScreen extends StatelessWidget {
                       profileConfirmationController.toggleLoading();
                       if (profileConfirmationController.loadingStatus.isTrue) {
                         Timer(
-                          const Duration(seconds: 3),
+                          const Duration(milliseconds: 150),
                           () {
-                            Get.off(const HomeScreen());
+                            Get.off(const AppContainer());
                           },
                         );
                       }

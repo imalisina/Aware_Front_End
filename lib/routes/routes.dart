@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:sample/app/app_container.dart';
+import 'package:sample/configs/route_names.dart';
 
 // UI screens
 import 'package:sample/screens/appDetails/app_details_screen.dart';
@@ -20,65 +22,44 @@ import 'package:sample/screens/support/passwordRecovery/resetPassword/reset_pass
 import 'package:sample/screens/support/passwordRecovery/secureCodeMethod/secure_code_method.dart';
 import 'package:sample/screens/support/support_screen.dart';
 import 'package:sample/screens/welcome/welcome_screen.dart';
-import 'package:sample/screens/home/home_screen.dart';
 
 class RoutesClass {
-  // Define a getter for initial route
-  static String getHomePage() => "/home";
-
   // Define all routes of the application
   static List<GetPage> routes = [
     // Welcome
-    GetPage(name: "/intro", page: () => const WelcomePage()),
+    GetPage(name: introduction, page: () => const WelcomePage()),
 
     // Country selection
-    GetPage(name: "/country", page: () => const SelectCountry()),
+    GetPage(name: countrySelection, page: () => const SelectCountry()),
 
     // Auth --> Login/Register
-    GetPage(name: "/auth/login", page: () => const LoginPage()),
-    GetPage(name: "/auth/register", page: () => const RegisterScreen()),
+    GetPage(name: login, page: () => const LoginPage()),
+    GetPage(name: register, page: () => const RegisterScreen()),
 
     // Support
-    GetPage(name: "/support/menu", page: () => const SupportScreen()),
-    GetPage(name: "/support/contact", page: () => const ContactUsScreen()),
-    GetPage(
-        name: "/support/password/recovery",
-        page: () => const PasswordRecoveryScreen()),
-    GetPage(
-        name: "/support/password/recovery/secure_code",
-        page: () => const SecureCodeMethod()),
-    GetPage(
-        name: "/support/password/recovery/email",
-        page: () => const EmailMethod()),
-    GetPage(
-        name: "/support/password/recovery/email/verification",
-        page: () => const EmailVerification()),
-    GetPage(
-        name: "/support/password/reset",
-        page: () => const ResetPasswordScreen()),
+    GetPage(name: supportMenu, page: () => const SupportScreen()),
+    GetPage(name: contactUs, page: () => const ContactUsScreen()),
+    GetPage(name: passwordRecovery, page: () => const PasswordRecoveryScreen()),
+    GetPage(name: secureCode, page: () => const SecureCodeMethod()),
+    GetPage(name: emailMethod, page: () => const EmailMethod()),
+    GetPage(name: emailVerification, page: () => const EmailVerification()),
+    GetPage(name: resetPassword, page: () => const ResetPasswordScreen()),
 
     // More details
-    GetPage(name: "/details", page: () => const AppDetailsScreen()),
-    GetPage(name: "/details/terms", page: () => const TermsOfUse()),
-    GetPage(name: "/details/privacy", page: () => const PrivacyPolicy()),
-    GetPage(name: "/details/agreement", page: () => const UserAgreement()),
+    GetPage(name: details, page: () => const AppDetailsScreen()),
+    GetPage(name: terms, page: () => const TermsOfUse()),
+    GetPage(name: privacy, page: () => const PrivacyPolicy()),
+    GetPage(name: agreement, page: () => const UserAgreement()),
 
     // Complete profile
-    GetPage(
-        name: "/complete/profile/personal",
-        page: () => const PersonalDetailsScreen()),
-    GetPage(
-        name: "/complete/profile/location",
-        page: () => const LocationDetailsScreen()),
+    GetPage(name: personalDetails, page: () => const PersonalDetailsScreen()),
+    GetPage(name: locationDetails, page: () => const LocationDetailsScreen()),
 
-    GetPage(
-        name: "/complete/profile/confirmation",
-        page: () => const ProfileConfirmationScreen()),
+    GetPage(name: confirmation, page: () => const ProfileConfirmationScreen()),
 
     // Home
-    GetPage(name: "/home", page: () => const HomeScreen()),
+    GetPage(name: home, page: () => const AppContainer()),
     // Shop & Products
-    GetPage(
-        name: "/shop/products/single", page: () => const SingleProductScreen())
+    GetPage(name: singleProduct, page: () => const SingleProductScreen())
   ];
 }

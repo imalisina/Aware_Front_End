@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
+import 'package:sample/configs/route_names.dart';
 import 'package:sample/controllers/auth/password_field_controller.dart';
 import 'package:sample/controllers/auth/register/register_controller.dart';
 import 'package:sample/controllers/countrySelection/select_country_controller.dart';
@@ -295,7 +296,7 @@ class RegisterContents extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Get.toNamed("/auth/login");
+                    Get.toNamed(login);
                   },
                 ),
               ],

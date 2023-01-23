@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sample/configs/theme.dart';
 
 // Other packages
 import 'package:sample/packages/space_box_container.dart';

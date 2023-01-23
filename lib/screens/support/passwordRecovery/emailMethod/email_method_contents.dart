@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
+import 'package:sample/configs/route_names.dart';
 import 'package:sample/controllers/passwordRecovery/email_method_controller.dart';
 
 // Other package
@@ -90,11 +91,11 @@ class EmailMethodContents extends StatelessWidget {
                     // Toggle method to display spinner during API calls
                     emailMethodController.toggleLoading();
                     Timer(
-                      const Duration(seconds: 3),
+                      const Duration(seconds: 1),
                       () {
                         // Redirection route
                         Get.toNamed(
-                            "/support/password/recovery/email/verification");
+                            emailVerification);
                         emailMethodController.toggleLoading();
                       },
                     );
