@@ -16,6 +16,8 @@ class _AppContainerState extends State<AppContainer> {
     const HomeScreen(),
     const HomeScreen(),
     const HomeScreen(),
+    const HomeScreen(),
+    const HomeScreen(),
   ];
 
   @override
@@ -34,21 +36,39 @@ class _AppContainerState extends State<AppContainer> {
               fontWeight: titleFontWeight),
         ),
       ),
-        child: CupertinoTabScaffold(
-          tabBar: CupertinoTabBar(
-            items: const [
-              BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.add), label: "Add1"),
-              BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.add_circled), label: "Add2"),
-              BottomNavigationBarItem(
-                  icon: Icon(CupertinoIcons.add_circled_solid), label: "Add3"),
-            ],
-          ),
-          tabBuilder: (BuildContext context, index) {
-            return pageTabs[index];
-          },
+      child: CupertinoTabScaffold(
+        tabBar: CupertinoTabBar(
+          backgroundColor: BACKGROUND_COLOR,
+          border: Border.all(color: GHOST_COLOR),
+          inactiveColor: INPUT_PLACEHOLDER,
+          height: 60.h,
+          items: [
+            const BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.house),
+              label: "Home",
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.collections),
+              label: "Collections",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.add_circled, size: 45.sp),
+              activeIcon: Icon(CupertinoIcons.add_circled_solid, size: 45.sp),
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.pencil_outline),
+              label: "Diary",
+            ),
+            const BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.gear_big),
+              label: "Settings",
+            ),
+          ],
         ),
+        tabBuilder: (BuildContext context, index) {
+          return pageTabs[index];
+        },
+      ),
     );
   }
 }

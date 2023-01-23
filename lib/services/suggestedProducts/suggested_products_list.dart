@@ -18,7 +18,7 @@ class SuggestedProductsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 400.h,
+      height: 230.h,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: Products().products.length,
