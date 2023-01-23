@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sample/configs/route_names.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
@@ -30,7 +31,7 @@ class SuggestedProductsList extends StatelessWidget {
             // Store product index and handle routing
             onPressed: () {
               productController.storeSelectedProduct(index);
-              Get.toNamed("/shop/products/single");
+              Get.toNamed(singleProduct);
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,

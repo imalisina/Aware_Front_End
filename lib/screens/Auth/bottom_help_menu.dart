@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
+import 'package:sample/configs/route_names.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
@@ -26,7 +27,7 @@ class BottomHelpMenu extends StatelessWidget {
               style: TextStyle(fontSize: 15.sp, color: INPUT_PLACEHOLDER),
             ),
             onPressed: () {
-              Get.toNamed("/support/menu");
+              Get.toNamed(supportMenu);
             },
           ),
         ),
@@ -41,7 +42,7 @@ class BottomHelpMenu extends StatelessWidget {
               style: TextStyle(fontSize: 15.sp, color: INPUT_PLACEHOLDER),
             ),
             onPressed: () {
-              Get.toNamed("/support/password/recovery");
+              Get.toNamed(passwordRecovery);
             },
           ),
         ),
@@ -56,7 +57,7 @@ class BottomHelpMenu extends StatelessWidget {
               style: TextStyle(fontSize: 15.sp, color: INPUT_PLACEHOLDER),
             ),
             onPressed: () {
-              Get.toNamed("/details");
+              Get.toNamed(details);
             },
           ),
         ),

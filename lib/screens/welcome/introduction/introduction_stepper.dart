@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sample/configs/route_names.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 // GetX package
@@ -68,7 +69,7 @@ class IntroductionStepper extends StatelessWidget {
                           color: PRIMARY_COLOR, fontWeight: FontWeight.w700),
                     ),
                     onPressed: () {
-                      Get.toNamed("/country");
+                      Get.toNamed(countrySelection);
                     }),
           )
         ],

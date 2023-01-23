@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
+import 'package:sample/configs/route_names.dart';
 import 'package:sample/controllers/countrySelection/select_country_controller.dart';
 
 // Other packages
@@ -31,7 +32,7 @@ class CountryList extends StatelessWidget {
             // Getting the selected countries ID and store it in the controller
             countryController.setSelectCountry(index);
             Navigator.of(context).pop();
-            Get.toNamed("/auth/login");
+            Get.toNamed(login);
           },
           child: Column(
             children: [
