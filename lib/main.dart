@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
+import 'package:sample/app/app_container.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         getPages: RoutesClass.routes,
         debugShowCheckedModeBanner: false,
         title: 'Aware',
-        initialRoute: RoutesClass.getHomePage(),
+        // initialRoute: RoutesClass.getHomePage(), 
+        home: const AppContainer(),
       ),
       // Setting the design size
       designSize: const Size(412, 915),
