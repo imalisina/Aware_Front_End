@@ -34,11 +34,19 @@ class SingleProductContent extends StatelessWidget {
               CupertinoButton(
                 padding: EdgeInsets.zero,
                 // Add item to bookmarks
-                onPressed: () {},
-                child: Icon(
-                  CupertinoIcons.bookmark,
-                  color: PRIMARY_COLOR,
-                  size: 30.sp,
+                onPressed: () {
+                  productController.toggleBookmark();
+                },
+                child: Obx(
+                  () => Icon(
+                    productController.isBookmarked.isTrue
+                        ? CupertinoIcons.bookmark_fill
+                        : CupertinoIcons.bookmark,
+                    color: productController.isBookmarked.isTrue
+                        ? MAIN_COLOR
+                        : PRIMARY_COLOR,
+                    size: 30.sp,
+                  ),
                 ),
               ),
               HorizontalSpaceBox(8.w),

@@ -14,9 +14,15 @@ class ProductController extends GetxController {
   var productBrandLogo = "";
   var productImage = "";
   var productUrl = "";
+  var isBookmarked = false.obs;
 
   // Define a variable to check whether the discount code is copied or not
   var isCopied = false.obs;
+
+  // Method to toggle the bookmark status
+  void toggleBookmark() {
+    isBookmarked.value = !isBookmarked.value;
+  }
 
   // Methods to toggle the copy status
   void setCopied() {
@@ -46,5 +52,6 @@ class ProductController extends GetxController {
     productBrandLogo = selectedProduct.brandLogo;
     productImage = selectedProduct.productImage;
     productUrl = selectedProduct.productUrl;
+    isBookmarked.value = selectedProduct.isBookmarked;
   }
 }

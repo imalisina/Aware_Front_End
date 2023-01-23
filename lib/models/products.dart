@@ -15,7 +15,9 @@ class Product {
       brandLogo,
       productImage,
       productUrl;
-  const Product(
+  final bool isBookmarked;
+
+  Product(
       {required this.title,
       required this.brand,
       required this.price,
@@ -24,7 +26,8 @@ class Product {
       required this.discountCode,
       required this.brandLogo,
       required this.productImage,
-      required this.productUrl});
+      required this.productUrl,
+      required this.isBookmarked});
 
   static Product fromJSON(json) => Product(
       title: json["title"],
@@ -35,7 +38,8 @@ class Product {
       discountCode: json["discountCode"],
       brandLogo: json["brandLogo"],
       productImage: json["productImage"],
-      productUrl: json["productUrl"]);
+      productUrl: json["productUrl"],
+      isBookmarked: json["isBookmarked"]);
 }
 
 // Product JSON data
@@ -52,6 +56,7 @@ const data = [
     "productImage": "https://static.smallable.com/1590291-720x720q80/.jpg",
     "productUrl":
         "https://www.smallable.com/en/product/summon-hoodie-purple-element-306573",
+    "isBookmarked": false,
   },
   {
     "title": "The Great Bardana",
@@ -65,6 +70,7 @@ const data = [
     "productImage": "https://static.smallable.com/1404656-720x720q80/.jpg",
     "productUrl":
         "https://www.smallable.com/en/product/the-kerchief-bandana-print-shirt-navy-blue-the-great-261428",
+    "isBookmarked": true,
   },
   {
     "title": "Escape Run 2",
@@ -78,5 +84,6 @@ const data = [
     "productImage": "https://static.smallable.com/1593135-648x648q80/.jpg",
     "productUrl":
         "https://www.nike.com/in/t/escape-run-2-road-running-shoes-ktrfqG/DJ9976-200",
+    "isBookmarked": false,
   },
 ];
