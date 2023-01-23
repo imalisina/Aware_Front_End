@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Other packages
 import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/screens/home/components/fashion_tips_section.dart';
 import 'package:sample/screens/home/components/middle_box_section.dart';
 import 'package:sample/screens/home/components/need_combination_section.dart';
 import 'package:sample/screens/home/components/suggested_products_section.dart';
@@ -35,6 +36,11 @@ class HomeScreen extends StatelessWidget {
 
                 // Suggested Products section - Slider
                 const SuggestedProductsSection(),
+
+                VerticalSpaceBox(30.h),
+
+                // Fashion Tips section - Scroll
+                const FashionTipsSection(),
               ],
             ),
           ),

@@ -1,13 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-// Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/suggestedProducts/suggested_products_list.dart';
+import 'package:sample/services/fashionTips/fashion_tips_list.dart';
 
-class SuggestedProductsSection extends StatelessWidget {
-  const SuggestedProductsSection({super.key});
+class FashionTipsSection extends StatelessWidget {
+  const FashionTipsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,19 +15,19 @@ class SuggestedProductsSection extends StatelessWidget {
           Row(
             children: [
               Icon(
-                CupertinoIcons.square_favorites_alt,
+                CupertinoIcons.square_favorites,
                 color: INPUT_PLACEHOLDER,
                 size: 25.sp,
               ),
               Text(
-                "Suggested",
+                "Fashion Tips",
                 style: sectionTitle,
               ),
             ],
           ),
           VerticalSpaceBox(15.h),
-          // Suggested products list section
-          const SuggestedProductsList(),
+          // Fashion Tips list section
+          const FashionTipsList(),
         ],
       ),
     );

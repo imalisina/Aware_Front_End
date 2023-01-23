@@ -17,7 +17,7 @@ class Product {
       productUrl;
   final bool isBookmarked;
 
-  Product(
+  const Product(
       {required this.title,
       required this.brand,
       required this.price,
