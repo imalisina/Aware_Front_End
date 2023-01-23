@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:get/get.dart';
 
 class DailyQuoteController extends GetxController {
@@ -36,7 +38,12 @@ class DailyQuoteController extends GetxController {
   // Method to store the selected feedback
   void storeFeedbackID(int selectedEmoji) {
     feedbackID.value = selectedEmoji;
-    isSelected.value = true;
+    Timer(
+      const Duration(milliseconds: 200),
+      () => {
+        isSelected.value = true,
+      },
+    );
     disabledButton.value = true;
   }
 }

@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: CupertinoPageScaffold(
+      child: CueprtinoTabBar(
         navigationBar: CupertinoNavigationBar(
           backgroundColor: BACKGROUND_COLOR,
           automaticallyImplyLeading: disableBackButton,

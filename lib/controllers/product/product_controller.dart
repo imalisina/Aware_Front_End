@@ -13,6 +13,7 @@ class ProductController extends GetxController {
   var productDiscountCode = "";
   var productBrandLogo = "";
   var productImage = "";
+  var productUrl = "";
 
   // Define a variable to check whether the discount code is copied or not
   var isCopied = false.obs;
@@ -44,5 +45,6 @@ class ProductController extends GetxController {
     productDiscountCode = selectedProduct.discountCode;
     productBrandLogo = selectedProduct.brandLogo;
     productImage = selectedProduct.productImage;
+    productUrl = selectedProduct.productUrl;
   }
 }

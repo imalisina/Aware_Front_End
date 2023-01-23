@@ -10,6 +10,7 @@ import 'package:sample/controllers/product/product_controller.dart';
 import 'package:sample/configs/constants.dart';
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/services/singleProduct/bottom_checkout_bar.dart';
 import 'package:sample/services/singleProduct/single_product_detail.dart';
 
 class SingleProductContent extends StatelessWidget {
@@ -63,11 +64,17 @@ class SingleProductContent extends StatelessWidget {
             child: Image.network(
               productController.productImage,
               width: 300.w,
-              height: 300.h,
+              height: 250.h,
             ),
           ),
 
-          VerticalSpaceBox(20.h),
+          // Product title
+          Text(
+            productController.productTitle,
+            style: TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w600),
+          ),
+
+          VerticalSpaceBox(50.h),
 
           // More details about the product
           Container(
@@ -103,7 +110,13 @@ class SingleProductContent extends StatelessWidget {
                 SingleProductDetail(productController.productDiscountCode, 3),
               ],
             ),
-          )
+          ),
+
+          VerticalSpaceBox(10.h),
+
+          // Product price and checkout bar
+          BottomCheckoutBar(
+              productController.productPrice, productController.productUrl),
         ],
       ),
     );
