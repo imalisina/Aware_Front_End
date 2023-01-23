@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -75,7 +77,12 @@ class DailyQuoteContent extends StatelessWidget {
                             dailyQuoteController.feedbackID.value != index
                                 ? () {
                                     dailyQuoteController.storeFeedbackID(index);
-                                    Navigator.of(context).pop();
+                                    Timer(
+                                      const Duration(milliseconds: 150),
+                                      () => {
+                                        Navigator.of(context).pop(),
+                                      },
+                                    );
                                   }
                                 : null,
                         child: Image.asset(

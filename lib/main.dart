@@ -6,13 +6,13 @@ import 'package:get/get.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+
+// UI Screens
 import 'package:sample/screens/appDetails/subScreens/privacy_policy.dart';
 import 'package:sample/screens/appDetails/subScreens/terms_of_use.dart';
 import 'package:sample/screens/appDetails/subScreens/user_agreement.dart';
 import 'package:sample/screens/appDetails/app_details_screen.dart';
 import 'package:sample/screens/auth/register/register_screen.dart';
-
-// UI Screens
 import 'package:sample/screens/completeProfile/Confirmation/profile_confirmation_screen.dart';
 import 'package:sample/screens/completeProfile/LocationDetails/location_details_screen.dart';
 import 'package:sample/screens/completeProfile/personalDetails/personal_details_screen.dart';

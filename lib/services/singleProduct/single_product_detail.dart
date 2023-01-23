@@ -4,9 +4,13 @@ import 'package:clipboard/clipboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// GetX package
 import 'package:get/get.dart';
-import 'package:sample/configs/theme.dart';
 import 'package:sample/controllers/product/product_controller.dart';
+
+// Other packages
+import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class SingleProductDetail extends StatelessWidget {
