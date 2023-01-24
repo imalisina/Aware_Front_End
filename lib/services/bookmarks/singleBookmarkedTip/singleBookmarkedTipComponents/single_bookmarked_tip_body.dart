@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// GetX package
 import 'package:get/get.dart';
 import 'package:sample/controllers/fashionTip/bookmarked_fashion_tip_controller.dart';
 
