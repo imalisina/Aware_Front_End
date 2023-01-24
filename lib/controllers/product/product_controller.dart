@@ -14,6 +14,7 @@ class ProductController extends GetxController {
   var productBrandLogo = "";
   var productImage = "";
   var productUrl = "";
+  var productId = 0;
   var isBookmarked = false.obs;
 
   // Define a variable to check whether the discount code is copied or not
@@ -28,7 +29,6 @@ class ProductController extends GetxController {
   void setCopied() {
     isCopied.value = true;
   }
-
   void openCopyButton() {
     isCopied.value = false;
   }
@@ -53,5 +53,6 @@ class ProductController extends GetxController {
     productImage = selectedProduct.productImage;
     productUrl = selectedProduct.productUrl;
     isBookmarked.value = selectedProduct.isBookmarked;
+    productId = selectedProduct.productId;
   }
 }

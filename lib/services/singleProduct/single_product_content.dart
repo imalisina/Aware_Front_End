@@ -33,7 +33,7 @@ class SingleProductContent extends StatelessWidget {
               // Bookmark button
               CupertinoButton(
                 padding: EdgeInsets.zero,
-                // Add item to bookmarks
+                // Toggle between bookmark status
                 onPressed: () {
                   productController.toggleBookmark();
                 },
@@ -55,7 +55,7 @@ class SingleProductContent extends StatelessWidget {
                 // Open share dialog to share the product
                 onPressed: () {
                   Share.share(
-                      "Check ${productController.productTitle} with Aware discount code, it's only \$${productController.productPrice}! \n\n$shareButtonUrl");
+                      "Check ${productController.productTitle} with Aware discount code, it's only \$${productController.productPrice} ! \n\n$shareButtonUrl");
                 },
                 child: Icon(
                   CupertinoIcons.share,
@@ -68,7 +68,7 @@ class SingleProductContent extends StatelessWidget {
 
           // Product image
           Hero(
-            tag: productController.selectedProductIndex.value,
+            tag: productController.productId,
             child: Image.network(
               productController.productImage,
               width: 300.w,

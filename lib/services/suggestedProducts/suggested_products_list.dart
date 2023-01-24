@@ -48,9 +48,10 @@ class SuggestedProductsList extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(20.r),
                         child: Hero(
-                          tag: index,
+                          tag: product.productId,
                           child: Image.network(
                             product.productImage,
+                            fit: BoxFit.cover,
                             width: 150.w,
                             height: 150.h,
                           ),
@@ -71,29 +72,32 @@ class SuggestedProductsList extends StatelessWidget {
                       // Product details
                       Row(
                         children: [
-                          // Product brand logo
+                          // Product brand logo icon
                           Icon(
                             CupertinoIcons.bag_fill,
                             size: 15.sp,
                             color: GHOST_COLOR,
                           ),
                           HorizontalSpaceBox(3.w),
+                          // Product brand logo image
                           Image.network(
                             product.brandLogo,
                             width: 30,
                             height: 30,
                           ),
                           HorizontalSpaceBox(20.w),
-                          // Product price
+                          // Product price icon
                           Icon(
                             CupertinoIcons.tag_fill,
                             size: 15.sp,
                             color: GHOST_COLOR,
                           ),
                           HorizontalSpaceBox(3.w),
+                          // Product price
                           Text(
                             "\$${product.price}",
-                            style: const TextStyle(color: PRIMARY_COLOR),
+                            style: TextStyle(
+                                color: PRIMARY_COLOR, fontSize: 15.sp),
                           )
                         ],
                       )
