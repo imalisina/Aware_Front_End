@@ -34,3 +34,6 @@ String home = "/home";
 
 // Shop and Products routes
 String singleProduct = "/shop/products/single";
+
+// Fashion Tips
+String singleFashionTip = "/fashion_tips/single";

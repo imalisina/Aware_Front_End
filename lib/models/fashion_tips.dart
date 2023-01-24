@@ -8,12 +8,13 @@ class FashionTips {
 class FashionTip {
   final String title, content, publishDate, publishTime, tipImage, tipSource;
   final int likes;
-  final bool isBookmarked;
+  final bool isBookmarked, isLiked;
 
   const FashionTip(
       {required this.title,
       required this.content,
       required this.likes,
+      required this.isLiked,
       required this.isBookmarked,
       required this.publishDate,
       required this.publishTime,
@@ -24,6 +25,7 @@ class FashionTip {
       title: json["title"],
       content: json["content"],
       likes: json["likes"],
+      isLiked: json["isLiked"],
       isBookmarked: json["isBookmarked"],
       publishDate: json["publish_date"],
       publishTime: json["publish_time"],
@@ -39,10 +41,11 @@ const data = [
         "Women that are naturally beautiful know how important it is to moisturize their skin. You will want to find a great moisturizer and make sure that you apply it at least once a day. Make it your new habit that after you get out of the shower you apply your moisturizer. You will keep your skin soft and pretty.",
     "likes": 120,
     "isBookmarked": false,
+    "isLiked": false,
     "publish_date": "16 Aug 2022",
     "publish_time": "01:33 A.M",
     "tip_image":
-        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/shutterstock-editorial-13014271af-1674040587.jpg?crop=0.669xw:1.00xh;0.0862xw,0&resize=980:*",
+        "https://media.gettyimages.com/id/1179747953/photo/our-style-is-influenced-by-our-upbringing.jpg?s=1024x1024&w=gi&k=20&c=pfaLU5pkO6bPHpy6nTQNDnqEO-7aRCmmzgG71owPqEQ=",
     "tip_source": "https://www.elle.com"
   },
   {
@@ -51,10 +54,11 @@ const data = [
         "When your hair is healthy then you are just going to have an overall more beautiful look. So try and cut back on the heat tools and get a great conditioner for your hair. I big lesson that I have learned is that when I don’t always dye or bleach my hair it starts to look so much prettier and healthy. Let it grow out natural for awhile you just might be surprised at how pretty it looks.",
     "likes": 538,
     "isBookmarked": true,
+    "isLiked": false,
     "publish_date": "08 Dec 2019",
     "publish_time": "19:45 P.M",
     "tip_image":
-        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-1175081734.jpg?crop=0.668xw:1.00xh;0.180xw,0&resize=980:*",
+        "https://media.gettyimages.com/id/1306342110/photo/beautiful-woman-with-pink-hair.jpg?s=1024x1024&w=gi&k=20&c=LrgsCQuliUxSCyrdiW0PigMhUagxNOg6ttMLMYcMoLo=",
     "tip_source": "https://www.harpersbazaar.com"
   },
 ];

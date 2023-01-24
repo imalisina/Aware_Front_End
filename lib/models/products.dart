@@ -16,9 +16,11 @@ class Product {
       productImage,
       productUrl;
   final bool isBookmarked;
+  final int productId;
 
   const Product(
-      {required this.title,
+      {required this.productId,
+      required this.title,
       required this.brand,
       required this.price,
       required this.market,
@@ -30,6 +32,7 @@ class Product {
       required this.isBookmarked});
 
   static Product fromJSON(json) => Product(
+      productId: json["id"],
       title: json["title"],
       brand: json["brand"],
       price: json["price"],
@@ -45,6 +48,7 @@ class Product {
 // Product JSON data
 const data = [
   {
+    "id": 0,
     "title": "Pink Poplin Long Shirt",
     "brand": "C&A",
     "price": "379",
@@ -59,6 +63,7 @@ const data = [
     "isBookmarked": false,
   },
   {
+    "id": 1,
     "title": "The Great Bardana",
     "brand": "Nike",
     "price": "290",
@@ -73,6 +78,7 @@ const data = [
     "isBookmarked": true,
   },
   {
+    "id": 2,
     "title": "Escape Run 2",
     "brand": "Nike",
     "price": "155",

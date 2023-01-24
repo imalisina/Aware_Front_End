@@ -13,6 +13,7 @@ import 'package:sample/screens/completeProfile/LocationDetails/location_details_
 import 'package:sample/screens/completeProfile/confirmation/profile_confirmation_screen.dart';
 import 'package:sample/screens/completeProfile/personalDetails/personal_details_screen.dart';
 import 'package:sample/screens/countrySelection/select_country_screen.dart';
+import 'package:sample/screens/fashionTips/singleTip/single_fashion_tip_screen.dart';
 import 'package:sample/screens/shop/singleProduct/single_product_screen.dart';
 import 'package:sample/screens/support/contactUs/contact_us_screen.dart';
 import 'package:sample/screens/support/passwordRecovery/emailMethod/email_method.dart';
@@ -59,7 +60,11 @@ class RoutesClass {
 
     // Home
     GetPage(name: home, page: () => const AppContainer()),
+
     // Shop & Products
-    GetPage(name: singleProduct, page: () => const SingleProductScreen())
+    GetPage(name: singleProduct, page: () => const SingleProductScreen()),
+
+    // Fashion tips
+    GetPage(name: singleFashionTip, page: () => const SingleFashionTipScreen())
   ];
 }
