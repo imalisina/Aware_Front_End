@@ -59,16 +59,14 @@ class AppDetailsScreen extends StatelessWidget {
               VerticalSpaceBox(50.h),
 
               // Details image
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    "assets/images/for_you.gif",
-                    width: 400.w,
-                    height: 400.h,
-                  ),
-                ],
-              )
+              Container(
+                alignment: Alignment.center,
+                child: Image.asset(
+                  "assets/images/for_you.gif",
+                  width: 400.w,
+                  height: 400.h,
+                ),
+              ),
             ],
           ),
         ),

@@ -1,39 +1,47 @@
 // Define all route names
 // Welcome route
-String introduction = "/intro";
+const String introduction = "/intro";
 
 // Country selection route
-String countrySelection = "/country";
+const String countrySelection = "/country";
 
 // Auth routes
-String login = "/auth/login";
-String register = "/auth/register";
+const String login = "/auth/login";
+const String register = "/auth/register";
 
 // Support routes
-String supportMenu = "/support/menu";
-String contactUs = "/support/contact";
-String passwordRecovery = "/support/password/recovery";
-String secureCode = "/support/password/recovery/secure_code";
-String emailMethod = "/support/password/recovery/email";
-String emailVerification = "/support/password/recovery/email/verification";
-String resetPassword = "/support/password/reset";
+const String supportMenu = "/support/menu";
+const String contactUs = "/support/contact";
+const String passwordRecovery = "/support/password/recovery";
+const String secureCode = "/support/password/recovery/secure_code";
+const String emailMethod = "/support/password/recovery/email";
+const String emailVerification =
+    "/support/password/recovery/email/verification";
+const String resetPassword = "/support/password/reset";
 
 // More details routes
-String details = "/details";
-String terms = "/details/terms";
-String privacy = "/details/privacy";
-String agreement = "/details/agreement";
+const String details = "/details";
+const String terms = "/details/terms";
+const String privacy = "/details/privacy";
+const String agreement = "/details/agreement";
 
 // Complete profile routes
-String personalDetails = "/complete/profile/personal";
-String locationDetails = "/complete/profile/location";
-String confirmation = "/complete/profile/confirmation";
+const String personalDetails = "/complete/profile/personal";
+const String locationDetails = "/complete/profile/location";
+const String confirmation = "/complete/profile/confirmation";
 
 // Home route
-String home = "/home";
+const String home = "/home";
 
 // Shop and Products routes
-String singleProduct = "/shop/products/single";
+const String singleProduct = "/shop/products/single";
 
 // Fashion Tips
-String singleFashionTip = "/fashion_tips/single";
+const String singleFashionTip = "/fashion_tips/single";
+
+// Bookmarks routes
+const String bookmarksMenu = "/bookmarks/menu";
+const String bookmarkedProducts = "/bookmarks/products";
+const String singleBookmarkedProduct = "/bookmarks/products/single";
+const String bookmarkedTips = "/bookmarks/fashion_tips";
+const String singleBookmarkedTip = "/bookmarks/fashion_tips/single";

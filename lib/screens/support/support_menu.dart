@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sample/configs/route_names.dart';
 
 // Other packages
 import 'package:sample/packages/horizontal_card_button.dart';
@@ -16,12 +17,12 @@ class SupportMenu extends StatelessWidget {
         children: const [
           SizedBox(
             child: CardContent("Password Recovery",
-                CupertinoIcons.lock_rotation, "/support/password/recovery"),
+                CupertinoIcons.lock_rotation, passwordRecovery),
           ),
           Divider(),
           SizedBox(
             child: CardContent(
-                "Contact us", CupertinoIcons.text_bubble, "/support/contact"),
+                "Contact us", CupertinoIcons.text_bubble, contactUs),
           ),
         ],
       ),
