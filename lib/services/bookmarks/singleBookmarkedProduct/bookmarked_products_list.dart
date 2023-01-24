@@ -1,39 +1,42 @@
-import 'package:flutter/cupertino.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-// GetX packages
 import 'package:get/get.dart';
-
-// Other packages
-import 'package:sample/configs/theme.dart';
 import 'package:sample/configs/route_names.dart';
-import 'package:sample/controllers/product/product_controller.dart';
+import 'package:sample/configs/theme.dart';
+import 'package:sample/controllers/product/bookmarked_product_controller.dart';
+import 'package:sample/models/bookmarked_products.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/models/products.dart';
 
-class SuggestedProductsList extends StatelessWidget {
-  const SuggestedProductsList({super.key});
+class BookmarkedProductsList extends StatelessWidget {
+  const BookmarkedProductsList({super.key});
 
-  // Define product controller
-  static final productController = Get.put(ProductController());
+  // Define bookmarked product controller
+  static final bookmarkedProductController =
+      Get.put(BookmarkedProductController());
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 230.h,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: Products().products.length,
-        separatorBuilder: (context, _) => HorizontalSpaceBox(10.w),
+    return Container(
+      margin: EdgeInsets.only(left: 15.w, right: 15.w),
+      height: 900.h,
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          childAspectRatio: 0.9.h,
+          crossAxisCount: 2,
+          mainAxisSpacing: 15.h,
+          crossAxisSpacing: 15.w,
+        ),
+        itemCount: BookmarkedProducts().bookmarkedProducts.length,
         itemBuilder: (context, index) {
-          var product = Products().products[index];
+          var bookmarkedProduct =
+              BookmarkedProducts().bookmarkedProducts[index];
           return CupertinoButton(
             padding: EdgeInsets.zero,
-            // Store product index and handle routing
+            // Store bookmarked product index and handle routing
             onPressed: () {
-              productController.storeSelectedProduct(index);
-              Get.toNamed(singleProduct);
+              bookmarkedProductController.storeSelectedProduct(index);
+              Get.toNamed(singleBookmarkedProduct);
             },
             // Product main card
             child: DottedBorder(
@@ -43,38 +46,33 @@ class SuggestedProductsList extends StatelessWidget {
               color: GHOST_COLOR,
               child: Column(
                 children: [
-                  // Product image
                   ClipRRect(
                     borderRadius: BorderRadius.circular(20.r),
                     child: Hero(
-                      tag: product.productId,
+                      tag: bookmarkedProduct.productId,
                       child: Image.network(
-                        product.productImage,
-                        fit: BoxFit.cover,
+                        bookmarkedProduct.productImage,
                         width: 150.w,
                         height: 150.h,
                       ),
                     ),
                   ),
-
                   VerticalSpaceBox(4.h),
-
                   // Product title
                   Container(
                     alignment: Alignment.center,
-                    width: 109.w,
+                    width: 150.w,
                     child: Text(
-                      product.title,
+                      bookmarkedProduct.title,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                       style: const TextStyle(color: PRIMARY_COLOR),
                     ),
                   ),
-
                   VerticalSpaceBox(2.h),
-
-                  // Product details
+                  // Product details section
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // Product brand logo icon
                       Icon(
@@ -87,7 +85,7 @@ class SuggestedProductsList extends StatelessWidget {
 
                       // Product brand logo image
                       Image.network(
-                        product.brandLogo,
+                        bookmarkedProduct.brandLogo,
                         width: 30,
                         height: 30,
                       ),
@@ -105,7 +103,7 @@ class SuggestedProductsList extends StatelessWidget {
 
                       // Product price
                       Text(
-                        "\$${product.price}",
+                        "\$${bookmarkedProduct.price}",
                         style: TextStyle(color: PRIMARY_COLOR, fontSize: 15.sp),
                       )
                     ],

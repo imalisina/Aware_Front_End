@@ -59,15 +59,13 @@ class SupportScreen extends StatelessWidget {
               VerticalSpaceBox(100.h),
 
               // Support image
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    "assets/images/support.gif",
-                    width: 400.w,
-                    height: 400.h,
-                  ),
-                ],
+              Container(
+                alignment: Alignment.center,
+                child: Image.asset(
+                  "assets/images/support.gif",
+                  width: 400.w,
+                  height: 400.h,
+                ),
               ),
             ],
           ),

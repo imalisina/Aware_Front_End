@@ -2,17 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-// GetX package
-import 'package:get/get.dart';
-
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
-import 'package:sample/screens/support/passwordRecovery/password_recovery_menu.dart';
+import 'package:sample/services/bookmarks/bookmarks_menu.dart';
 
-class PasswordRecoveryScreen extends StatelessWidget {
-  const PasswordRecoveryScreen({super.key});
+class BookmarksScreen extends StatelessWidget {
+  const BookmarksScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,16 +18,6 @@ class PasswordRecoveryScreen extends StatelessWidget {
         navigationBar: CupertinoNavigationBar(
           backgroundColor: BACKGROUND_COLOR,
           automaticallyImplyLeading: !disableBackButton,
-          leading: CupertinoButton(
-            padding: EdgeInsets.zero,
-            child: Container(
-              margin: EdgeInsets.only(top: 10.h),
-              child: const Icon(CupertinoIcons.chevron_left),
-            ),
-            onPressed: () {
-              Get.back();
-            },
-          ),
           border: navigationBorder,
           padding: EdgeInsetsDirectional.only(top: 9.h),
           middle: Text(
@@ -49,20 +36,20 @@ class PasswordRecoveryScreen extends StatelessWidget {
 
               // Title and sub-title
               const TitleContent(
-                  "Password recovery", "Please select one recovery method"),
+                  "My bookmarks", "Which bookmark you want to see ?"),
 
               VerticalSpaceBox(40.h),
 
-              // Password recovery menu
-              const PasswordRecoveryMenu(),
+              // Bookmarks menu section
+              const BookmarksMenu(),
 
-              VerticalSpaceBox(100.h),
+              VerticalSpaceBox(80.h),
 
-              // Password recovery image
+              // Bookmark image
               Container(
                 alignment: Alignment.center,
                 child: Image.asset(
-                  "assets/images/security.gif",
+                  "assets/images/bookmarks.gif",
                   width: 400.w,
                   height: 400.h,
                 ),

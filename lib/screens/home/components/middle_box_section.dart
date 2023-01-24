@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:sample/configs/route_names.dart';
 import 'package:sample/configs/theme.dart';
 import 'package:sample/services/dailyQuote/next_quote_loading.dart';
 import 'package:share_plus/share_plus.dart';
@@ -91,10 +92,10 @@ class MiddleBoxSection extends StatelessWidget {
         // Daily Quote button
         IconCardButton(
             "Daily Quote", CupertinoIcons.gift_fill, () => dailyQuote()),
+        IconCardButton("Discounts", CupertinoIcons.tickets_fill,
+            () => Get.toNamed("")),
         IconCardButton(
-            "Discounts", CupertinoIcons.tickets_fill, () => Get.toNamed("")),
-        IconCardButton(
-            "Bookmarks", CupertinoIcons.bookmark_fill, () => Get.toNamed("")),
+            "Bookmarks", CupertinoIcons.bookmark_fill, () => Get.toNamed(bookmarksMenu)),
       ],
     );
   }

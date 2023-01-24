@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sample/configs/route_names.dart';
 import 'package:sample/packages/horizontal_card_button.dart';
 
 class AppDetailsMenu extends StatelessWidget {
@@ -13,18 +14,18 @@ class AppDetailsMenu extends StatelessWidget {
       child: Column(
         children: const [
           SizedBox(
-            child: CardContent("Terms of use",
-                CupertinoIcons.exclamationmark_circle, "/details/terms"),
+            child: CardContent(
+                "Terms of use", CupertinoIcons.exclamationmark_circle, terms),
+          ),
+          Divider(),
+          SizedBox(
+            child:
+                CardContent("Privacy policy", CupertinoIcons.person, privacy),
           ),
           Divider(),
           SizedBox(
             child: CardContent(
-                "Privacy policy", CupertinoIcons.person, "/details/privacy"),
-          ),
-          Divider(),
-          SizedBox(
-            child: CardContent("User agreement", CupertinoIcons.doc_text,
-                "/details/agreement"),
+                "User agreement", CupertinoIcons.doc_text, agreement),
           )
         ],
       ),

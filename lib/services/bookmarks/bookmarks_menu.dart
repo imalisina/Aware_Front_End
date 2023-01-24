@@ -6,8 +6,8 @@ import 'package:sample/configs/route_names.dart';
 // Other packages
 import 'package:sample/packages/horizontal_card_button.dart';
 
-class PasswordRecoveryMenu extends StatelessWidget {
-  const PasswordRecoveryMenu({super.key});
+class BookmarksMenu extends StatelessWidget {
+  const BookmarksMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +15,10 @@ class PasswordRecoveryMenu extends StatelessWidget {
       padding: EdgeInsets.only(left: 20.w, right: 20.w),
       child: Column(
         children: const [
-          SizedBox(
-            child: CardContent(
-                "Secure code", CupertinoIcons.shield_lefthalf_fill, secureCode),
-          ),
+          CardContent("Saved Products", CupertinoIcons.bag, bookmarkedProducts),
           Divider(),
-          SizedBox(
-            child: CardContent(
-                "Email verification code", CupertinoIcons.mail, emailMethod),
-          ),
+          CardContent("Saved Fashion Tips", CupertinoIcons.sidebar_left,
+              bookmarkedTips),
         ],
       ),
     );
