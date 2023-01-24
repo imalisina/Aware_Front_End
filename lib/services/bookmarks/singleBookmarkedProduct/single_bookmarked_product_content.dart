@@ -1,13 +1,17 @@
 import 'package:flutter/cupertino.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// GetX package
 import 'package:get/get.dart';
-import 'package:sample/configs/constants.dart';
-import 'package:sample/configs/theme.dart';
 import 'package:sample/controllers/product/bookmarked_product_controller.dart';
+
+// Other packages
+import 'package:sample/configs/theme.dart';
+import 'package:sample/configs/constants.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/services/singleProduct/bottom_checkout_bar.dart';
 import 'package:sample/services/singleProduct/single_product_detail.dart';
-import 'package:share_plus/share_plus.dart';
 
 class SingleBookmarkedProductContent extends StatelessWidget {
   const SingleBookmarkedProductContent({super.key});

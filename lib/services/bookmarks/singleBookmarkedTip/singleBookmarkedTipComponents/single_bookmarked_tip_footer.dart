@@ -1,9 +1,13 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:sample/configs/theme.dart';
-import 'package:sample/controllers/fashionTip/bookmarked_fashion_tip_controller.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// GetX package
+import 'package:get/get.dart';
+import 'package:sample/controllers/fashionTip/bookmarked_fashion_tip_controller.dart';
+
+// Other packages
+import 'package:sample/configs/theme.dart';
 
 class SingleBookmarkedTipFooter extends StatelessWidget {
   const SingleBookmarkedTipFooter({super.key});
