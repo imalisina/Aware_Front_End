@@ -16,8 +16,7 @@ class PasswordRecoveryMenu extends StatelessWidget {
       child: Column(
         children: const [
           SizedBox(
-            child: CardContent(
-                "Secure code", CupertinoIcons.shield_lefthalf_fill, secureCode),
+            child: CardContent("Secure code", CupertinoIcons.burn, secureCode),
           ),
           Divider(),
           SizedBox(

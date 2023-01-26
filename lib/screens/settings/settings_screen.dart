@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Other packages
 import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/services/settings/logout_button.dart';
 import 'package:sample/services/settings/settings_header.dart';
+import 'package:sample/services/settings/settings_menu.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -22,9 +24,31 @@ class SettingsScreen extends StatelessWidget {
 
               // Settings header
               const SettingsHeader(),
+
+              VerticalSpaceBox(40.h),
+
               // Settings menu
+              const SettingsMenu(),
+
+              VerticalSpaceBox(20.h),
 
               // Logout button
+              const LogoutButton(),
+
+              VerticalSpaceBox(50.h),
+
+              // Aware transparent logo
+              Container(
+                alignment: Alignment.center,
+                child: Opacity(
+                  opacity: 0.2,
+                  child: Image.asset(
+                    "assets/images/aware_logo.png",
+                    width: 60.w,
+                    height: 60.h,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
