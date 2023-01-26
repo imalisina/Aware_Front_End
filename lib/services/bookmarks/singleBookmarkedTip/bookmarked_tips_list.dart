@@ -23,7 +23,7 @@ class BookmarkedTipsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 15.w, right: 15.w),
-      height: 900.h,
+      height: 650.h,
       child: ListView.separated(
         itemCount: BookmarkedTips().bookmarkedTips.length,
         separatorBuilder: (context, _) => VerticalSpaceBox(10.h),

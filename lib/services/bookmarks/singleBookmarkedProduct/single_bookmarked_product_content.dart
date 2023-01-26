@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:like_button/like_button.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -32,22 +33,32 @@ class SingleBookmarkedProductContent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               // Bookmark button
-              CupertinoButton(
-                padding: EdgeInsets.zero,
-                // Toggle between bookmark status
-                onPressed: () {
-                  bookmarkedProductController.toggleBookmark();
-                },
-                child: Obx(
-                  () => Icon(
-                    bookmarkedProductController.isBookmarked.isTrue
-                        ? CupertinoIcons.bookmark_fill
-                        : CupertinoIcons.bookmark,
-                    color: bookmarkedProductController.isBookmarked.isTrue
-                        ? MAIN_COLOR
-                        : PRIMARY_COLOR,
-                    size: 30.sp,
-                  ),
+              Obx(
+                () => LikeButton(
+                  padding: EdgeInsets.only(left: 6.w, right: 6.w),
+                  circleColor: const CircleColor(
+                      start: SECONDARY_COLOR, end: PRIMARY_COLOR),
+                  bubblesColor: const BubblesColor(
+                      dotPrimaryColor: MAIN_COLOR,
+                      dotSecondaryColor: PRIMARY_COLOR,
+                      dotThirdColor: GHOST_COLOR,
+                      dotLastColor: SECONDARY_COLOR),
+                  // Toggle bookmark status and handle operation in controller
+                  onTap: (isLiked) async {
+                    bookmarkedProductController.toggleBookmark(isLiked);
+                    return bookmarkedProductController.isBookmarked.value;
+                  },
+                  size: 30.sp,
+                  isLiked: bookmarkedProductController.isBookmarked.value,
+                  likeBuilder: (isLiked) {
+                    return Icon(
+                      isLiked
+                          ? CupertinoIcons.bookmark_fill
+                          : CupertinoIcons.bookmark,
+                      color: isLiked ? MAIN_COLOR : PRIMARY_COLOR,
+                      size: 30.sp,
+                    );
+                  },
                 ),
               ),
               HorizontalSpaceBox(8.w),

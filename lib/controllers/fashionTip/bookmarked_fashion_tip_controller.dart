@@ -16,7 +16,8 @@ class BookmarkedFashionTipController extends GetxController {
   var isLiked = false.obs;
 
   // Method to change fashion tip like count
-  void toggleLikes() {
+  void toggleLikes(bool likeAction) {
+    isLiked.value = likeAction;
     isLiked.value = !isLiked.value;
     if (isLiked.isFalse) {
       fashionTipLikes.value--;
@@ -26,7 +27,8 @@ class BookmarkedFashionTipController extends GetxController {
   }
 
   // Method to toggle the bookmark status
-  void toggleBookmark() {
+  void toggleBookmark(bool bookmarkAction) {
+    isBookmarked.value = bookmarkAction;
     isBookmarked.value = !isBookmarked.value;
   }
 

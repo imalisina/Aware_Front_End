@@ -29,22 +29,20 @@ class BookmarkedProductsScreen extends StatelessWidget {
           ),
         ),
         child: SizedBox(
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                VerticalSpaceBox(50.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              VerticalSpaceBox(50.h),
 
-                // Title and sub-title
-                const TitleContent(
-                    "Saved products", "Here are your bookmarked products"),
+              // Title and sub-title
+              const TitleContent(
+                  "Saved products", "Here are your bookmarked products"),
 
-                VerticalSpaceBox(40.h),
+              VerticalSpaceBox(40.h),
 
-                // Bookmarked products list
-                const BookmarkedProductsList(),
-              ],
-            ),
+              // Bookmarked products list
+              const BookmarkedProductsList(),
+            ],
           ),
         ),
       ),
