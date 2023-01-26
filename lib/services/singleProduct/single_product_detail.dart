@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
-import 'package:sample/controllers/product/product_controller.dart';
+import 'package:sample/controllers/product/suggested_product_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
@@ -28,8 +28,9 @@ class SingleProductDetail extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
   const SingleProductDetail(this.productDetail, this.detailTitleIndex);
 
-  // Define product controller
-  static final productController = Get.put(ProductController());
+  // Define suggested product controller
+  static final suggestedProductController =
+      Get.put(SuggestedProductController());
 
   @override
   Widget build(BuildContext context) {
@@ -67,22 +68,22 @@ class SingleProductDetail extends StatelessWidget {
                       padding: EdgeInsets.zero,
                       child: Obx(
                         () => Icon(
-                          productController.isCopied.isFalse
+                          suggestedProductController.isCopied.isFalse
                               ? CupertinoIcons.doc_on_clipboard_fill
                               : CupertinoIcons.checkmark_alt_circle_fill,
-                          color: productController.isCopied.isFalse
+                          color: suggestedProductController.isCopied.isFalse
                               ? GHOST_COLOR
                               : AGREE_COLOR,
                         ),
                       ),
                       onPressed: () {
                         FlutterClipboard.copy(productDetail);
-                        productController.setCopied();
+                        suggestedProductController.setCopied();
 
                         Timer(
                           const Duration(seconds: 1),
                           () {
-                            productController.openCopyButton();
+                            suggestedProductController.openCopyButton();
                           },
                         );
                       },

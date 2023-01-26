@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/singleProduct/single_product_content.dart';
+import 'package:sample/services/suggestedProducts/singleSuggestedProduct/single_product_content.dart';
 
 class SingleProductScreen extends StatelessWidget {
   const SingleProductScreen({super.key});

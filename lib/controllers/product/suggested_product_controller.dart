@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:sample/models/products.dart';
+import 'package:sample/models/suggested_products.dart';
 
-class ProductController extends GetxController {
+class SuggestedProductController extends GetxController {
   // Store selected product's index
   var selectedProductIndex = 0.obs;
   // Store attributes of selected product
@@ -21,7 +21,8 @@ class ProductController extends GetxController {
   var isCopied = false.obs;
 
   // Method to toggle the bookmark status
-  void toggleBookmark() {
+  void toggleBookmark(bool bookmarkAction) {
+    isBookmarked.value = bookmarkAction;
     isBookmarked.value = !isBookmarked.value;
   }
 
@@ -29,6 +30,7 @@ class ProductController extends GetxController {
   void setCopied() {
     isCopied.value = true;
   }
+
   void openCopyButton() {
     isCopied.value = false;
   }
@@ -41,8 +43,8 @@ class ProductController extends GetxController {
 
   // Extract selected product details
   void storeSelectedProductDetails() {
-    Product selectedProduct =
-        Product.fromJSON(data[selectedProductIndex.value]);
+    SugesstedProduct selectedProduct =
+        SugesstedProduct.fromJSON(data[selectedProductIndex.value]);
     productTitle = selectedProduct.title;
     productBrand = selectedProduct.brand;
     productPrice = selectedProduct.price;

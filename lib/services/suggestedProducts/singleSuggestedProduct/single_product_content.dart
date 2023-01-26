@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:like_button/like_button.dart';
 import 'package:share_plus/share_plus.dart';
 
 // GetX package
 import 'package:get/get.dart';
-import 'package:sample/controllers/product/product_controller.dart';
+import 'package:sample/controllers/product/suggested_product_controller.dart';
 
 // Other packages
 import 'package:sample/configs/constants.dart';
@@ -16,8 +17,9 @@ import 'package:sample/services/singleProduct/single_product_detail.dart';
 class SingleProductContent extends StatelessWidget {
   const SingleProductContent({super.key});
 
-  // Define product controller
-  static final productController = Get.put(ProductController());
+  // Define suggested product controller
+  static final suggestedProductController =
+      Get.put(SuggestedProductController());
 
   @override
   Widget build(BuildContext context) {
@@ -31,22 +33,32 @@ class SingleProductContent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               // Bookmark button
-              CupertinoButton(
-                padding: EdgeInsets.zero,
-                // Toggle between bookmark status
-                onPressed: () {
-                  productController.toggleBookmark();
-                },
-                child: Obx(
-                  () => Icon(
-                    productController.isBookmarked.isTrue
-                        ? CupertinoIcons.bookmark_fill
-                        : CupertinoIcons.bookmark,
-                    color: productController.isBookmarked.isTrue
-                        ? MAIN_COLOR
-                        : PRIMARY_COLOR,
-                    size: 30.sp,
-                  ),
+              Obx(
+                () => LikeButton(
+                  padding: EdgeInsets.only(left: 6.w, right: 6.w),
+                  circleColor: const CircleColor(
+                      start: SECONDARY_COLOR, end: PRIMARY_COLOR),
+                  bubblesColor: const BubblesColor(
+                      dotPrimaryColor: MAIN_COLOR,
+                      dotSecondaryColor: PRIMARY_COLOR,
+                      dotThirdColor: GHOST_COLOR,
+                      dotLastColor: SECONDARY_COLOR),
+                  // Toggle bookmark status and handle operation in controller
+                  onTap: (isLiked) async {
+                    suggestedProductController.toggleBookmark(isLiked);
+                    return suggestedProductController.isBookmarked.value;
+                  },
+                  size: 30.sp,
+                  isLiked: suggestedProductController.isBookmarked.value,
+                  likeBuilder: (isLiked) {
+                    return Icon(
+                      isLiked
+                          ? CupertinoIcons.bookmark_fill
+                          : CupertinoIcons.bookmark,
+                      color: isLiked ? MAIN_COLOR : PRIMARY_COLOR,
+                      size: 30.sp,
+                    );
+                  },
                 ),
               ),
               HorizontalSpaceBox(8.w),
@@ -56,7 +68,7 @@ class SingleProductContent extends StatelessWidget {
                 // Open share dialog to share the product
                 onPressed: () {
                   Share.share(
-                      "Check ${productController.productTitle} with Aware discount code, it's only \$${productController.productPrice} ! \n\n$shareButtonUrl");
+                      "Check ${suggestedProductController.productTitle} with Aware discount code, it's only \$${suggestedProductController.productPrice} ! \n\n$shareButtonUrl");
                 },
                 child: Icon(
                   CupertinoIcons.share,
@@ -69,9 +81,9 @@ class SingleProductContent extends StatelessWidget {
 
           // Product image
           Hero(
-            tag: productController.productId,
+            tag: suggestedProductController.productId,
             child: Image.network(
-              productController.productImage,
+              suggestedProductController.productImage,
               width: 300.w,
               height: 250.h,
             ),
@@ -79,7 +91,7 @@ class SingleProductContent extends StatelessWidget {
 
           // Product title
           Text(
-            productController.productTitle,
+            suggestedProductController.productTitle,
             style: TextStyle(fontSize: 25.sp, fontWeight: FontWeight.w600),
           ),
 
@@ -115,10 +127,13 @@ class SingleProductContent extends StatelessWidget {
                 VerticalSpaceBox(20.h),
 
                 // Product details component
-                SingleProductDetail(productController.productBrand, 0),
-                SingleProductDetail(productController.productMarketUrl, 1),
-                SingleProductDetail(productController.productCategory, 2),
-                SingleProductDetail(productController.productDiscountCode, 3),
+                SingleProductDetail(suggestedProductController.productBrand, 0),
+                SingleProductDetail(
+                    suggestedProductController.productMarketUrl, 1),
+                SingleProductDetail(
+                    suggestedProductController.productCategory, 2),
+                SingleProductDetail(
+                    suggestedProductController.productDiscountCode, 3),
               ],
             ),
           ),
@@ -126,8 +141,8 @@ class SingleProductContent extends StatelessWidget {
           VerticalSpaceBox(10.h),
 
           // Product price and checkout bar
-          BottomCheckoutBar(
-              productController.productPrice, productController.productUrl),
+          BottomCheckoutBar(suggestedProductController.productPrice,
+              suggestedProductController.productUrl),
         ],
       ),
     );

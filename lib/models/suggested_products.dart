@@ -1,11 +1,11 @@
-class Products {
-  List<Product> products = getProducts();
-  static List<Product> getProducts() {
-    return data.map<Product>(Product.fromJSON).toList();
+class SuggestedProducts {
+  List<SugesstedProduct> suggestedProducts = getSugesstedProducts();
+  static List<SugesstedProduct> getSugesstedProducts() {
+    return data.map<SugesstedProduct>(SugesstedProduct.fromJSON).toList();
   }
 }
 
-class Product {
+class SugesstedProduct {
   final String title,
       brand,
       price,
@@ -18,7 +18,7 @@ class Product {
   final bool isBookmarked;
   final int productId;
 
-  const Product(
+  const SugesstedProduct(
       {required this.productId,
       required this.title,
       required this.brand,
@@ -31,7 +31,7 @@ class Product {
       required this.productUrl,
       required this.isBookmarked});
 
-  static Product fromJSON(json) => Product(
+  static SugesstedProduct fromJSON(json) => SugesstedProduct(
       productId: json["id"],
       title: json["title"],
       brand: json["brand"],

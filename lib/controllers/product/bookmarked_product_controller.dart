@@ -21,7 +21,8 @@ class BookmarkedProductController extends GetxController {
   var isCopied = false.obs;
 
   // Method to toggle the bookmark status
-  void toggleBookmark() {
+  void toggleBookmark(bool bookmarkAction) {
+    isBookmarked.value = bookmarkAction;
     isBookmarked.value = !isBookmarked.value;
   }
 

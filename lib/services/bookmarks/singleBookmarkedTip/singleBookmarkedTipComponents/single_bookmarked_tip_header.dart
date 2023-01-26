@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:like_button/like_button.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -28,44 +29,65 @@ class SingleBookmarkedTipHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               // Bookmark button
-              CupertinoButton(
-                padding: EdgeInsets.zero,
-                // Toggle between bookmark status
-                onPressed: () {
-                  bookmarkedTipController.toggleBookmark();
-                },
-                child: Obx(
-                  () => Icon(
-                    bookmarkedTipController.isBookmarked.isFalse
-                        ? CupertinoIcons.bookmark
-                        : CupertinoIcons.bookmark_fill,
-                    size: 30.sp,
-                    color: bookmarkedTipController.isBookmarked.isFalse
-                        ? PRIMARY_COLOR
-                        : MAIN_COLOR,
-                  ),
+              Obx(
+                () => LikeButton(
+                  padding: EdgeInsets.only(left: 6.w, right: 6.w),
+                  circleColor: const CircleColor(
+                      start: SECONDARY_COLOR, end: PRIMARY_COLOR),
+                  bubblesColor: const BubblesColor(
+                      dotPrimaryColor: MAIN_COLOR,
+                      dotSecondaryColor: PRIMARY_COLOR,
+                      dotThirdColor: GHOST_COLOR,
+                      dotLastColor: SECONDARY_COLOR),
+                  // Toggle bookmark status and handle operation in controller
+                  onTap: (isLiked) async {
+                    bookmarkedTipController.toggleBookmark(isLiked);
+                    return bookmarkedTipController.isBookmarked.value;
+                  },
+                  size: 30.sp,
+                  isLiked: bookmarkedTipController.isBookmarked.value,
+                  likeBuilder: (isLiked) {
+                    return Icon(
+                      isLiked
+                          ? CupertinoIcons.bookmark_fill
+                          : CupertinoIcons.bookmark,
+                      color: isLiked ? MAIN_COLOR : PRIMARY_COLOR,
+                      size: 30.sp,
+                    );
+                  },
                 ),
               ),
 
               HorizontalSpaceBox(8.w),
 
               // Like button
-              CupertinoButton(
-                padding: EdgeInsets.zero,
-                // Toggle between like status
-                onPressed: () {
-                  bookmarkedTipController.toggleLikes();
-                },
-                child: Obx(
-                  () => Icon(
-                    bookmarkedTipController.isLiked.isFalse
-                        ? CupertinoIcons.heart
-                        : CupertinoIcons.heart_fill,
-                    size: 30.sp,
-                    color: bookmarkedTipController.isLiked.isFalse
-                        ? PRIMARY_COLOR
-                        : MAIN_COLOR,
+              Obx(
+                () => LikeButton(
+                  padding: EdgeInsets.only(left: 6.w, right: 6.w),
+                  circleColor: const CircleColor(
+                      start: SECONDARY_COLOR, end: PRIMARY_COLOR),
+                  bubblesColor: const BubblesColor(
+                    dotPrimaryColor: MAIN_COLOR,
+                    dotSecondaryColor: PRIMARY_COLOR,
+                    dotThirdColor: MAIN_COLOR,
+                    dotLastColor: SECONDARY_COLOR,
                   ),
+                  // Toggle like status and handle operation in controller
+                  onTap: (isLiked) async {
+                    bookmarkedTipController.toggleLikes(isLiked);
+                    return bookmarkedTipController.isLiked.value;
+                  },
+                  size: 30.sp,
+                  isLiked: bookmarkedTipController.isLiked.value,
+                  likeBuilder: (isLiked) {
+                    return Icon(
+                      isLiked
+                          ? CupertinoIcons.heart_fill
+                          : CupertinoIcons.heart,
+                      color: isLiked ? MAIN_COLOR : PRIMARY_COLOR,
+                      size: 30.sp,
+                    );
+                  },
                 ),
               ),
 

@@ -8,15 +8,16 @@ import 'package:get/get.dart';
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/configs/route_names.dart';
-import 'package:sample/controllers/product/product_controller.dart';
+import 'package:sample/controllers/product/suggested_product_controller.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/models/products.dart';
+import 'package:sample/models/suggested_products.dart';
 
 class SuggestedProductsList extends StatelessWidget {
   const SuggestedProductsList({super.key});
 
-  // Define product controller
-  static final productController = Get.put(ProductController());
+  // Define suggested product controller
+  static final suggestedProductController =
+      Get.put(SuggestedProductController());
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +25,15 @@ class SuggestedProductsList extends StatelessWidget {
       height: 230.h,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemCount: Products().products.length,
+        itemCount: SuggestedProducts().suggestedProducts.length,
         separatorBuilder: (context, _) => HorizontalSpaceBox(10.w),
         itemBuilder: (context, index) {
-          var product = Products().products[index];
+          var product = SuggestedProducts().suggestedProducts[index];
           return CupertinoButton(
             padding: EdgeInsets.zero,
             // Store product index and handle routing
             onPressed: () {
-              productController.storeSelectedProduct(index);
+              suggestedProductController.storeSelectedProduct(index);
               Get.toNamed(singleProduct);
             },
             // Product main card
