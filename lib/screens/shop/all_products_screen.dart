@@ -1,13 +1,19 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sample/configs/theme.dart';
+import 'package:sample/controllers/product/products_controller.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
 import 'package:sample/services/products/all_products_list.dart';
 
 class AllProductsScreen extends StatelessWidget {
   const AllProductsScreen({super.key});
+
+  // Define all products controller
+  static final productsController = Get.put(ProductsController());
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +43,9 @@ class AllProductsScreen extends StatelessWidget {
               const TitleContent(
                   "Discounts", "Buy anything with special discount codes !"),
 
-              VerticalSpaceBox(40.h),
+              VerticalSpaceBox(10.h),
+
+              VerticalSpaceBox(20.h),
 
               // All products list
               const AllProductsList(),

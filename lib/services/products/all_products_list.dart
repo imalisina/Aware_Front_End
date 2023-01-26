@@ -22,7 +22,7 @@ class AllProductsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 15.w, right: 15.w),
-      height: 650.h,
+      height: 670.h,
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: 0.9.h,
@@ -32,7 +32,7 @@ class AllProductsList extends StatelessWidget {
         ),
         itemCount: Products().products.length,
         itemBuilder: (context, index) {
-          var product = Products().products[index];
+          final product = Products().products[index];
           return CupertinoButton(
             padding: EdgeInsets.zero,
             // Store selected product's index and handle routing
