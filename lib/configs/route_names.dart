@@ -47,3 +47,6 @@ const String bookmarkedProducts = "/bookmarks/products";
 const String singleBookmarkedProduct = "/bookmarks/products/single";
 const String bookmarkedTips = "/bookmarks/fashion_tips";
 const String singleBookmarkedTip = "/bookmarks/fashion_tips/single";
+
+// Settings routes
+const String settings = "/settings";
