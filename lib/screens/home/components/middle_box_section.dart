@@ -93,9 +93,9 @@ class MiddleBoxSection extends StatelessWidget {
         IconCardButton(
             "Daily Quote", CupertinoIcons.gift_fill, () => dailyQuote()),
         IconCardButton("Discounts", CupertinoIcons.tickets_fill,
-            () => Get.toNamed("")),
-        IconCardButton(
-            "Bookmarks", CupertinoIcons.bookmark_fill, () => Get.toNamed(bookmarksMenu)),
+            () => Get.toNamed(allProducts)),
+        IconCardButton("Bookmarks", CupertinoIcons.bookmark_fill,
+            () => Get.toNamed(bookmarksMenu)),
       ],
     );
   }

@@ -4,37 +4,41 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX packages
 import 'package:get/get.dart';
+import 'package:sample/controllers/product/products_controller.dart';
 
 // Other packages
-import 'package:sample/configs/theme.dart';
 import 'package:sample/configs/route_names.dart';
-import 'package:sample/controllers/product/suggested_product_controller.dart';
+import 'package:sample/configs/theme.dart';
+import 'package:sample/models/products.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/models/suggested_products.dart';
 
-class SuggestedProductsList extends StatelessWidget {
-  const SuggestedProductsList({super.key});
+class AllProductsList extends StatelessWidget {
+  const AllProductsList({super.key});
 
-  // Define suggested product controller
-  static final suggestedProductController =
-      Get.put(SuggestedProductController());
+  // Define products controller
+  static final productsController = Get.put(ProductsController());
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 230.h,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: SuggestedProducts().suggestedProducts.length,
-        separatorBuilder: (context, _) => HorizontalSpaceBox(10.w),
+    return Container(
+      margin: EdgeInsets.only(left: 15.w, right: 15.w),
+      height: 650.h,
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          childAspectRatio: 0.9.h,
+          crossAxisCount: 2,
+          mainAxisSpacing: 15.h,
+          crossAxisSpacing: 15.w,
+        ),
+        itemCount: Products().products.length,
         itemBuilder: (context, index) {
-          var product = SuggestedProducts().suggestedProducts[index];
+          var product = Products().products[index];
           return CupertinoButton(
             padding: EdgeInsets.zero,
-            // Store product index and handle routing
+            // Store selected product's index and handle routing
             onPressed: () {
-              suggestedProductController.storeSelectedProduct(index);
-              Get.toNamed(singleSuggestedProduct);
+              productsController.storeSelectedProduct(index);
+              Get.toNamed(singleProduct);
             },
             // Product main card
             child: DottedBorder(
@@ -44,26 +48,22 @@ class SuggestedProductsList extends StatelessWidget {
               color: GHOST_COLOR,
               child: Column(
                 children: [
-                  // Product image
                   ClipRRect(
                     borderRadius: BorderRadius.circular(20.r),
                     child: Hero(
                       tag: product.productId,
                       child: Image.network(
                         product.productImage,
-                        fit: BoxFit.cover,
                         width: 150.w,
                         height: 150.h,
                       ),
                     ),
                   ),
-
                   VerticalSpaceBox(4.h),
-
                   // Product title
                   Container(
                     alignment: Alignment.center,
-                    width: 109.w,
+                    width: 150.w,
                     child: Text(
                       product.title,
                       overflow: TextOverflow.ellipsis,
@@ -71,11 +71,10 @@ class SuggestedProductsList extends StatelessWidget {
                       style: const TextStyle(color: PRIMARY_COLOR),
                     ),
                   ),
-
                   VerticalSpaceBox(2.h),
-
-                  // Product details
+                  // Product details section
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       // Product brand logo icon
                       Icon(

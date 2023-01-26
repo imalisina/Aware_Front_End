@@ -5,10 +5,10 @@ import 'package:google_fonts/google_fonts.dart';
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/suggestedProducts/singleSuggestedProduct/single_product_content.dart';
+import 'package:sample/services/suggestedProducts/singleSuggestedProduct/single_suggested_product_content.dart';
 
-class SingleProductScreen extends StatelessWidget {
-  const SingleProductScreen({super.key});
+class SingleSuggestedProductScreen extends StatelessWidget {
+  const SingleSuggestedProductScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class SingleProductScreen extends StatelessWidget {
                 VerticalSpaceBox(20.h),
 
                 // Product details section
-                const SingleProductContent(),
+                const SingleSuggestedProductContent(),
               ],
             ),
           ),

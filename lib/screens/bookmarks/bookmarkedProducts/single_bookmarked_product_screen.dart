@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/bookmarks/singleBookmarkedProduct/single_bookmarked_product_content.dart';
+import 'package:sample/services/bookmarks/bookmarkedProduct/single_bookmarked_product_content.dart';
 
 class SingleBookmarkedProductScreen extends StatelessWidget {
   const SingleBookmarkedProductScreen({super.key});
