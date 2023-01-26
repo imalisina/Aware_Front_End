@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+// Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/screens/home/home_screen.dart';
+import 'package:sample/screens/settings/settings_screen.dart';
 
 class AppContainer extends StatefulWidget {
   const AppContainer({super.key});
@@ -17,7 +20,7 @@ class _AppContainerState extends State<AppContainer> {
     const HomeScreen(),
     const HomeScreen(),
     const HomeScreen(),
-    const HomeScreen(),
+    const SettingsScreen(),
   ];
 
   @override

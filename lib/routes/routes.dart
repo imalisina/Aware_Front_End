@@ -18,6 +18,7 @@ import 'package:sample/screens/completeProfile/confirmation/profile_confirmation
 import 'package:sample/screens/completeProfile/personalDetails/personal_details_screen.dart';
 import 'package:sample/screens/countrySelection/select_country_screen.dart';
 import 'package:sample/screens/fashionTips/singleTip/single_fashion_tip_screen.dart';
+import 'package:sample/screens/settings/settings_screen.dart';
 import 'package:sample/screens/shop/all_products_screen.dart';
 import 'package:sample/screens/shop/singleSuggestedProduct/single_suggested_product_screen.dart';
 import 'package:sample/screens/shop/single_product_screen.dart';
@@ -89,5 +90,8 @@ class RoutesClass {
     GetPage(
         name: singleBookmarkedTip,
         page: () => const SingleBookmarkedTipScreen()),
+
+    // Settings
+    GetPage(name: settings, page: () => const SettingsScreen()),
   ];
 }
