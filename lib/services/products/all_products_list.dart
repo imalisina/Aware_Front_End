@@ -22,7 +22,7 @@ class AllProductsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 15.w, right: 15.w),
-      height: 670.h,
+      height: 650.h,
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: 0.9.h,
