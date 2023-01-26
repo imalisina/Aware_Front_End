@@ -15,14 +15,20 @@ class SupportMenu extends StatelessWidget {
       padding: EdgeInsets.only(left: 20.w, right: 20.w),
       child: Column(
         children: const [
-          SizedBox(
-            child: CardContent("Password Recovery",
-                CupertinoIcons.lock_rotation, passwordRecovery),
+          // Password recovery section
+          CardContent(
+            "Password recovery",
+            CupertinoIcons.lock_rotation,
+            passwordRecovery,
           ),
+
           Divider(),
-          SizedBox(
-            child: CardContent(
-                "Contact us", CupertinoIcons.text_bubble, contactUs),
+
+          // Contact us section
+          CardContent(
+            "Contact us",
+            CupertinoIcons.text_bubble,
+            contactUs,
           ),
         ],
       ),
