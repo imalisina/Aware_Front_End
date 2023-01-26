@@ -5,10 +5,10 @@ import 'package:google_fonts/google_fonts.dart';
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/bookmarks/bookmarkedTip/single_bookmarked_tip_content.dart';
+import 'package:sample/services/products/single_product_content.dart';
 
-class SingleBookmarkedTipScreen extends StatelessWidget {
-  const SingleBookmarkedTipScreen({super.key});
+class SingleProductScreen extends StatelessWidget {
+  const SingleProductScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +34,8 @@ class SingleBookmarkedTipScreen extends StatelessWidget {
               children: [
                 VerticalSpaceBox(20.h),
 
-                // Bookmarked fashion tip content section
-                const SingleBookmarkedTipContent(),
+                // Product details section
+                const SingleProductContent(),
               ],
             ),
           ),

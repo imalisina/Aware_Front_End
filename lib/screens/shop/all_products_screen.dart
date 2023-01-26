@@ -1,15 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-// Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
-import 'package:sample/services/bookmarks/bookmarkedTip/bookmarked_tips_list.dart';
+import 'package:sample/services/products/all_products_list.dart';
 
-class BookmarkedTipsScreen extends StatelessWidget {
-  const BookmarkedTipsScreen({super.key});
+class AllProductsScreen extends StatelessWidget {
+  const AllProductsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +21,10 @@ class BookmarkedTipsScreen extends StatelessWidget {
           middle: Text(
             titleText,
             style: GoogleFonts.pacifico(
-                color: MAIN_COLOR,
-                fontSize: titleFontSize,
-                fontWeight: titleFontWeight),
+              color: MAIN_COLOR,
+              fontSize: titleFontSize,
+              fontWeight: titleFontWeight,
+            ),
           ),
         ),
         child: SizedBox(
@@ -35,13 +34,13 @@ class BookmarkedTipsScreen extends StatelessWidget {
               VerticalSpaceBox(50.h),
 
               // Title and sub-title
-              const TitleContent("Saved fashion tips",
-                  "Here are your bookmarked fashion tips"),
+              const TitleContent(
+                  "Discounts", "Buy anything with special discount codes !"),
 
               VerticalSpaceBox(40.h),
 
-              // Bookmarked fashion tips list
-              const BookmarkedTipsList(),
+              // All products list
+              const AllProductsList(),
             ],
           ),
         ),

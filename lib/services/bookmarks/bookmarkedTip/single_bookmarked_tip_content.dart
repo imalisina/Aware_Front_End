@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Other packages
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/bookmarks/singleBookmarkedTip/singleBookmarkedTipComponents/single_bookmarked_tip_banner.dart';
-import 'package:sample/services/bookmarks/singleBookmarkedTip/singleBookmarkedTipComponents/single_bookmarked_tip_body.dart';
-import 'package:sample/services/bookmarks/singleBookmarkedTip/singleBookmarkedTipComponents/single_bookmarked_tip_footer.dart';
-import 'package:sample/services/bookmarks/singleBookmarkedTip/singleBookmarkedTipComponents/single_bookmarked_tip_header.dart';
+import 'package:sample/services/bookmarks/bookmarkedTip/singleBookmarkedTipComponents/single_bookmarked_tip_banner.dart';
+import 'package:sample/services/bookmarks/bookmarkedTip/singleBookmarkedTipComponents/single_bookmarked_tip_body.dart';
+import 'package:sample/services/bookmarks/bookmarkedTip/singleBookmarkedTipComponents/single_bookmarked_tip_footer.dart';
+import 'package:sample/services/bookmarks/bookmarkedTip/singleBookmarkedTipComponents/single_bookmarked_tip_header.dart';
 
 class SingleBookmarkedTipContent extends StatelessWidget {
   const SingleBookmarkedTipContent({super.key});

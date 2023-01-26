@@ -34,7 +34,9 @@ const String confirmation = "/complete/profile/confirmation";
 const String home = "/home";
 
 // Shop and Products routes
+const String allProducts = "/shop/products/all";
 const String singleProduct = "/shop/products/single";
+const String singleSuggestedProduct = "/shop/products/suggested/single";
 
 // Fashion Tips
 const String singleFashionTip = "/fashion_tips/single";

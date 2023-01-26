@@ -18,7 +18,9 @@ import 'package:sample/screens/completeProfile/confirmation/profile_confirmation
 import 'package:sample/screens/completeProfile/personalDetails/personal_details_screen.dart';
 import 'package:sample/screens/countrySelection/select_country_screen.dart';
 import 'package:sample/screens/fashionTips/singleTip/single_fashion_tip_screen.dart';
-import 'package:sample/screens/shop/singleProduct/single_product_screen.dart';
+import 'package:sample/screens/shop/all_products_screen.dart';
+import 'package:sample/screens/shop/singleSuggestedProduct/single_suggested_product_screen.dart';
+import 'package:sample/screens/shop/single_product_screen.dart';
 import 'package:sample/screens/support/contactUs/contact_us_screen.dart';
 import 'package:sample/screens/support/passwordRecovery/emailMethod/email_method.dart';
 import 'package:sample/screens/support/passwordRecovery/emailVerification/email_verification.dart';
@@ -67,7 +69,11 @@ class RoutesClass {
     GetPage(name: home, page: () => const AppContainer()),
 
     // Shop & Products
+    GetPage(name: allProducts, page: () => const AllProductsScreen()),
     GetPage(name: singleProduct, page: () => const SingleProductScreen()),
+    GetPage(
+        name: singleSuggestedProduct,
+        page: () => const SingleSuggestedProductScreen()),
 
     // Fashion tips
     GetPage(name: singleFashionTip, page: () => const SingleFashionTipScreen()),
