@@ -16,9 +16,9 @@ import 'package:sample/screens/auth/login/login_screen.dart';
 class ResetPasswordContents extends StatelessWidget {
   const ResetPasswordContents({super.key});
 
-  // Reset password controller
+  // Define reset password controller
   static final resetPasswordController = Get.put(ResetPasswordController());
-  // Password visibility controller
+  // Define password visibility controller
   static final passwordController = Get.put(PasswordFiledController());
 
   @override

@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// Other packages
+import 'package:sample/configs/route_names.dart';
 import 'package:sample/packages/horizontal_card_button.dart';
 
 class SettingsMenu extends StatelessWidget {
@@ -33,13 +36,22 @@ class SettingsMenu extends StatelessWidget {
           CardContent(
             "Password recovery",
             CupertinoIcons.lock_rotation,
+            passwordRecovery,
+          ),
+
+          Divider(),
+
+          // Diary settings
+          CardContent(
+            "Diary settings",
+            CupertinoIcons.pencil_ellipsis_rectangle,
             "",
           ),
 
           Divider(),
 
           // Secure code section
-          CardContent("Get secure code", CupertinoIcons.burn, ""),
+          CardContent("Get Secure code", CupertinoIcons.burn, getSecureCode),
 
           Divider(),
 
@@ -47,7 +59,7 @@ class SettingsMenu extends StatelessWidget {
           CardContent(
             "Contact us",
             CupertinoIcons.text_bubble,
-            "",
+            contactUs,
           ),
         ],
       ),

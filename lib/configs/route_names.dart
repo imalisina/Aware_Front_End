@@ -50,3 +50,4 @@ const String singleBookmarkedTip = "/bookmarks/fashion_tips/single";
 
 // Settings routes
 const String settings = "/settings";
+const String getSecureCode = "/settings/secure_code/generate";

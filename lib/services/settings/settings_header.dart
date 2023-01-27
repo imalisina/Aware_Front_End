@@ -1,9 +1,13 @@
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// GetX package
 import 'package:get/get.dart';
-import 'package:sample/configs/theme.dart';
 import 'package:sample/controllers/user/user_controller.dart';
+
+// Other packages
+import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class SettingsHeader extends StatelessWidget {
