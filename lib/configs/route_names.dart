@@ -52,3 +52,4 @@ const String singleBookmarkedTip = "/bookmarks/fashion_tips/single";
 const String settings = "/settings";
 const String getSecureCode = "/settings/secure_code/generate";
 const String resetDiaryPassword = "/settings/diary/password/reset";
+const String locationSettings = "/settings/details/location";
