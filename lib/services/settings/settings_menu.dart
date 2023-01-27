@@ -27,7 +27,7 @@ class SettingsMenu extends StatelessWidget {
           CardContent(
             "Location details",
             CupertinoIcons.placemark,
-            "",
+            locationSettings,
           ),
 
           Divider(),
