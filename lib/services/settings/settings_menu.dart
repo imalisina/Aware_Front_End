@@ -43,9 +43,9 @@ class SettingsMenu extends StatelessWidget {
 
           // Diary settings
           CardContent(
-            "Diary settings",
+            "Reset diary password",
             CupertinoIcons.pencil_ellipsis_rectangle,
-            "",
+            resetDiaryPassword,
           ),
 
           Divider(),

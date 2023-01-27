@@ -19,6 +19,7 @@ import 'package:sample/screens/completeProfile/personalDetails/personal_details_
 import 'package:sample/screens/countrySelection/select_country_screen.dart';
 import 'package:sample/screens/fashionTips/singleTip/single_fashion_tip_screen.dart';
 import 'package:sample/screens/settings/menuScreens/getSecureCode/get_secure_code_screen.dart';
+import 'package:sample/screens/settings/menuScreens/resetDiaryPassword/reset_diary_password_screen.dart';
 import 'package:sample/screens/settings/settings_screen.dart';
 import 'package:sample/screens/shop/all_products_screen.dart';
 import 'package:sample/screens/shop/singleSuggestedProduct/single_suggested_product_screen.dart';
@@ -95,5 +96,6 @@ class RoutesClass {
     // Settings
     GetPage(name: settings, page: () => const SettingsScreen()),
     GetPage(name: getSecureCode, page: () => const GetSecureCodeScreen()),
+    GetPage(name: resetDiaryPassword, page: () => const ResetDiaryPasswordScreen()),
   ];
 }

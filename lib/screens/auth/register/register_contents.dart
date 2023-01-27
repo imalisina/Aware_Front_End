@@ -24,7 +24,7 @@ class RegisterContents extends StatelessWidget {
   // Countries controller
   static final countries = Get.put(SelectCountryController());
   // Password controller
-  static final passwordController = Get.put(PasswordFiledController());
+  static final passwordController = Get.put(PasswordFieldController());
 
   @override
   Widget build(BuildContext context) {

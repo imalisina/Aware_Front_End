@@ -1,23 +1,22 @@
 import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// GetX package
+// GetX packages
 import 'package:get/get.dart';
 import 'package:sample/controllers/auth/password_field_controller.dart';
-import 'package:sample/controllers/passwordRecovery/reset_password_controller.dart';
+import 'package:sample/controllers/diary/diary_password_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/screens/auth/login/login_screen.dart';
 
-class ResetPasswordContents extends StatelessWidget {
-  const ResetPasswordContents({super.key});
+class ResetDiaryPasswordContent extends StatelessWidget {
+  const ResetDiaryPasswordContent({super.key});
 
-  // Define reset password controller
-  static final resetPasswordController = Get.put(ResetPasswordController());
+  // Define diary password controller
+  static final diaryPasswordController = Get.put(DiaryPasswordController());
+
   // Define password visibility controller
   static final passwordController = Get.put(PasswordFieldController());
 
@@ -34,7 +33,7 @@ class ResetPasswordContents extends StatelessWidget {
               () => CupertinoTextField(
                 keyboardType: TextInputType.visiblePassword,
                 onChanged: (value) {
-                  resetPasswordController.storeNewPassword(value);
+                  diaryPasswordController.storeNewPassword(value);
                 },
                 placeholder: "Enter your new password",
                 obscureText: passwordController.isPassword.value,
@@ -55,7 +54,7 @@ class ResetPasswordContents extends StatelessWidget {
                     : const EmptyBox(),
                 textInputAction: TextInputAction.next,
                 prefix: Obx(
-                  () => resetPasswordController.newPassHasError.value
+                  () => diaryPasswordController.newPassHasError.value
                       ? Container(
                           margin: EdgeInsets.only(left: 10.w),
                           child: const Icon(
@@ -72,7 +71,7 @@ class ResetPasswordContents extends StatelessWidget {
 
           // New password error handler widget
           Obx(
-            () => resetPasswordController.newPassHasError.value
+            () => diaryPasswordController.newPassHasError.value
                 ? Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -100,7 +99,7 @@ class ResetPasswordContents extends StatelessWidget {
               () => CupertinoTextField(
                 keyboardType: TextInputType.visiblePassword,
                 onChanged: (value) {
-                  resetPasswordController.storeNewPasswordConfirmation(value);
+                  diaryPasswordController.storeNewPasswordConfirmation(value);
                 },
                 placeholder: "Enter the new password again",
                 obscureText: passwordController.isPassword.value,
@@ -121,7 +120,7 @@ class ResetPasswordContents extends StatelessWidget {
                     : const EmptyBox(),
                 prefix: Obx(
                   () =>
-                      resetPasswordController.newPassConfirmationHasError.value
+                      diaryPasswordController.newPassConfirmationHasError.value
                           ? Container(
                               margin: EdgeInsets.only(left: 10.w),
                               child: const Icon(
@@ -138,7 +137,7 @@ class ResetPasswordContents extends StatelessWidget {
 
           // Password confirmation error handler widget
           Obx(
-            () => resetPasswordController.newPassConfirmationHasError.value
+            () => diaryPasswordController.newPassConfirmationHasError.value
                 ? Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -164,27 +163,27 @@ class ResetPasswordContents extends StatelessWidget {
             width: double.maxFinite,
             child: Obx(
               () => CupertinoButton.filled(
-                child: resetPasswordController.spinnerStatus.value
+                child: diaryPasswordController.spinnerStatus.value
                     ? const CupertinoActivityIndicator(
                         color: BACKGROUND_COLOR,
                       )
                     : const Text("Update"),
                 onPressed: () {
                   // Perform validation process
-                  resetPasswordController.validatePassword();
-                  resetPasswordController.validatePasswordConfirmation();
+                  diaryPasswordController.validatePassword();
+                  diaryPasswordController.validatePasswordConfirmation();
                   // Open redirection gateway
-                  resetPasswordController.setAuthorized();
+                  diaryPasswordController.setAuthorized();
 
-                  // Redirect to success page
-                  if (resetPasswordController.hasPermission.isTrue) {
+                  // Redirect to a previous page
+                  if (diaryPasswordController.hasPermission.isTrue) {
                     // Toggle method to display spinner during API calls
-                    resetPasswordController.toggleLoading();
+                    diaryPasswordController.toggleLoading();
                     Timer(
                       const Duration(seconds: 3),
                       () {
                         // Redirection route
-                        Get.off(const LoginPage());
+                        Get.back();
                       },
                     );
                   }

@@ -24,8 +24,7 @@ class GetSecureCodeContent extends StatelessWidget {
       child: Column(
         children: [
           // Secure Code input
-          Container(
-            color: GHOST_COLOR,
+          SizedBox(
             height: 55.h,
             child: CupertinoTextField(
               // Secure code data

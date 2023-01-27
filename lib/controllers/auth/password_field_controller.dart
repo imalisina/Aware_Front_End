@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class PasswordFiledController extends GetxController {
+class PasswordFieldController extends GetxController {
   var isPassword = true.obs;
   bool secureSection = true;
 
