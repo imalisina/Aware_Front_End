@@ -8,7 +8,10 @@ class User {
       height,
       zipCode,
       address,
-      birthDate;
+      birthDate,
+      secureCode;
+
+  late String? diaryPassword;
 
   late int genderID,
       ethnicityID,
@@ -17,6 +20,8 @@ class User {
       stateID,
       birthDay,
       birthMonth;
+
+  late bool secureDiary;
 
   // Initialize values to each property
   User() {
@@ -36,6 +41,9 @@ class User {
     birthDate = data["birthDate"] as String;
     birthDay = data["birthDay"] as int;
     birthMonth = data["birthMonth"] as int;
+    secureCode = data["secureCode"] as String;
+    secureDiary = data["secureDiary"] as bool;
+    diaryPassword = data["diaryPassword"] as String;
   }
 }
 
@@ -57,4 +65,7 @@ const data = {
   "birthDate": "29/01/1998",
   "birthDay": 29,
   "birthMonth": 01,
+  "secureCode": "19SJ@#o1McID_Ld!3d",
+  "secureDiary": false,
+  "diaryPassword": "123456789password"
 };

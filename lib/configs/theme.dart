@@ -30,6 +30,8 @@ double titleFontSize = 25.0.sp;
 const titleFontWeight = FontWeight.w500;
 const inputPlaceholderStyle =
     TextStyle(color: INPUT_PLACEHOLDER, fontWeight: FontWeight.w300);
+const inputActiveDataPlaceholderStye =
+    TextStyle(color: SECONDARY_COLOR, fontWeight: FontWeight.w500);
 const dropDownStyleDefault = TextStyle(color: PRIMARY_COLOR);
 const dropDownStyleError = TextStyle(color: ERROR_COLOR);
 TextStyle sectionTitle = TextStyle(

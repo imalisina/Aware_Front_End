@@ -18,7 +18,7 @@ class LoginContents extends StatelessWidget {
   const LoginContents({super.key});
 
   // Password controller
-  static final passwordController = Get.put(PasswordFiledController());
+  static final passwordController = Get.put(PasswordFieldController());
   // Input fields controller
   static final loginController = Get.put(LoginController());
 
