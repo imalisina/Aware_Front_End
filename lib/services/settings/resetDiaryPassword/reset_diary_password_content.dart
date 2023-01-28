@@ -9,6 +9,7 @@ import 'package:sample/controllers/diary/diary_password_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class ResetDiaryPasswordContent extends StatelessWidget {
@@ -184,6 +185,9 @@ class ResetDiaryPasswordContent extends StatelessWidget {
                       () {
                         // Redirection route
                         Get.back();
+                        diaryPasswordController.toggleLoading();
+                        showSnackBar(context,
+                            "Diary password has been changed successfully !");
                       },
                     );
                   }

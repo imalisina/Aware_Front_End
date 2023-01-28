@@ -9,6 +9,7 @@ import 'package:sample/controllers/completeProfile/profile_confirmation_controll
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/navbars/navbar_without_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 
@@ -75,6 +76,8 @@ class ProfileConfirmationScreen extends StatelessWidget {
                           const Duration(milliseconds: 150),
                           () {
                             Get.off(const AppContainer());
+                            showSnackBar(context,
+                                "Welcome to Aware, Let's start your digital life !");
                           },
                         );
                       }
@@ -83,7 +86,7 @@ class ProfileConfirmationScreen extends StatelessWidget {
                         ? const CupertinoActivityIndicator(
                             color: BACKGROUND_COLOR,
                           )
-                        : const Text("Explore the Aware"),
+                        : const Text("Explore Aware"),
                   ),
                 ),
               ),

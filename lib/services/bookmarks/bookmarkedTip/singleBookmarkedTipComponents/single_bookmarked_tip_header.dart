@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:like_button/like_button.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -42,6 +43,13 @@ class SingleBookmarkedTipHeader extends StatelessWidget {
                   // Toggle bookmark status and handle operation in controller
                   onTap: (isLiked) async {
                     bookmarkedTipController.toggleBookmark(isLiked);
+                    if (!isLiked) {
+                      showSnackBar(context,
+                          "Fashion tip has been added to your bookmarks !");
+                    } else {
+                      showSnackBar(context,
+                          "Fashion tip has been removed from your bookmarks");
+                    }
                     return bookmarkedTipController.isBookmarked.value;
                   },
                   size: 30.sp,

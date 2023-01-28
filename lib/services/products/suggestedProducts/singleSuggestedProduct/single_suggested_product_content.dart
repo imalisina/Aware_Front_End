@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:like_button/like_button.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:share_plus/share_plus.dart';
 
 // GetX package
@@ -46,6 +47,13 @@ class SingleSuggestedProductContent extends StatelessWidget {
                   // Toggle bookmark status and handle operation in controller
                   onTap: (isLiked) async {
                     suggestedProductController.toggleBookmark(isLiked);
+                    if (!isLiked) {
+                      showSnackBar(context,
+                          "Product has been added to your bookmarks !");
+                    } else {
+                      showSnackBar(context,
+                          "Product has been removed from your bookmarks");
+                    }
                     return suggestedProductController.isBookmarked.value;
                   },
                   size: 30.sp,

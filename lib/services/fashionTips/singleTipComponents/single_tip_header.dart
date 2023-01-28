@@ -8,6 +8,7 @@ import 'package:sample/controllers/fashionTip/fashion_tip_controller.dart';
 
 // Other package
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:sample/configs/constants.dart';
 import 'package:sample/packages/space_box_container.dart';
@@ -41,6 +42,13 @@ class SingleFashionTipHeader extends StatelessWidget {
                   // Toggle bookmark status and handle operation in controller
                   onTap: (isLiked) async {
                     fashionTipController.toggleBookmark(isLiked);
+                    if (!isLiked) {
+                      showSnackBar(context,
+                          "Fashion tip has been added to your bookmarks !");
+                    } else {
+                      showSnackBar(context,
+                          "Fashion tip has been removed from your bookmarks !");
+                    }
                     return fashionTipController.isBookmarked.value;
                   },
                   size: 30.sp,

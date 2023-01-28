@@ -5,7 +5,7 @@ import 'package:sample/controllers/product/products_controller.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
-import 'package:sample/services/products/all_products_list.dart';
+import 'package:sample/services/products/allProducts/all_products_list.dart';
 
 class AllProductsScreen extends StatelessWidget {
   const AllProductsScreen({super.key});

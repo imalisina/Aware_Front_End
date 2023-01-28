@@ -11,6 +11,7 @@ import 'package:sample/controllers/product/suggested_product_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class SingleProductDetail extends StatelessWidget {
@@ -79,6 +80,9 @@ class SingleProductDetail extends StatelessWidget {
                       onPressed: () {
                         FlutterClipboard.copy(productDetail);
                         suggestedProductController.setCopied();
+
+                        showSnackBar(context,
+                            "Discount code has been copied to clipboard !");
 
                         Timer(
                           const Duration(seconds: 1),

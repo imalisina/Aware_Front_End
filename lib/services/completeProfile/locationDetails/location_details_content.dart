@@ -8,8 +8,9 @@ import 'package:sample/controllers/location/location_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/screens/completeProfile/Confirmation/profile_confirmation_screen.dart';
+import 'package:sample/screens/completeProfile/profile_confirmation_screen.dart';
 
 class LocationDetailsContent extends StatelessWidget {
   const LocationDetailsContent({super.key});
@@ -260,6 +261,8 @@ class LocationDetailsContent extends StatelessWidget {
 
                             // Redirection route
                             Get.off(const ProfileConfirmationScreen());
+                            showSnackBar(context,
+                                "Your details has been saved ! Now you can explore Aware");
                           },
                         );
                       }

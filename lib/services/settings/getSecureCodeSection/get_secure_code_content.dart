@@ -9,6 +9,7 @@ import 'package:sample/controllers/user/user_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class GetSecureCodeContent extends StatelessWidget {
@@ -46,7 +47,8 @@ class GetSecureCodeContent extends StatelessWidget {
                 onPressed: () {
                   FlutterClipboard.copy(userController.appUser.secureCode);
                   userController.setCopied();
-
+                  showSnackBar(
+                      context, "Secure code has been copied to clipboard !");
                   Timer(
                     const Duration(seconds: 1),
                     () {
