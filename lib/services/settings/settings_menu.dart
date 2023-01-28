@@ -18,7 +18,7 @@ class SettingsMenu extends StatelessWidget {
             "Personal details",
             // CupertinoIcons.doc_person,
             CupertinoIcons.person_2_square_stack,
-            "",
+            personalSettings,
           ),
 
           Divider(),
