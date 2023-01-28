@@ -10,6 +10,7 @@ import 'package:sample/controllers/passwordRecovery/reset_password_controller.da
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/screens/auth/login_screen.dart';
 
@@ -185,6 +186,9 @@ class ResetPasswordContents extends StatelessWidget {
                       () {
                         // Redirection route
                         Get.off(const LoginScreen());
+                        resetPasswordController.toggleLoading();
+                        showSnackBar(context,
+                            "Password has been changed successfully !");
                       },
                     );
                   }

@@ -10,6 +10,7 @@ import 'package:sample/controllers/passwordRecovery/email_method_controller.dart
 
 // Other package
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class EmailMethodContents extends StatelessWidget {
@@ -94,9 +95,10 @@ class EmailMethodContents extends StatelessWidget {
                       const Duration(seconds: 1),
                       () {
                         // Redirection route
-                        Get.toNamed(
-                            emailVerification);
+                        Get.toNamed(emailVerification);
                         emailMethodController.toggleLoading();
+                        showSnackBar(context,
+                            "A verification code has been sent to your email !");
                       },
                     );
                   }

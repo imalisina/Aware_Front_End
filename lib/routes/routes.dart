@@ -13,7 +13,7 @@ import 'package:sample/screens/bookmarks/bookmarkedProducts/single_bookmarked_pr
 import 'package:sample/screens/bookmarks/bookmarkedTips/bookmarked_tips_screen.dart';
 import 'package:sample/screens/bookmarks/bookmarkedTips/single_bookmarked_tip_screen.dart';
 import 'package:sample/screens/bookmarks/bookmarks_screen.dart';
-import 'package:sample/screens/completeProfile/LocationDetails/location_details_screen.dart';
+import 'package:sample/screens/completeProfile/location_details_screen.dart';
 import 'package:sample/screens/completeProfile/profile_confirmation_screen.dart';
 import 'package:sample/screens/completeProfile/personal_details_screen.dart';
 import 'package:sample/screens/countrySelection/select_country_screen.dart';
@@ -54,7 +54,8 @@ class RoutesClass {
     GetPage(name: passwordRecovery, page: () => const PasswordRecoveryScreen()),
     GetPage(name: secureCode, page: () => const SecureCodeMethodScreen()),
     GetPage(name: emailMethod, page: () => const EmailMethodScreen()),
-    GetPage(name: emailVerification, page: () => const EmailVerificationScreen()),
+    GetPage(
+        name: emailVerification, page: () => const EmailVerificationScreen()),
     GetPage(name: resetPassword, page: () => const ResetPasswordScreen()),
 
     // More details

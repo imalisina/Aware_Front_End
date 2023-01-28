@@ -8,6 +8,7 @@ import 'package:sample/controllers/location/location_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 
 class ValidateLocationDetailsButton extends StatelessWidget {
   const ValidateLocationDetailsButton({super.key});
@@ -44,6 +45,8 @@ class ValidateLocationDetailsButton extends StatelessWidget {
             if (locationController.hasPermission.isTrue) {
               // Togge method to display spinner during API calls
               locationController.toggleLoading();
+              showSnackBar(
+                  context, "Location details has been edited successfully !");
               Timer(
                 const Duration(milliseconds: 500),
                 () {

@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sample/configs/theme.dart';
 import 'package:sample/controllers/contactUs/contact_us_controller.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 
 // Other packages
 import 'package:sample/packages/space_box_container.dart';
@@ -152,6 +153,8 @@ class ContactUsForm extends StatelessWidget {
                       () {
                         // Redirection route
                         Get.back();
+                        showSnackBar(context,
+                            "Your request has been submitted successfully !");
                         contactController.toggleLoading();
                       },
                     );

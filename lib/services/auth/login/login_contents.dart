@@ -12,6 +12,7 @@ import 'package:sample/controllers/auth/login/login_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class LoginContents extends StatelessWidget {
@@ -167,6 +168,7 @@ class LoginContents extends StatelessWidget {
                       () {
                         // Redirection route
                         Get.off(const AppContainer());
+                        showSnackBar(context, "Logged in !");
                       },
                     );
                   }

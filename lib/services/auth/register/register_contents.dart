@@ -12,6 +12,7 @@ import 'package:sample/controllers/location/location_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/services/auth/bottom_help_menu.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/screens/completeProfile/personal_details_screen.dart';
@@ -23,8 +24,8 @@ class RegisterContents extends StatelessWidget {
   static final registerController = Get.put(RegisterController());
 
   // Define location details controller
-  static final locationController = Get.put(LocationController())
-;  // Password controller
+  static final locationController =
+      Get.put(LocationController()); // Password controller
   static final passwordController = Get.put(PasswordFieldController());
 
   @override
@@ -133,7 +134,8 @@ class RegisterContents extends StatelessWidget {
               onChanged: (value) {
                 registerController.storePhoneNumber(value);
               },
-              placeholder: "(+${locationController.selectedCountryCode}) xxx-xxx-xxxx",
+              placeholder:
+                  "(+${locationController.selectedCountryCode}) xxx-xxx-xxxx",
               prefix: Obx(() => registerController.phoneNumberHasError.value
                   ? Container(
                       margin: EdgeInsets.only(left: 10.w),
@@ -272,6 +274,8 @@ class RegisterContents extends StatelessWidget {
                       () {
                         // Redirection route
                         Get.off(const PersonalDetailsScreen());
+                        showSnackBar(context,
+                            "Hey ${registerController.name}, please complete your profile !");
                       },
                     );
                   }

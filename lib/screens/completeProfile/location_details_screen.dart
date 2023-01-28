@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/title_content.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/screens/completeProfile/LocationDetails/location_details_content.dart';
+import 'package:sample/services/completeProfile/locationDetails/location_details_content.dart';
 
 class LocationDetailsScreen extends StatelessWidget {
   const LocationDetailsScreen({super.key});

@@ -10,6 +10,7 @@ import 'package:sample/controllers/dailyQuote/daily_quote_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class DailyQuoteContent extends StatelessWidget {
@@ -81,6 +82,8 @@ class DailyQuoteContent extends StatelessWidget {
                                       const Duration(milliseconds: 150),
                                       () => {
                                         Navigator.of(context).pop(),
+                                        showSnackBar(context,
+                                            "You will get a new daily quote in the next 24 hours.")
                                       },
                                     );
                                   }

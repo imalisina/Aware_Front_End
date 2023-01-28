@@ -6,7 +6,7 @@ import 'package:sample/configs/theme.dart';
 // Snackbar method
 void showSnackBar(BuildContext widgetContext, String snackBarMessage) =>
     Flushbar(
-      duration: const Duration(seconds: 5),
+      duration: const Duration(seconds: 3),
       title: "Aware",
       message: snackBarMessage,
       backgroundColor: PRIMARY_COLOR,

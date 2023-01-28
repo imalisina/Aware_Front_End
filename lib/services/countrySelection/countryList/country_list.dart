@@ -4,13 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
-import 'package:sample/configs/route_names.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/controllers/location/location_controller.dart';
 import 'package:sample/models/countries.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/screens/auth/login_screen.dart';
 
 class CountryList extends StatelessWidget {
   const CountryList({super.key});
@@ -32,7 +33,9 @@ class CountryList extends StatelessWidget {
             // Getting the selected countries ID and store it in the controller
             locationController.setSelectCountry(index);
             Navigator.of(context).pop();
-            Get.toNamed(login);
+            Get.off(const LoginScreen());
+            showSnackBar(context,
+                "${locationController.countryName} selected successfully !");
           },
           child: Column(
             children: [
