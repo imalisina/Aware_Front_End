@@ -19,7 +19,7 @@ class GetSecureCodeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: EdgeInsets.only(left: 30.w, right: 30.w),
       child: Column(
         children: [
@@ -29,7 +29,7 @@ class GetSecureCodeContent extends StatelessWidget {
             child: CupertinoTextField(
               // Secure code data
               placeholder: userController.appUser.secureCode,
-              placeholderStyle: inputActiveDataPlaceholderStye,
+              placeholderStyle: inputActiveDataPlaceholderStyle,
               readOnly: true,
               // Copy to clipboard button as suffix
               suffix: CupertinoButton(

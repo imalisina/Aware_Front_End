@@ -61,9 +61,7 @@ class LocationDetailsContent extends StatelessWidget {
                         )
                       : const EmptyBox(),
                   HorizontalSpaceBox(
-                      locationController.stateHasError.value
-                          ? 4.w
-                          : 0.w),
+                      locationController.stateHasError.value ? 4.w : 0.w),
                   const Text(
                     "State : ",
                     style: TextStyle(color: INPUT_PLACEHOLDER),
@@ -102,8 +100,7 @@ class LocationDetailsContent extends StatelessWidget {
                           itemExtent: 35.h,
                           scrollController: FixedExtentScrollController(),
                           children: List<Widget>.generate(
-                            locationController
-                                .selectedCountryStates.length,
+                            locationController.selectedCountryStates.length,
                             (int index) {
                               return Center(
                                 child: Text(
@@ -114,8 +111,7 @@ class LocationDetailsContent extends StatelessWidget {
                             },
                           ),
                           onSelectedItemChanged: (int value) {
-                            locationController
-                                .storeSelectedStateID(value);
+                            locationController.storeSelectedStateID(value);
                           },
                         ),
                       ),
@@ -136,7 +132,7 @@ class LocationDetailsContent extends StatelessWidget {
               onChanged: (value) {
                 locationController.storeZipCode(value);
               },
-              placeholder: "Enter your ZIP / Postal code",
+              placeholder: "Enter your ZIP code",
               prefix: Obx(
                 () => locationController.zipHasError.value
                     ? Container(
