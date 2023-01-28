@@ -1,12 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-// GetX package
-import 'package:get/get.dart';
 
 // Other packages
-import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/screens/appDetails/app_details_menu.dart';
 import 'package:sample/packages/space_box_container.dart';
