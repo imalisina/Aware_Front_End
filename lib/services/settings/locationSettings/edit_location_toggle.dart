@@ -1,10 +1,12 @@
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// GetX package
 import 'package:get/get.dart';
-import 'package:like_button/like_button.dart';
-import 'package:sample/configs/theme.dart';
 import 'package:sample/controllers/location/location_controller.dart';
+
+// Other packages
+import 'package:sample/configs/theme.dart';
 
 class EditLocationToggle extends StatelessWidget {
   const EditLocationToggle({super.key});
@@ -17,47 +19,21 @@ class EditLocationToggle extends StatelessWidget {
     return Container(
       width: double.maxFinite,
       alignment: Alignment.centerRight,
-      child: Obx(
-        () => SizedBox(
-          width: 60.w,
-          height: 60.h,
-          child: LikeButton(
-            // Button animation styles
-            circleColor: const CircleColor(start: MAIN_COLOR, end: GHOST_COLOR),
-            bubblesColor: const BubblesColor(
-              dotPrimaryColor: MAIN_COLOR,
-              dotSecondaryColor: PRIMARY_COLOR,
-              dotThirdColor: PRIMARY_COLOR,
-              dotLastColor: PRIMARY_COLOR,
-            ),
-            // Toggle like status and handle operation in controller
-            onTap: (isLiked) async {
-              locationController.toggleReadOnly();
-              if (!isLiked) {
-                // Handle storing operation
-              }
-              return locationController.isReadOnly.value;
-            },
+      child: Container(
+        alignment: Alignment.centerRight,
+        width: 100.w,
+        child: CupertinoButton.filled(
+          padding:
+              EdgeInsets.only(left: 40.w, right: 40.w, top: 10.h, bottom: 10.h),
+          borderRadius: BorderRadius.circular(40.r),
+          child: Icon(
+            CupertinoIcons.pen,
+            color: BACKGROUND_COLOR,
             size: 30.sp,
-            isLiked: locationController.isReadOnly.value,
-            likeBuilder: (isLiked) {
-              return DottedBorder(
-                borderType: BorderType.RRect,
-                borderPadding: EdgeInsets.only(
-                    left: 40.w, right: 40.w, bottom: 40.h, top: 44.h),
-                radius: Radius.circular(5.r),
-                strokeWidth: 2,
-                // Toggle color values based on isReadOnly status
-                color: isLiked ? INPUT_PLACEHOLDER : MAIN_COLOR,
-                dashPattern: const [5, 2],
-                child: Icon(
-                  isLiked ? CupertinoIcons.pen : CupertinoIcons.floppy_disk,
-                  color: isLiked ? INPUT_PLACEHOLDER : MAIN_COLOR,
-                  size: 30.sp,
-                ),
-              );
-            },
           ),
+          onPressed: () {
+            locationController.toggleReadOnly();
+          },
         ),
       ),
     );

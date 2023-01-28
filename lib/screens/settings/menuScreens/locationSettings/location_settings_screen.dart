@@ -7,12 +7,15 @@ import 'package:get/get.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/controllers/location/location_controller.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
 import 'package:sample/services/settings/locationSettings/location_settings_content.dart';
 
 class LocationSettingsScreen extends StatelessWidget {
   const LocationSettingsScreen({super.key});
+
+  static final locationController = Get.put(LocationController());
 
   @override
   Widget build(BuildContext context) {
