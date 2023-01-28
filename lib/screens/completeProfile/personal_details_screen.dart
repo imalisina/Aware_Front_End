@@ -2,21 +2,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
-import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 
 // Other packages
-import 'package:sample/services/support/contactUs/contact_us_form.dart';
+import 'package:sample/packages/navbars/navbar_without_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
+import 'package:sample/services/completeProfile/personalDetails/personal_details_content.dart';
 
-class ContactUsScreen extends StatelessWidget {
-  const ContactUsScreen({super.key});
+class PersonalDetailsScreen extends StatelessWidget {
+  const PersonalDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: CupertinoPageScaffold(
-        navigationBar: navbarWithBackButton,
+        navigationBar: navbarWithoutBackButton,
         child: SizedBox(
           child: SingleChildScrollView(
             child: Column(
@@ -26,12 +26,12 @@ class ContactUsScreen extends StatelessWidget {
 
                 // Title and sub-title
                 const TitleContent(
-                    "Contact Us", "Describe your problem to our team"),
+                    "Complete profile", "Enter your personal details"),
 
-                VerticalSpaceBox(30.h),
+                VerticalSpaceBox(40.h),
 
-                // Contact us input fields and button
-                const ContactUsForm(),
+                // Personal details input fields
+                const PersonalDetailsContent(),
               ],
             ),
           ),

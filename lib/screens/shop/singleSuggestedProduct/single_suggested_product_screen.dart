@@ -1,12 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 // Other packages
-import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/suggestedProducts/singleSuggestedProduct/single_suggested_product_content.dart';
+import 'package:sample/services/products/suggestedProducts/singleSuggestedProduct/single_suggested_product_content.dart';
 
 class SingleSuggestedProductScreen extends StatelessWidget {
   const SingleSuggestedProductScreen({super.key});

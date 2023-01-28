@@ -1,20 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// Other packages
-import 'package:sample/packages/navbars/navbar_without_back_button.dart';
+// GetX package
+
+// Other package
+import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
-import 'package:sample/services/support/passwordRecovery/resetPassword/reset_password_contents.dart';
+import 'package:sample/services/support/passwordRecovery/emailVerification/email_verification_contents.dart';
 
-class ResetPasswordScreen extends StatelessWidget {
-  const ResetPasswordScreen({super.key});
+class EmailVerificationScreen extends StatelessWidget {
+  const EmailVerificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: CupertinoPageScaffold(
-        navigationBar: navbarWithoutBackButton,
+        navigationBar: navbarWithBackButton,
         child: SizedBox(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,12 +25,12 @@ class ResetPasswordScreen extends StatelessWidget {
 
               // Title and sub-title
               const TitleContent(
-                  "Reset password", "Now you can change your password !"),
+                  "Verification", "Please enter the code sent to your email"),
 
               VerticalSpaceBox(40.h),
 
-              // Reset password input fields and button
-              const ResetPasswordContents(),
+              // Verification input field and button
+              const EmailVerificationContents(),
             ],
           ),
         ),

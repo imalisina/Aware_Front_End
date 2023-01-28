@@ -1,11 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:sample/configs/theme.dart';
 import 'package:sample/controllers/product/products_controller.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
-import 'package:sample/packages/navbars/navbar_without_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
 import 'package:sample/services/products/all_products_list.dart';
