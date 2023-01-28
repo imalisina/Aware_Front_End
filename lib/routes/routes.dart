@@ -26,11 +26,11 @@ import 'package:sample/screens/shop/all_products_screen.dart';
 import 'package:sample/screens/shop/singleSuggestedProduct/single_suggested_product_screen.dart';
 import 'package:sample/screens/shop/single_product_screen.dart';
 import 'package:sample/screens/support/contactUs/contact_us_screen.dart';
-import 'package:sample/screens/support/passwordRecovery/emailMethod/email_method.dart';
-import 'package:sample/screens/support/passwordRecovery/emailVerification/email_verification.dart';
+import 'package:sample/screens/support/passwordRecovery/emailMethod/email_method_screen.dart';
+import 'package:sample/screens/support/passwordRecovery/emailVerification/email_verification_screen.dart';
 import 'package:sample/screens/support/passwordRecovery/password_recovery_screen.dart';
 import 'package:sample/screens/support/passwordRecovery/resetPassword/reset_password_screen.dart';
-import 'package:sample/screens/support/passwordRecovery/secureCodeMethod/secure_code_method.dart';
+import 'package:sample/screens/support/passwordRecovery/secureCodeMethod/secure_code_method_screen.dart';
 import 'package:sample/screens/support/support_screen.dart';
 import 'package:sample/screens/welcome/welcome_screen.dart';
 import 'package:sample/screens/bookmarks/bookmarkedProducts/bookmarked_products_screen.dart';
@@ -52,9 +52,9 @@ class RoutesClass {
     GetPage(name: supportMenu, page: () => const SupportScreen()),
     GetPage(name: contactUs, page: () => const ContactUsScreen()),
     GetPage(name: passwordRecovery, page: () => const PasswordRecoveryScreen()),
-    GetPage(name: secureCode, page: () => const SecureCodeMethod()),
-    GetPage(name: emailMethod, page: () => const EmailMethod()),
-    GetPage(name: emailVerification, page: () => const EmailVerification()),
+    GetPage(name: secureCode, page: () => const SecureCodeMethodScreen()),
+    GetPage(name: emailMethod, page: () => const EmailMethodScreen()),
+    GetPage(name: emailVerification, page: () => const EmailVerificationScreen()),
     GetPage(name: resetPassword, page: () => const ResetPasswordScreen()),
 
     // More details

@@ -5,10 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
-import 'package:sample/screens/support/passwordRecovery/secureCodeMethod/secure_code_contents.dart';
+import 'package:sample/services/support/passwordRecovery/secureCodeMethod/secure_code_contents.dart';
 
-class SecureCodeMethod extends StatelessWidget {
-  const SecureCodeMethod({super.key});
+class SecureCodeMethodScreen extends StatelessWidget {
+  const SecureCodeMethodScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

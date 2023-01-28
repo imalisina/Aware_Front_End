@@ -3,14 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 
-// Other packages
+// Other package
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
-import 'package:sample/screens/support/passwordRecovery/emailMethod/email_method_contents.dart';
+import 'package:sample/services/support/passwordRecovery/emailVerification/email_verification_contents.dart';
 
-class EmailMethod extends StatelessWidget {
-  const EmailMethod({super.key});
+class EmailVerificationScreen extends StatelessWidget {
+  const EmailVerificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +24,13 @@ class EmailMethod extends StatelessWidget {
               VerticalSpaceBox(50.h),
 
               // Title and sub-title
-              const TitleContent("Email", "Please enter your account's email"),
+              const TitleContent(
+                  "Verification", "Please enter the code sent to your email"),
 
               VerticalSpaceBox(40.h),
 
-              // Email input field and button
-              const EmailMethodContents(),
+              // Verification input field and button
+              const EmailVerificationContents(),
             ],
           ),
         ),
