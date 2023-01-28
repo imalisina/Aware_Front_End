@@ -1,32 +1,18 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 // Other packages
-import 'package:sample/configs/theme.dart';
-import 'package:sample/screens/countrySelection/country_selection_content.dart';
+import 'package:sample/packages/navbars/navbar_without_back_button.dart';
+import 'package:sample/services/countrySelection/country_selection_content.dart';
 
 // Country selection page container
-class SelectCountry extends StatelessWidget {
-  const SelectCountry({super.key});
+class SelectCountryScreen extends StatelessWidget {
+  const SelectCountryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          backgroundColor: BACKGROUND_COLOR,
-          automaticallyImplyLeading: disableBackButton,
-          border: navigationBorder,
-          padding: EdgeInsetsDirectional.only(top: 9.0.h),
-          middle: Text(
-            titleText,
-            style: GoogleFonts.pacifico(
-                color: MAIN_COLOR,
-                fontSize: titleFontSize,
-                fontWeight: titleFontWeight),
-          ),
-        ),
+        navigationBar: navbarWithoutBackButton,
         child: const CountrySelectionContent(),
       ),
     );

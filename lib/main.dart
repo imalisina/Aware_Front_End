@@ -33,9 +33,9 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Aware',
           // Check whether user is authenticated or not
-          home: !mainController.isAuthenticated.isFalse
+          home: mainController.isAuthenticated.isFalse
               ? const AppContainer()
-              : const WelcomePage(),
+              : const WelcomeScreen(),
         ),
       ),
       // Setting the design size

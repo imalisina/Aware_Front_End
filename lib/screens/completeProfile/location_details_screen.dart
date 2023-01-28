@@ -1,20 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// GetX packages
-import 'package:get/get.dart';
+// GetX package
 
 // Other packages
-import 'package:sample/controllers/location/location_controller.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
-import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
-import 'package:sample/services/settings/locationSettings/location_settings_content.dart';
+import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/screens/completeProfile/LocationDetails/location_details_content.dart';
 
-class LocationSettingsScreen extends StatelessWidget {
-  const LocationSettingsScreen({super.key});
-
-  static final locationController = Get.put(LocationController());
+class LocationDetailsScreen extends StatelessWidget {
+  const LocationDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,13 +25,13 @@ class LocationSettingsScreen extends StatelessWidget {
                 VerticalSpaceBox(50.h),
 
                 // Title and sub-title
-                const TitleContent("Location details",
-                    "Check and edit your location details !"),
+                const TitleContent(
+                    "Complete profile", "Enter your location details"),
 
-                VerticalSpaceBox(20.h),
+                VerticalSpaceBox(40.h),
 
-                // Location settings content
-                const LocationSettingsContent(),
+                // Location details input fields
+                const LocationDetailsContent(),
               ],
             ),
           ),
