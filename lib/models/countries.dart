@@ -5357,7 +5357,6 @@ const data = [
       "West Virginia",
       "Mississippi",
       "Northern Mariana Islands",
-      "United States Minor Outlying Islands",
       "Massachusetts",
       "Arizona",
       "Connecticut",

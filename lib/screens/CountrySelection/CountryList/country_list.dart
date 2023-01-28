@@ -5,18 +5,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // GetX package
 import 'package:get/get.dart';
 import 'package:sample/configs/route_names.dart';
-import 'package:sample/controllers/countrySelection/select_country_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/controllers/location/location_controller.dart';
 import 'package:sample/models/countries.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class CountryList extends StatelessWidget {
   const CountryList({super.key});
 
-  // Get countries state from GetX
-  static final countryController = Get.put(SelectCountryController());
+  // Define location details controller
+  static final locationController = Get.put(LocationController());
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class CountryList extends StatelessWidget {
               EdgeInsets.only(left: 15.w, right: 15.w, bottom: 6.h, top: 3.h),
           onPressed: () {
             // Getting the selected countries ID and store it in the controller
-            countryController.setSelectCountry(index);
+            locationController.setSelectCountry(index);
             Navigator.of(context).pop();
             Get.toNamed(login);
           },
