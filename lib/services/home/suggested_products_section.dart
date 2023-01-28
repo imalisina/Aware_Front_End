@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/suggestedProducts/suggested_products_list.dart';
+import 'package:sample/services/products/suggestedProducts/suggested_products_list.dart';
 
 class SuggestedProductsSection extends StatelessWidget {
   const SuggestedProductsSection({super.key});

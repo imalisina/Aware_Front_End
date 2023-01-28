@@ -11,7 +11,7 @@ import 'package:sample/controllers/passwordRecovery/reset_password_controller.da
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/screens/auth/login/login_screen.dart';
+import 'package:sample/screens/auth/login_screen.dart';
 
 class ResetPasswordContents extends StatelessWidget {
   const ResetPasswordContents({super.key});
@@ -184,7 +184,7 @@ class ResetPasswordContents extends StatelessWidget {
                       const Duration(seconds: 3),
                       () {
                         // Redirection route
-                        Get.off(const LoginPage());
+                        Get.off(const LoginScreen());
                       },
                     );
                   }

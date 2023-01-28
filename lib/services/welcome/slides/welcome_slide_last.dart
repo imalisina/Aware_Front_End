@@ -6,8 +6,8 @@ import 'package:sample/packages/slide_text_content.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 // Last introduction slide
-class IntroductionSlideLast extends StatelessWidget {
-  const IntroductionSlideLast({super.key});
+class WelcomeSlideLast extends StatelessWidget {
+  const WelcomeSlideLast({super.key});
 
   @override
   Widget build(BuildContext context) {

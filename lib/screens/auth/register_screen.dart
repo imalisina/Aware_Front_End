@@ -1,22 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// GetX package
-
 // Other packages
-import 'package:sample/packages/navbars/navbar_without_back_button.dart';
-import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/title_content.dart';
-import 'package:sample/screens/completeProfile/personalDetails/personal_details_content.dart';
+import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/services/auth/register/register_contents.dart';
 
-class PersonalDetailsScreen extends StatelessWidget {
-  const PersonalDetailsScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: CupertinoPageScaffold(
-        navigationBar: navbarWithoutBackButton,
+        navigationBar: navbarWithBackButton,
         child: SizedBox(
           child: SingleChildScrollView(
             child: Column(
@@ -26,12 +24,12 @@ class PersonalDetailsScreen extends StatelessWidget {
 
                 // Title and sub-title
                 const TitleContent(
-                    "Complete profile", "Enter your personal details"),
+                    "Sign up", "Join to Aware by creating a new account !"),
 
                 VerticalSpaceBox(40.h),
 
-                // Personal details input fields
-                const PersonalDetailsContent(),
+                // Register input fields and button
+                const RegisterContents(),
               ],
             ),
           ),

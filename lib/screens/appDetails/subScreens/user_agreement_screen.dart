@@ -8,8 +8,8 @@ import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
 
-class PrivacyPolicy extends StatelessWidget {
-  const PrivacyPolicy({super.key});
+class UserAgreementScreen extends StatelessWidget {
+  const UserAgreementScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +23,15 @@ class PrivacyPolicy extends StatelessWidget {
             VerticalSpaceBox(50.h),
 
             // Title and sub-title
-            const TitleContent("Privacy policy", "Check Aware's privacy policy"),
+            const TitleContent(
+                "User agreement", "You can check our user agreement"),
 
             VerticalSpaceBox(40.h),
 
             // Main content
             Container(
               margin: EdgeInsets.only(left: 30.w, right: 30.w),
-              child: const Text("PUT REAL PRIVACY POLICY"),
+              child: const Text("PUT REAL USER AGREEMENT"),
             )
           ],
         ),

@@ -11,11 +11,11 @@ import 'package:sample/controllers/welcome/welcome_controller.dart';
 import 'package:sample/configs/theme.dart';
 
 // Introduction slide bullets
-class IntroductionStepper extends StatelessWidget {
+class WelcomeStepper extends StatelessWidget {
   // Getting slide controller
   final PageController slideController;
   // ignore: use_key_in_widget_constructors
-  const IntroductionStepper(this.slideController);
+  const WelcomeStepper(this.slideController);
 
   // Getting the welcomePageController
   static final welcomeController = Get.put(WelcomePageController());

@@ -12,9 +12,9 @@ import 'package:sample/controllers/location/location_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
-import 'package:sample/screens/auth/bottom_help_menu.dart';
+import 'package:sample/services/auth/bottom_help_menu.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/screens/completeProfile/personalDetails/personal_details_screen.dart';
+import 'package:sample/screens/completeProfile/personal_details_screen.dart';
 
 class RegisterContents extends StatelessWidget {
   const RegisterContents({super.key});

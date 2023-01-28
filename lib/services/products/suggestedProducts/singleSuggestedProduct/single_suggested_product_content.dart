@@ -11,8 +11,8 @@ import 'package:sample/controllers/product/suggested_product_controller.dart';
 import 'package:sample/configs/constants.dart';
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/singleProduct/bottom_checkout_bar.dart';
-import 'package:sample/services/singleProduct/single_product_detail.dart';
+import 'package:sample/services/products/singleProduct/bottom_checkout_bar.dart';
+import 'package:sample/services/products/singleProduct/single_product_detail.dart';
 
 class SingleSuggestedProductContent extends StatelessWidget {
   const SingleSuggestedProductContent({super.key});

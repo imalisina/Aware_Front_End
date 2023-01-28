@@ -8,8 +8,8 @@ import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
 
-class TermsOfUse extends StatelessWidget {
-  const TermsOfUse({super.key});
+class TermsOfUseScreen extends StatelessWidget {
+  const TermsOfUseScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

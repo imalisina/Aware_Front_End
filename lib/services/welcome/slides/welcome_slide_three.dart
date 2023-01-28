@@ -5,9 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/packages/slide_text_content.dart';
 import 'package:sample/packages/space_box_container.dart';
 
-// Introduction slide one
-class IntroductionSlideOne extends StatelessWidget {
-  const IntroductionSlideOne({super.key});
+// Introduction slide three
+class WelcomeSlideThree extends StatelessWidget {
+  const WelcomeSlideThree({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,21 +15,15 @@ class IntroductionSlideOne extends StatelessWidget {
       height: double.maxFinite,
       child: Column(
         children: [
-
-          VerticalSpaceBox(70.h),
-          
-          // Slide one image
+          VerticalSpaceBox(50.h),
           Image.asset(
-            "assets/images/first_slide.gif",
+            "assets/images/third_slide.gif",
             width: 350.w,
             height: 350.h,
           ),
-
           VerticalSpaceBox(20.h),
-          
-          // Title and sub-title
-          const TextSlogan("Save Your Time",
-              "Aware generates special outfit combos based on your closet for each occasion, people, etc. as fast and best as possible !")
+          const TextSlogan("Save Your Memories",
+              "Write your memories and store them on free and unlimited storage provided by Aware !")
         ],
       ),
     );
