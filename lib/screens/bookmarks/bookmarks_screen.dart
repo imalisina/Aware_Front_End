@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
-import 'package:sample/services/bookmarks/bookmarks_menu.dart';
+import 'package:sample/components/bookmarks/bookmarks_menu.dart';
 
 class BookmarksScreen extends StatelessWidget {
   const BookmarksScreen({super.key});

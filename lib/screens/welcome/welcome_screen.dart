@@ -5,11 +5,11 @@ import 'package:get/get.dart';
 import 'package:sample/controllers/welcome/welcome_controller.dart';
 
 // Other packages
-import 'package:sample/services/welcome/welcome_stepper.dart';
-import 'package:sample/services/welcome/slides/welcome_slide_last.dart';
-import 'package:sample/services/welcome/slides/welcome_slide_one.dart';
-import 'package:sample/services/welcome/slides/welcome_slide_three.dart';
-import 'package:sample/services/welcome/slides/welcome_slide_two.dart';
+import 'package:sample/components/welcome/welcome_stepper.dart';
+import 'package:sample/components/welcome/slides/welcome_slide_last.dart';
+import 'package:sample/components/welcome/slides/welcome_slide_one.dart';
+import 'package:sample/components/welcome/slides/welcome_slide_three.dart';
+import 'package:sample/components/welcome/slides/welcome_slide_two.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});

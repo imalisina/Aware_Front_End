@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
-import 'package:sample/services/support/support_menu.dart';
+import 'package:sample/components/support/support_menu.dart';
 
 class SupportScreen extends StatelessWidget {
   const SupportScreen({super.key});

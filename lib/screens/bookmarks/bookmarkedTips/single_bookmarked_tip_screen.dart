@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // Other packages
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/bookmarks/bookmarkedTip/single_bookmarked_tip_content.dart';
+import 'package:sample/components/bookmarks/bookmarkedTip/single_bookmarked_tip_content.dart';
 
 class SingleBookmarkedTipScreen extends StatelessWidget {
   const SingleBookmarkedTipScreen({super.key});

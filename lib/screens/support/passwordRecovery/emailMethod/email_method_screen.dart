@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
-import 'package:sample/services/support/passwordRecovery/emailMethod/email_method_contents.dart';
+import 'package:sample/components/support/passwordRecovery/emailMethod/email_method_contents.dart';
 
 class EmailMethodScreen extends StatelessWidget {
   const EmailMethodScreen({super.key});

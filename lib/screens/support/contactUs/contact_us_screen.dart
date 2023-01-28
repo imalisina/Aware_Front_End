@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 
 // Other packages
-import 'package:sample/services/support/contactUs/contact_us_form.dart';
+import 'package:sample/components/support/contactUs/contact_us_form.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
 

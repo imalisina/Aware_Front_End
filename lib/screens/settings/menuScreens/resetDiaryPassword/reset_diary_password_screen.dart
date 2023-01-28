@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/title_content.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/settings/resetDiaryPassword/reset_diary_password_content.dart';
+import 'package:sample/components/settings/resetDiaryPassword/reset_diary_password_content.dart';
 
 class ResetDiaryPasswordScreen extends StatelessWidget {
   const ResetDiaryPasswordScreen({super.key});
