@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 // GetX package
-import 'package:get/get.dart';
-import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 
 // Other packages
 import 'package:sample/screens/support/contactUs/contact_us_form.dart';
@@ -18,29 +16,7 @@ class ContactUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          backgroundColor: BACKGROUND_COLOR,
-          automaticallyImplyLeading: !disableBackButton,
-          leading: CupertinoButton(
-            padding: EdgeInsets.zero,
-            child: Container(
-              margin: EdgeInsets.only(top: 10.h),
-              child: const Icon(CupertinoIcons.chevron_left),
-            ),
-            onPressed: () {
-              Get.back();
-            },
-          ),
-          border: navigationBorder,
-          padding: EdgeInsetsDirectional.only(top: 9.h),
-          middle: Text(
-            titleText,
-            style: GoogleFonts.pacifico(
-                color: MAIN_COLOR,
-                fontSize: titleFontSize,
-                fontWeight: titleFontWeight),
-          ),
-        ),
+        navigationBar: navbarWithBackButton,
         child: SizedBox(
           child: SingleChildScrollView(
             child: Column(

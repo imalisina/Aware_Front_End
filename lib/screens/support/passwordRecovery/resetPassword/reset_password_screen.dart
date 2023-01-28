@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/navbars/navbar_without_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
 import 'package:sample/screens/support/passwordRecovery/resetPassword/reset_password_contents.dart';
@@ -15,19 +16,7 @@ class ResetPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          backgroundColor: BACKGROUND_COLOR,
-          automaticallyImplyLeading: disableBackButton,
-          border: navigationBorder,
-          padding: EdgeInsetsDirectional.only(top: 9.h),
-          middle: Text(
-            titleText,
-            style: GoogleFonts.pacifico(
-                color: MAIN_COLOR,
-                fontSize: titleFontSize,
-                fontWeight: titleFontWeight),
-          ),
-        ),
+        navigationBar: navbarWithoutBackButton,
         child: SizedBox(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

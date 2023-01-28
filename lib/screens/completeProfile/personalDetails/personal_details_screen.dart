@@ -7,6 +7,8 @@ import 'package:get/get.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/navbars/navbar_with_back_button.dart';
+import 'package:sample/packages/navbars/navbar_without_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
 import 'package:sample/screens/completeProfile/personalDetails/personal_details_content.dart';
@@ -18,29 +20,7 @@ class PersonalDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          backgroundColor: BACKGROUND_COLOR,
-          automaticallyImplyLeading: !disableBackButton,
-          leading: CupertinoButton(
-            padding: EdgeInsets.zero,
-            child: Container(
-              margin: EdgeInsets.only(top: 10.h),
-              child: const Icon(CupertinoIcons.chevron_left),
-            ),
-            onPressed: () {
-              Get.back();
-            },
-          ),
-          border: navigationBorder,
-          padding: EdgeInsetsDirectional.only(top: 9.h),
-          middle: Text(
-            titleText,
-            style: GoogleFonts.pacifico(
-                color: MAIN_COLOR,
-                fontSize: titleFontSize,
-                fontWeight: titleFontWeight),
-          ),
-        ),
+        navigationBar: navbarWithoutBackButton,
         child: SizedBox(
           child: SingleChildScrollView(
             child: Column(

@@ -10,6 +10,7 @@ import 'package:sample/controllers/completeProfile/profile_confirmation_controll
 
 // Other packages
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/navbars/navbar_without_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class ProfileConfirmationScreen extends StatelessWidget {
@@ -23,19 +24,7 @@ class ProfileConfirmationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: CupertinoPageScaffold(
-        navigationBar: CupertinoNavigationBar(
-          backgroundColor: BACKGROUND_COLOR,
-          automaticallyImplyLeading: disableBackButton,
-          border: navigationBorder,
-          padding: EdgeInsetsDirectional.only(top: 9.h),
-          middle: Text(
-            titleText,
-            style: GoogleFonts.pacifico(
-                color: MAIN_COLOR,
-                fontSize: titleFontSize,
-                fontWeight: titleFontWeight),
-          ),
-        ),
+        navigationBar: navbarWithoutBackButton,
         child: SizedBox(
           width: double.maxFinite,
           child: Column(
