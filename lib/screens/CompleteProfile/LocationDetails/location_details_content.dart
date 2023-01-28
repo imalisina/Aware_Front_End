@@ -4,21 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
-import 'package:sample/screens/completeProfile/Confirmation/profile_confirmation_screen.dart';
-import 'package:sample/controllers/countrySelection/select_country_controller.dart';
-import 'package:sample/controllers/completeProfile/location_details_controller.dart';
+import 'package:sample/controllers/location/location_controller.dart';
 
-// Other package
+// Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/screens/completeProfile/Confirmation/profile_confirmation_screen.dart';
 
 class LocationDetailsContent extends StatelessWidget {
   const LocationDetailsContent({super.key});
 
-  // Define selected country controller
-  static final selectedCountry = Get.put(SelectCountryController());
   // Define location details controller
-  static final locationDetailsController = Get.put(LocationDetailsController());
+  static final locationController = Get.put(LocationController());
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +38,7 @@ class LocationDetailsContent extends StatelessWidget {
                     children: [
                       Text(
                         style: dropDownStyleDefault,
-                        selectedCountry.selectedCountryName,
+                        locationController.selectedCountryName,
                       )
                     ],
                   ),
@@ -57,14 +54,14 @@ class LocationDetailsContent extends StatelessWidget {
             child: Obx(
               () => Row(
                 children: [
-                  locationDetailsController.stateHasError.value
+                  locationController.stateHasError.value
                       ? const Icon(
                           CupertinoIcons.clear_circled_solid,
                           color: ERROR_COLOR,
                         )
                       : const EmptyBox(),
                   HorizontalSpaceBox(
-                      locationDetailsController.stateHasError.value
+                      locationController.stateHasError.value
                           ? 4.w
                           : 0.w),
                   const Text(
@@ -76,18 +73,18 @@ class LocationDetailsContent extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          style: locationDetailsController.stateHasError.value
+                          style: locationController.stateHasError.value
                               ? dropDownStyleError
                               : dropDownStyleDefault,
-                          !locationDetailsController.isStateSelected.value
+                          !locationController.isStateSelected.value
                               ? "Select your state"
-                              : locationDetailsController.stateName.value,
+                              : locationController.stateName.value,
                         ),
                         HorizontalSpaceBox(7.w),
                         Icon(
                           CupertinoIcons.chevron_down,
                           size: 21.sp,
-                          color: locationDetailsController.stateHasError.value
+                          color: locationController.stateHasError.value
                               ? ERROR_COLOR
                               : PRIMARY_COLOR,
                         ),
@@ -105,17 +102,19 @@ class LocationDetailsContent extends StatelessWidget {
                           itemExtent: 35.h,
                           scrollController: FixedExtentScrollController(),
                           children: List<Widget>.generate(
-                            selectedCountry.selectedCountryStates.length,
+                            locationController
+                                .selectedCountryStates.length,
                             (int index) {
                               return Center(
                                 child: Text(
-                                  selectedCountry.selectedCountryStates[index],
+                                  locationController
+                                      .selectedCountryStates[index],
                                 ),
                               );
                             },
                           ),
                           onSelectedItemChanged: (int value) {
-                            locationDetailsController
+                            locationController
                                 .storeSelectedStateID(value);
                           },
                         ),
@@ -135,11 +134,11 @@ class LocationDetailsContent extends StatelessWidget {
             child: CupertinoTextField(
               keyboardType: TextInputType.number,
               onChanged: (value) {
-                locationDetailsController.storeZipCode(value);
+                locationController.storeZipCode(value);
               },
               placeholder: "Enter your ZIP / Postal code",
               prefix: Obx(
-                () => locationDetailsController.zipHasError.value
+                () => locationController.zipHasError.value
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
                         child: const Icon(
@@ -155,7 +154,7 @@ class LocationDetailsContent extends StatelessWidget {
           ),
 
           Obx(
-            () => locationDetailsController.zipHasError.value
+            () => locationController.zipHasError.value
                 ? Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -182,11 +181,11 @@ class LocationDetailsContent extends StatelessWidget {
             child: CupertinoTextField(
               keyboardType: TextInputType.text,
               onSubmitted: (value) {
-                locationDetailsController.storeAddress(value);
+                locationController.storeAddress(value);
               },
               placeholder: "Enter your home address",
               prefix: Obx(
-                () => locationDetailsController.addressHasError.value
+                () => locationController.addressHasError.value
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
                         child: const Icon(
@@ -203,7 +202,7 @@ class LocationDetailsContent extends StatelessWidget {
           ),
 
           // Address error handler widget
-          Obx(() => locationDetailsController.addressHasError.value
+          Obx(() => locationController.addressHasError.value
               ? Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -241,27 +240,27 @@ class LocationDetailsContent extends StatelessWidget {
                 width: 170.w,
                 child: Obx(
                   () => CupertinoButton.filled(
-                    child: locationDetailsController.spinnerStatus.value
+                    child: locationController.spinnerStatus.value
                         ? const CupertinoActivityIndicator(
                             color: BACKGROUND_COLOR,
                           )
                         : const Text("Next"),
                     onPressed: () {
                       // Perform validation process
-                      locationDetailsController.validateState();
-                      locationDetailsController.validateZipCode();
-                      locationDetailsController.validateAddress();
+                      locationController.validateState();
+                      locationController.validateZipCode();
+                      locationController.validateAddress();
                       // Open redirection gateway
-                      locationDetailsController.setAuthorized();
+                      locationController.setAuthorized();
 
                       // Redirect to profile confirmation screen
-                      if (locationDetailsController.hasPermission.isTrue) {
+                      if (locationController.hasPermission.isTrue) {
                         // Togge method to display spinner during API calls
-                        locationDetailsController.toggleLoading();
+                        locationController.toggleLoading();
                         Timer(
                           const Duration(seconds: 1),
                           () {
-                            locationDetailsController.toggleLoading();
+                            locationController.toggleLoading();
 
                             // Redirection route
                             Get.off(const ProfileConfirmationScreen());

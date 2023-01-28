@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 import 'package:sample/configs/route_names.dart';
 import 'package:sample/controllers/auth/password_field_controller.dart';
 import 'package:sample/controllers/auth/register/register_controller.dart';
-import 'package:sample/controllers/countrySelection/select_country_controller.dart';
+import 'package:sample/controllers/location/location_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
@@ -21,9 +21,10 @@ class RegisterContents extends StatelessWidget {
 
   // Input fields controller
   static final registerController = Get.put(RegisterController());
-  // Countries controller
-  static final countries = Get.put(SelectCountryController());
-  // Password controller
+
+  // Define location details controller
+  static final locationController = Get.put(LocationController())
+;  // Password controller
   static final passwordController = Get.put(PasswordFieldController());
 
   @override
@@ -132,7 +133,7 @@ class RegisterContents extends StatelessWidget {
               onChanged: (value) {
                 registerController.storePhoneNumber(value);
               },
-              placeholder: "(+${countries.selectedCountryCode}) xxx-xxx-xxxx",
+              placeholder: "(+${locationController.selectedCountryCode}) xxx-xxx-xxxx",
               prefix: Obx(() => registerController.phoneNumberHasError.value
                   ? Container(
                       margin: EdgeInsets.only(left: 10.w),

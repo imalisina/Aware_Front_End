@@ -3,16 +3,45 @@ import 'package:get/get.dart';
 
 // Other packages
 import 'package:sample/models/countries.dart';
-import 'package:sample/controllers/countrySelection/select_country_controller.dart';
 
-class LocationDetailsController extends GetxController {
+class LocationController extends GetxController {
+  // Define a variable to store the status of inputs
+  var isReadOnly = true.obs;
+
+  // Method to toggle input status
+  void toggleReadOnly() {
+    isReadOnly.value = !isReadOnly.value;
+  }
+
+  // COUNTRY SELECTION SECTION
+  // Store selected country's index
+  var selectedCountryIndex = 0.obs;
+  // Store attributes of selected country
+  var selectedCountryName = "";
+  var selectedCountryFlag = "";
+  var selectedCountryCode = "";
+  var selectedCountryStates = [];
+
+  // Store selected country
+  setSelectCountry(int regionID) {
+    selectedCountryIndex.value = regionID;
+    storeSelectedCountryDetails();
+  }
+
+  // Extract selected country details
+  void storeSelectedCountryDetails() {
+    Country selectedCountry =
+        Country.fromJSON(data[selectedCountryIndex.value]);
+    selectedCountryName = selectedCountry.name;
+    selectedCountryFlag = selectedCountry.flag;
+    selectedCountryCode = selectedCountry.code;
+    selectedCountryStates = selectedCountry.states;
+  }
+
   // COUNTRY & STATE INPUT SECTION
-  // Define a variable to store selected country ID
-  var countryID = SelectCountryController().selectedCountryIndex.value;
   // Define a variable to store selected country name
-  var countryName = Countries()
-      .countries[SelectCountryController().selectedCountryIndex.value]
-      .name;
+  late String countryName =
+      Countries().countries[selectedCountryIndex.value].name;
   // Define variable to store the state
   var stateID = 0.obs;
   // Define a variable to store the state name
@@ -24,9 +53,8 @@ class LocationDetailsController extends GetxController {
 
   // Convert the state id to state name
   void idToNameConverter() {
-    stateName.value = Countries()
-        .countries[SelectCountryController().selectedCountryIndex.value]
-        .states[stateID.value];
+    stateName.value =
+        Countries().countries[selectedCountryIndex.value].states[stateID.value];
   }
 
   // Store the selected state
