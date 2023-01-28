@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Other packages
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/home/fashion_tips_section.dart';
-import 'package:sample/services/home/middle_box_section.dart';
-import 'package:sample/services/home/need_combination_section.dart';
-import 'package:sample/services/home/suggested_products_section.dart';
+import 'package:sample/components/home/fashion_tips_section.dart';
+import 'package:sample/components/home/middle_box_section.dart';
+import 'package:sample/components/home/need_combination_section.dart';
+import 'package:sample/components/home/suggested_products_section.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

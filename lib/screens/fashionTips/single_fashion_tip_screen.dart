@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // Other packages
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/fashionTips/single_fashion_tip_content.dart';
+import 'package:sample/components/fashionTips/single_fashion_tip_content.dart';
 
 class SingleFashionTipScreen extends StatelessWidget {
   const SingleFashionTipScreen({super.key});

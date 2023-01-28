@@ -6,8 +6,8 @@ import 'package:sample/packages/navbars/navbar_without_back_button.dart';
 import 'package:sample/packages/support_button.dart';
 import 'package:sample/packages/title_content.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/auth/login/login_contents.dart';
-import 'package:sample/services/auth/login/social_media_login.dart';
+import 'package:sample/components/auth/login/login_contents.dart';
+import 'package:sample/components/auth/login/social_media_login.dart';
 
 // Login page container
 class LoginScreen extends StatelessWidget {

@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Other packages
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/services/settings/logout_button.dart';
-import 'package:sample/services/settings/settings_header.dart';
-import 'package:sample/services/settings/settings_menu.dart';
+import 'package:sample/components/settings/logout_button.dart';
+import 'package:sample/components/settings/settings_header.dart';
+import 'package:sample/components/settings/settings_menu.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
