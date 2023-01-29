@@ -25,7 +25,7 @@ class LocationSettingsContent extends StatelessWidget {
       child: Obx(
         () => Column(
           children: [
-            // Edit toggle button section main container
+            // Edit toggle button section
             locationSettingsController.isReadOnly.isTrue
                 ? const EditLocationToggle()
                 : const EmptyBox(),

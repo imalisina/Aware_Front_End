@@ -122,15 +122,6 @@ class LocationSettingsController extends GetxController {
     spinnerStatus.value = !spinnerStatus.value;
   }
 
-  // Change the status of redirection middleware
-  void setAuthorized() {
-    if (stateHasError.isFalse &&
-        zipHasError.isFalse &&
-        addressHasError.isFalse) {
-      hasPermission.value = true;
-    }
-  }
-
   // Define a variable to store update validation status
   var isUpdatable = true.obs;
 
