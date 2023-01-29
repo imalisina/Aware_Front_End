@@ -15,19 +15,10 @@ class SettingsMenu extends StatelessWidget {
         children: const [
           // Account details section
           CardContent(
-            "Personal details",
+            "Account details",
             // CupertinoIcons.doc_person,
-            CupertinoIcons.person_2_square_stack,
-            personalSettings,
-          ),
-
-          Divider(),
-
-          // Location details section
-          CardContent(
-            "Location details",
-            CupertinoIcons.placemark,
-            locationSettings,
+            CupertinoIcons.at_circle,
+            accountSettings,
           ),
 
           Divider(),
@@ -35,7 +26,7 @@ class SettingsMenu extends StatelessWidget {
           // Password recovery section
           CardContent(
             "Password recovery",
-            CupertinoIcons.lock_rotation,
+            CupertinoIcons.lock_open,
             passwordRecovery,
           ),
 
@@ -51,7 +42,7 @@ class SettingsMenu extends StatelessWidget {
           Divider(),
 
           // Secure code section
-          CardContent("Get Secure code", CupertinoIcons.burn, getSecureCode),
+          CardContent("Get Secure code", CupertinoIcons.burst, getSecureCode),
 
           Divider(),
 

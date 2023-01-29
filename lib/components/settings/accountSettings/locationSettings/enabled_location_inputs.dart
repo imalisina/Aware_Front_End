@@ -3,12 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX packages
 import 'package:get/get.dart';
+import 'package:sample/components/settings/accountSettings/locationSettings/validate_location_details_button.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/controllers/locationSettings/location_settings_controller.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/components/settings/locationSettings/validate_location_details_button.dart';
 
 class EnabledLocationInputs extends StatelessWidget {
   const EnabledLocationInputs({super.key});

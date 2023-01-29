@@ -62,9 +62,9 @@ const data = {
   "favouriteFashionStyleID": 2,
   "countryID": 35,
   "stateID": 2,
-  "birthDate": "29/01/1998",
+  "birthDate": "29/02/1998",
   "birthDay": 29,
-  "birthMonth": 01,
+  "birthMonth": 02,
   "secureCode": "19SJ@#o1McID_Ld!3d",
   "secureDiary": false,
   "diaryPassword": "123456789password"
