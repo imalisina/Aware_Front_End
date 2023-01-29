@@ -1,22 +1,27 @@
 import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// GetX package
+// GetX packages
 import 'package:get/get.dart';
-import 'package:sample/controllers/support/passwordRecovery/email_verification_controller.dart';
+import 'package:sample/controllers/settings/updateEmail/update_email_controller.dart';
+import 'package:sample/controllers/settings/updateEmail/new_email_validation_controller.dart';
 
 // Other packages
+import 'package:sample/app/app_container.dart';
 import 'package:sample/configs/theme.dart';
+import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/screens/support/passwordRecovery/resetPassword/reset_password_screen.dart';
 
-class EmailVerificationContents extends StatelessWidget {
-  const EmailVerificationContents({super.key});
+class NewEmailVerificationContents extends StatelessWidget {
+  const NewEmailVerificationContents({super.key});
 
-  // Email verification controller
-  static final verificationController = Get.put(EmailVerificationController());
+  // Define new email verification controller
+  static final newEmailVerificationController =
+      Get.put(NewEmailValidationController());
+
+  // Define update email controller
+  static final updateEmailController = Get.put(UpdateEmailController());
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +35,11 @@ class EmailVerificationContents extends StatelessWidget {
             child: CupertinoTextField(
               keyboardType: TextInputType.number,
               onChanged: (value) {
-                verificationController.storeVerificationCode(value);
+                newEmailVerificationController.storeVerificationCode(value);
               },
               placeholder: "Enter the verification code",
-              prefix: Obx(
-                  () => verificationController.verificationCodeHasError.value
+              prefix: Obx(() =>
+                  newEmailVerificationController.verificationCodeHasError.value
                       ? Container(
                           margin: EdgeInsets.only(left: 10.w),
                           child: const Icon(
@@ -50,7 +55,7 @@ class EmailVerificationContents extends StatelessWidget {
 
           // Verification code erro handler widget
           Obx(
-            () => verificationController.verificationCodeHasError.value
+            () => newEmailVerificationController.verificationCodeHasError.value
                 ? Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -76,26 +81,29 @@ class EmailVerificationContents extends StatelessWidget {
             width: double.maxFinite,
             child: Obx(
               () => CupertinoButton.filled(
-                child: verificationController.spinnerStatus.value
+                child: newEmailVerificationController.spinnerStatus.value
                     ? const CupertinoActivityIndicator(
                         color: BACKGROUND_COLOR,
                       )
                     : const Text("Verify"),
                 onPressed: () {
                   // Perform validation process
-                  verificationController.validateVerificationCode();
+                  newEmailVerificationController.validateVerificationCode();
                   // Open redirection gateway
-                  verificationController.setAuthorized();
+                  newEmailVerificationController.setAuthorized();
 
                   // Redirect to reset password screen
-                  if (verificationController.hasPermission.isTrue) {
+                  if (newEmailVerificationController.hasPermission.isTrue) {
                     // Toggle method to display spinner during API calls
-                    verificationController.toggleLoading();
+                    newEmailVerificationController.toggleLoading();
+                    updateEmailController.updateEmail();
                     Timer(
                       const Duration(seconds: 3),
                       () {
                         // Redirection route
-                        Get.off(const ResetPasswordScreen());
+                        Get.off(const AppContainer());
+                        showSnackBar(
+                            context, "Email has been updated successfully !");
                       },
                     );
                   }

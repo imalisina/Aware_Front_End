@@ -2,61 +2,78 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// GetX package
+// GetX packages
 import 'package:get/get.dart';
-import 'package:sample/configs/route_names.dart';
-import 'package:sample/controllers/support/passwordRecovery/email_method_controller.dart';
+import 'package:sample/controllers/settings/updateEmail/update_email_controller.dart';
 
-// Other package
+// Other packages
+import 'package:sample/configs/route_names.dart';
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
 
-class EmailMethodContents extends StatelessWidget {
-  const EmailMethodContents({super.key});
+class UpdateEmailContent extends StatelessWidget {
+  const UpdateEmailContent({super.key});
 
-  // Email method controller
-  static final emailMethodController = Get.put(EmailMethodController());
+  // Define update email controller
+  static final updateEmailController = Get.put(UpdateEmailController());
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: EdgeInsets.only(left: 30.w, right: 30.w),
       child: Column(
         children: [
-          // Email input field
+          // Current email read-only input field
+          SizedBox(
+            height: 55.h,
+            child: Obx(
+              () => CupertinoTextField(
+                placeholder:
+                    "Current email : ${updateEmailController.currentEmail}",
+                placeholderStyle: inputActiveDataPlaceholderStyle,
+                readOnly: true,
+              ),
+            ),
+          ),
+
+          VerticalSpaceBox(20.h),
+
+          // New email input field
           SizedBox(
             height: 55.h,
             child: CupertinoTextField(
               keyboardType: TextInputType.emailAddress,
               onChanged: (value) {
-                emailMethodController.storeEmail(value);
+                updateEmailController.storeEmail(value);
               },
-              placeholder: "Enter your email",
-              prefix: Obx(() => emailMethodController.emailHasError.value
-                  ? Container(
-                      margin: EdgeInsets.only(left: 10.w),
-                      child: const Icon(
-                        CupertinoIcons.clear_thick_circled,
-                        color: ERROR_COLOR,
-                      ),
-                    )
-                  : const EmptyBox()),
+              placeholder: "Enter a new email",
+              prefix: Obx(
+                () => updateEmailController.emailHasError.value
+                    ? Container(
+                        margin: EdgeInsets.only(left: 10.w),
+                        child: const Icon(
+                          CupertinoIcons.clear_thick_circled,
+                          color: ERROR_COLOR,
+                        ),
+                      )
+                    : const EmptyBox(),
+              ),
               textInputAction: TextInputAction.done,
               placeholderStyle: inputPlaceholderStyle,
             ),
           ),
 
-          // Email error handler widget
+          // New email error handler widget
           Obx(
-            () => emailMethodController.emailHasError.value
+            () => updateEmailController.emailHasError.value
                 ? Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         margin: EdgeInsets.only(top: 6.h),
                         child: Text(
-                          "Enter a valid email !",
+                          "New email is not valid !",
                           style: TextStyle(
                               color: ERROR_COLOR,
                               fontSize: 12.sp,
@@ -75,29 +92,29 @@ class EmailMethodContents extends StatelessWidget {
             width: double.maxFinite,
             child: Obx(
               () => CupertinoButton.filled(
-                child: emailMethodController.spinnerStatus.value
+                child: updateEmailController.spinnerStatus.value
                     ? const CupertinoActivityIndicator(
                         color: BACKGROUND_COLOR,
                       )
                     : const Text("Get code"),
                 onPressed: () {
                   // Perform validation process
-                  emailMethodController.validateEmail();
+                  updateEmailController.validateEmail();
                   // Open redirection gateway
-                  emailMethodController.setAuthorized();
+                  updateEmailController.setAuthorized();
 
-                  // Redirect to reset verification code screen
-                  if (emailMethodController.hasPermission.isTrue) {
+                  // Redirect to verification code screen
+                  if (updateEmailController.hasPermission.isTrue) {
                     // Toggle method to display spinner during API calls
-                    emailMethodController.toggleLoading();
+                    updateEmailController.toggleLoading();
                     Timer(
                       const Duration(seconds: 1),
                       () {
                         // Redirection route
-                        Get.toNamed(emailVerification);
-                        emailMethodController.toggleLoading();
+                        Get.toNamed(verifyNewEmail);
+                        updateEmailController.toggleLoading();
                         showSnackBar(context,
-                            "A verification code has been sent to your email !");
+                            "A verification code has been sent to your current email !");
                       },
                     );
                   }
