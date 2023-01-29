@@ -1,30 +1,24 @@
 import 'package:get/get.dart';
 
 class PersonalSettingsController extends GetxController {
+  // Define a variable to store the status of inputs
+  var isReadOnly = true.obs;
+
+  // Method to toggle input status
+  void toggleReadOnly() {
+    isReadOnly.value = !isReadOnly.value;
+  }
+
   // GETTING BASIC INPUTS --> FULLNAME | EMAIL | PHONE NUMBER
   // Define variables to store input values
-  var name = "Martin".obs;
-  var email = "mar@gmail.com".obs;
-  var phoneNumber = "+9481939139".obs;
+  var name = "Tracy Caller".obs;
 
   // Define variables to handle errors for each input
   var nameHasError = false.obs;
-  var emailHasError = false.obs;
-  var phoneNumberHasError = false.obs;
 
   // Store the entered name value
   void storeName(String enteredName) {
     name.value = enteredName;
-  }
-
-  // Store the entered email value
-  void storeEmail(String enteredEmail) {
-    email.value = enteredEmail;
-  }
-
-  // Store the entered phone number value
-  void storePhoneNumber(String enteredPhoneNumber) {
-    phoneNumber.value = enteredPhoneNumber;
   }
 
   // Validate name input
@@ -36,31 +30,13 @@ class PersonalSettingsController extends GetxController {
     }
   }
 
-  // Validate email input
-  void validateEmail() {
-    if (!GetUtils.isEmail(email.value)) {
-      emailHasError.value = true;
-    } else {
-      emailHasError.value = false;
-    }
-  }
-
-  // Validate phone number input
-  void validatePhoneNumber() {
-    if (!GetUtils.isPhoneNumber(phoneNumber.value)) {
-      phoneNumberHasError.value = true;
-    } else {
-      phoneNumberHasError.value = false;
-    }
-  }
-
   // BIRTH DATE INPUT SECTION
   // Define initial value for Date Time in Modal
   var defaultDate = DateTime.now();
   // Define variable to store the birthdate
-  var birthYear = 0.obs;
-  var birthMonth = 0.obs;
-  var birthDay = 0.obs;
+  var birthYear = 1998.obs;
+  var birthMonth = 03.obs;
+  var birthDay = 17.obs;
   // Define a variable to check the status of birth date
   var isDateSelected = false.obs;
   // Define variable to handle errors of birth date input
@@ -89,9 +65,9 @@ class PersonalSettingsController extends GetxController {
   // Define static list of gender
   List<String> genders = <String>["Female", "Male", "Others"];
   // Define variable to store the ID of selected gender
-  var genderID = 1.obs;
+  var genderID = 0.obs;
   // Define variable to store the name of selected gender
-  var genderName = "Male".obs;
+  var genderName = "Female".obs;
   // Define a variable to check the status of gender
   var isGenderSelected = false.obs;
   // Define variable to handle errors of gender input
@@ -252,18 +228,23 @@ class PersonalSettingsController extends GetxController {
     spinnerStatus.value = !spinnerStatus.value;
   }
 
-  // Change the status of redirection middleware
-  void setAuthorized() {
-    if (weightHasError.isFalse &&
-        heightHasError.isFalse &&
-        birthDateHasError.isFalse &&
-        genderHasError.isFalse &&
-        ethnicityHasError.isFalse &&
-        fashionStyleHasErrors.isFalse &&
-        nameHasError.isFalse &&
-        emailHasError.isFalse &&
-        phoneNumberHasError.isFalse) {
-      hasPermission.value = true;
+  // Define a variable to store update validation status
+  var isUpdatable = true.obs;
+
+  // Method to validate the upadted location details
+  void updateLocationDetails() {
+    if (weightHasError.isTrue ||
+        heightHasError.isTrue ||
+        birthDateHasError.isTrue ||
+        genderHasError.isTrue ||
+        ethnicityHasError.isTrue ||
+        fashionStyleHasErrors.isTrue ||
+        nameHasError.isTrue) {
+      isUpdatable.value = false;
+      isReadOnly.value = false;
+    } else {
+      isUpdatable.value = true;
+      isReadOnly.value = true;
     }
   }
 }
