@@ -35,7 +35,7 @@ class SettingsScreen extends StatelessWidget {
               // Logout button
               const LogoutButton(),
 
-              VerticalSpaceBox(25.h),
+              VerticalSpaceBox(55.h),
 
               // Aware transparent logo
               Container(
@@ -44,8 +44,8 @@ class SettingsScreen extends StatelessWidget {
                   opacity: 0.2,
                   child: Image.asset(
                     "assets/images/aware_logo.png",
-                    width: 40.w,
-                    height: 40.h,
+                    width: 50.w,
+                    height: 50.h,
                   ),
                 ),
               ),

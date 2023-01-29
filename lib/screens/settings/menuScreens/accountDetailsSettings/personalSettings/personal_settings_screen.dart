@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sample/components/settings/accountSettings/personalSettings/personal_settings_content.dart';
 
 // Other packages
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/title_content.dart';
-import 'package:sample/components/settings/personalSettings/personal_settings_content.dart';
 
 class PersonalSettingsScreen extends StatelessWidget {
   const PersonalSettingsScreen({super.key});

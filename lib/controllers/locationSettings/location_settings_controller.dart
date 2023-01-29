@@ -13,7 +13,7 @@ class LocationSettingsController extends GetxController {
 
   // COUNTRY SELECTION SECTION
   // Store selected country's index
-  var selectedCountryIndex = 60.obs;
+  var selectedCountryIndex = 5.obs;
   // Store attributes of selected country
   var selectedCountryName = "Iran";
   var selectedCountryFlag = "";

@@ -66,18 +66,28 @@ class SettingsHeader extends StatelessWidget {
                     Icon(
                       CupertinoIcons.rosette,
                       size: 22.sp,
-                      color: INPUT_PLACEHOLDER,
+                      color: userController.daysLeft != 0
+                          ? INPUT_PLACEHOLDER
+                          : MAIN_COLOR,
                     ),
                     HorizontalSpaceBox(5.w),
                     SizedBox(
                       width: 240.w,
                       child: Text(
-                        "${userController.daysLeft} days left for your birthday !",
+                        userController.daysLeft != 0
+                            ? "${userController.daysLeft} days left for your birthday !"
+                            : "Happy birthday to you !",
                         maxLines: 2,
                         style: TextStyle(
-                            fontSize: 15.sp, color: INPUT_PLACEHOLDER),
+                            fontSize: 15.sp,
+                            color: userController.daysLeft != 0
+                                ? INPUT_PLACEHOLDER
+                                : MAIN_COLOR,
+                            fontWeight: userController.daysLeft != 0
+                                ? FontWeight.normal
+                                : FontWeight.w600),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ],

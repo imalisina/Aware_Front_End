@@ -11,19 +11,18 @@ class PasswordRecoveryMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: EdgeInsets.only(left: 20.w, right: 20.w),
       child: Column(
         children: const [
-          SizedBox(
-            child: CardContent(
-                "Secure Code", CupertinoIcons.lock_shield, secureCode),
-          ),
+          // Secure code method
+          CardContent("Secure Code", CupertinoIcons.lock_shield, secureCode),
+
           Divider(),
-          SizedBox(
-            child: CardContent(
-                "Email verification code", CupertinoIcons.mail, emailMethod),
-          ),
+
+          // Email method
+          CardContent(
+              "Email verification code", CupertinoIcons.mail, emailMethod),
         ],
       ),
     );

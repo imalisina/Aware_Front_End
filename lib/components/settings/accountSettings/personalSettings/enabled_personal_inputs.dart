@@ -8,7 +8,7 @@ import 'package:sample/controllers/personalSettings/personal_settings_controller
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/components/settings/personalSettings/validate_personal_details_button.dart';
+import 'package:sample/components/settings/accountSettings/personalSettings/validate_personal_details_button.dart';
 
 class EnabledPersonalInputs extends StatelessWidget {
   const EnabledPersonalInputs({super.key});

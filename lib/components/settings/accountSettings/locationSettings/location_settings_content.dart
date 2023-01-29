@@ -7,9 +7,9 @@ import 'package:sample/controllers/locationSettings/location_settings_controller
 
 // Other packages
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/components/settings/locationSettings/edit_location_toggle.dart';
-import 'package:sample/components/settings/locationSettings/enabled_location_inputs.dart';
-import 'package:sample/components/settings/locationSettings/disabled_location_inputs.dart';
+import 'package:sample/components/settings/accountSettings/locationSettings/edit_location_toggle.dart';
+import 'package:sample/components/settings/accountSettings/locationSettings/enabled_location_inputs.dart';
+import 'package:sample/components/settings/accountSettings/locationSettings/disabled_location_inputs.dart';
 
 class LocationSettingsContent extends StatelessWidget {
   const LocationSettingsContent({super.key});
