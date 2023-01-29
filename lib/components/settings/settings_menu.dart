@@ -17,7 +17,7 @@ class SettingsMenu extends StatelessWidget {
           CardContent(
             "Account details",
             // CupertinoIcons.doc_person,
-            CupertinoIcons.at_circle,
+            CupertinoIcons.person,
             accountSettings,
           ),
 

@@ -53,5 +53,7 @@ const String settings = "/settings";
 const String getSecureCode = "/settings/secure_code/generate";
 const String resetDiaryPassword = "/settings/diary/password/reset";
 const String accountSettings = "/settings/account/details";
+const String updateEmail = "/settings/account/update/email";
+const String updatePhoneNumber = "/settings/account/update/phone_number";
 const String locationSettings = "/settings/account/details/location";
 const String personalSettings = "/settings/account/details/personal";

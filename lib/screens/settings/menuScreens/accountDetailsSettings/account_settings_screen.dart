@@ -30,15 +30,15 @@ class AccountSettingsScreen extends StatelessWidget {
               // Account details menu
               const AccountSettingsMenu(),
 
-              VerticalSpaceBox(100.h),
+              VerticalSpaceBox(50.h),
 
               // Account details image
               Container(
                 alignment: Alignment.center,
                 child: Image.asset(
                   "assets/images/account_settings.gif",
-                  width: 400.w,
-                  height: 400.h,
+                  width: 300.w,
+                  height: 300.h,
                 ),
               )
             ],
