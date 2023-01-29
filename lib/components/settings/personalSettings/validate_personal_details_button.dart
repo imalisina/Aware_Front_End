@@ -31,6 +31,10 @@ class ValidatePersonalDetailsButton extends StatelessWidget {
             personalSettingsController.validateName();
             personalSettingsController.validateBirthDate();
             personalSettingsController.validateGender();
+            personalSettingsController.validateEthnicity();
+            personalSettingsController.validateFashionStyle();
+            personalSettingsController.validateWeight();
+            personalSettingsController.validateHeight();
             // Open redirection gateway
             personalSettingsController.updateLocationDetails();
 

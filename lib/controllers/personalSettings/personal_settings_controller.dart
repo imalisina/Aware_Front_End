@@ -38,7 +38,7 @@ class PersonalSettingsController extends GetxController {
   var birthMonth = 03.obs;
   var birthDay = 17.obs;
   // Define a variable to check the status of birth date
-  var isDateSelected = false.obs;
+  var isDateSelected = true.obs;
   // Define variable to handle errors of birth date input
   var birthDateHasError = false.obs;
 
@@ -69,7 +69,7 @@ class PersonalSettingsController extends GetxController {
   // Define variable to store the name of selected gender
   var genderName = "Female".obs;
   // Define a variable to check the status of gender
-  var isGenderSelected = false.obs;
+  var isGenderSelected = true.obs;
   // Define variable to handle errors of gender input
   var genderHasError = false.obs;
 
@@ -112,7 +112,7 @@ class PersonalSettingsController extends GetxController {
   // Define variable to store the name of selected ethnicity
   var ethnicityName = "White".obs;
   // Define variable to check the status of ethnicity
-  var isEthnicitySelected = false.obs;
+  var isEthnicitySelected = true.obs;
   // Define variable to handle errors of ethnicity input
   var ethnicityHasError = false.obs;
 
@@ -153,7 +153,7 @@ class PersonalSettingsController extends GetxController {
   // Define variable to store the name of selected fashion style
   var fashionStyleName = "Casual".obs;
   // Define variable to check the status of fashion style
-  var isFashionStyleSelected = false.obs;
+  var isFashionStyleSelected = true.obs;
   // Define variable to handle errors of fashion style input
   var fashionStyleHasErrors = false.obs;
 
@@ -181,8 +181,8 @@ class PersonalSettingsController extends GetxController {
   // ----------------------
   // WEIGHT AND HEIGHT INPUT SECTION
   // Define variables to store input values
-  var weight = "80".obs;
-  var height = "180".obs;
+  var weight = "".obs;
+  var height = "".obs;
   // Define variables to handle errors for each input
   var weightHasError = false.obs;
   var heightHasError = false.obs;

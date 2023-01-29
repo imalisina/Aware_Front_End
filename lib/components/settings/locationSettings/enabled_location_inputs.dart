@@ -14,7 +14,8 @@ class EnabledLocationInputs extends StatelessWidget {
   const EnabledLocationInputs({super.key});
 
   // Define location settings controller
-  static final locationSettingsController = Get.put(LocationSettingsController());
+  static final locationSettingsController =
+      Get.put(LocationSettingsController());
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +60,9 @@ class EnabledLocationInputs extends StatelessWidget {
                         )
                       : const EmptyBox(),
                   HorizontalSpaceBox(
-                      locationSettingsController.stateHasError.value ? 4.w : 0.w),
+                      locationSettingsController.stateHasError.value
+                          ? 4.w
+                          : 0.w),
                   const Text(
                     "State : ",
                     style: TextStyle(color: INPUT_PLACEHOLDER),
@@ -98,7 +101,8 @@ class EnabledLocationInputs extends StatelessWidget {
                           itemExtent: 35.h,
                           scrollController: FixedExtentScrollController(),
                           children: List<Widget>.generate(
-                            locationSettingsController.selectedCountryStates.length,
+                            locationSettingsController
+                                .selectedCountryStates.length,
                             (int index) {
                               return Center(
                                 child: Text(
@@ -109,7 +113,8 @@ class EnabledLocationInputs extends StatelessWidget {
                             },
                           ),
                           onSelectedItemChanged: (int value) {
-                            locationSettingsController.storeSelectedStateID(value);
+                            locationSettingsController
+                                .storeSelectedStateID(value);
                           },
                         ),
                       ),
@@ -130,8 +135,8 @@ class EnabledLocationInputs extends StatelessWidget {
                   locationSettingsController.storeZipCode(value);
                 },
                 placeholder: locationSettingsController.zip.isEmpty
-                    ? "Enter your ZIP / Postal code"
-                    : locationSettingsController.zip.value,
+                    ? "Enter your ZIP code"
+                    : "Enter new ZIP code",
                 prefix: locationSettingsController.zipHasError.value
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
@@ -171,12 +176,12 @@ class EnabledLocationInputs extends StatelessWidget {
               height: 80.h,
               child: CupertinoTextField(
                 keyboardType: TextInputType.text,
-                onSubmitted: (value) {
+                onChanged: (value) {
                   locationSettingsController.storeAddress(value);
                 },
                 placeholder: locationSettingsController.address.isEmpty
                     ? "Enter your home address"
-                    : locationSettingsController.address.value,
+                    : "Enter new address",
                 prefix: locationSettingsController.addressHasError.value
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),

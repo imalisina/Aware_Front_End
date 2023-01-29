@@ -13,12 +13,17 @@ class LocationSettingsController extends GetxController {
 
   // COUNTRY SELECTION SECTION
   // Store selected country's index
-  var selectedCountryIndex = 0.obs;
+  var selectedCountryIndex = 60.obs;
   // Store attributes of selected country
-  var selectedCountryName = "";
+  var selectedCountryName = "Iran";
   var selectedCountryFlag = "";
   var selectedCountryCode = "";
-  var selectedCountryStates = [];
+  var selectedCountryStates = <dynamic>[
+    "Tehran",
+    "Isfahan",
+    "Mazandaran",
+    "Shiraz"
+  ];
 
   // Store selected country
   setSelectCountry(int regionID) {
