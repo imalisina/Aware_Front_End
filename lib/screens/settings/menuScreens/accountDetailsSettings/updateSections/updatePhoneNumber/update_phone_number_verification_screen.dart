@@ -5,10 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/packages/title_content.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
-import 'package:sample/components/settings/accountSettings/updateSection/UpdatePhoneNumber/update_phone_number_content.dart';
+import 'package:sample/components/settings/accountSettings/updateSection/UpdatePhoneNumber/new_phone_number_verification_contents.dart';
 
-class UpdatePhoneNumberScreen extends StatelessWidget {
-  const UpdatePhoneNumberScreen({super.key});
+class UpdatePhoneNumberVerificationScreen extends StatelessWidget {
+  const UpdatePhoneNumberVerificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +23,13 @@ class UpdatePhoneNumberScreen extends StatelessWidget {
                 VerticalSpaceBox(50.h),
 
                 // Title and sub-title
-                const TitleContent("Update phone number",
-                    "change your account's phone number !"),
+                const TitleContent("Verification",
+                    "Please enter the code sent to your current phone number"),
 
                 VerticalSpaceBox(40.h),
 
-                // Update phone number content
-                const UpdatePhoneNumberContent(),
+                // Verification input field and button
+                const NewPhoneNumberVerificationContents(),
               ],
             ),
           ),

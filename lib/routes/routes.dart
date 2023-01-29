@@ -22,6 +22,7 @@ import 'package:sample/screens/completeProfile/personal_details_screen.dart';
 import 'package:sample/screens/countrySelection/select_country_screen.dart';
 import 'package:sample/screens/fashionTips/single_fashion_tip_screen.dart';
 import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/account_settings_screen.dart';
+import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateSections/updatePhoneNumber/update_phone_number_verification_screen.dart';
 import 'package:sample/screens/settings/menuScreens/getSecureCode/get_secure_code_screen.dart';
 import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/locationSettings/location_settings_screen.dart';
 import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/personalSettings/personal_settings_screen.dart';
@@ -112,6 +113,9 @@ class RoutesClass {
         page: () => const UpdateEmailVerificationScreen()),
     GetPage(
         name: updatePhoneNumber, page: () => const UpdatePhoneNumberScreen()),
+    GetPage(
+        name: verifyNewPhoneNumber,
+        page: () => const UpdatePhoneNumberVerificationScreen()),
     GetPage(name: locationSettings, page: () => const LocationSettingsScreen()),
     GetPage(name: personalSettings, page: () => const PersonalSettingsScreen()),
   ];
