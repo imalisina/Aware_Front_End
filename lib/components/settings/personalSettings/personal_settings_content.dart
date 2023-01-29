@@ -1,11 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// GetX packages
 import 'package:get/get.dart';
-import 'package:sample/components/settings/personalSettings/disabled_personal_inputs.dart';
-import 'package:sample/components/settings/personalSettings/edit_personal_toggle.dart';
-import 'package:sample/components/settings/personalSettings/enabled_personal_inputs.dart';
 import 'package:sample/controllers/personalSettings/personal_settings_controller.dart';
+
+// Other packages
 import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/components/settings/personalSettings/edit_personal_toggle.dart';
+import 'package:sample/components/settings/personalSettings/disabled_personal_inputs.dart';
+import 'package:sample/components/settings/personalSettings/enabled_personal_inputs.dart';
 
 class PersonalSettingsContent extends StatelessWidget {
   const PersonalSettingsContent({super.key});
