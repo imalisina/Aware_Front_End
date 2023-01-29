@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:sample/components/settings/accountSettings/personalSettings/disabled_personal_inputs.dart';
 import 'package:sample/components/settings/accountSettings/personalSettings/edit_personal_toggle.dart';
 import 'package:sample/components/settings/accountSettings/personalSettings/enabled_personal_inputs.dart';
-import 'package:sample/controllers/personalSettings/personal_settings_controller.dart';
+import 'package:sample/controllers/settings/personalSettings/personal_settings_controller.dart';
 
 // Other packages
 import 'package:sample/packages/space_box_container.dart';

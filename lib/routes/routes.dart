@@ -1,7 +1,8 @@
 import 'package:get/get.dart';
 import 'package:sample/app/app_container.dart';
-import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateEmail/update_email_screen.dart';
-import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updatePhoneNumber/update_phone_number_screen.dart';
+import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateSections/updateEmail/update_email_screen.dart';
+import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateSections/updateEmail/update_email_verification_screen.dart';
+import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateSections/updatePhoneNumber/update_phone_number_screen.dart';
 import 'package:sample/configs/route_names.dart';
 
 // UI screens
@@ -106,6 +107,9 @@ class RoutesClass {
         name: resetDiaryPassword, page: () => const ResetDiaryPasswordScreen()),
     GetPage(name: accountSettings, page: () => const AccountSettingsScreen()),
     GetPage(name: updateEmail, page: () => const UpdateEmailScreen()),
+    GetPage(
+        name: verifyNewEmail,
+        page: () => const UpdateEmailVerificationScreen()),
     GetPage(
         name: updatePhoneNumber, page: () => const UpdatePhoneNumberScreen()),
     GetPage(name: locationSettings, page: () => const LocationSettingsScreen()),

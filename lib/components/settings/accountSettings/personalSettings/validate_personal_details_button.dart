@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX packages
 import 'package:get/get.dart';
-import 'package:sample/controllers/personalSettings/personal_settings_controller.dart';
+import 'package:sample/controllers/settings/personalSettings/personal_settings_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';

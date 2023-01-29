@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
-import 'package:sample/controllers/locationSettings/location_settings_controller.dart';
+import 'package:sample/controllers/settings/locationSettings/location_settings_controller.dart';
 import 'package:sample/packages/flush_bar_method.dart';
 
 class ValidateLocationDetailsButton extends StatelessWidget {

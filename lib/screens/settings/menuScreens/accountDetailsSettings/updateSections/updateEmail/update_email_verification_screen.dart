@@ -5,10 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/packages/title_content.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
-import 'package:sample/components/settings/updateSection/updateEmail/update_email_content.dart';
+import 'package:sample/components/settings/accountSettings/updateSection/updateEmail/new_email_verification_contents.dart';
 
-class UpdateEmailScreen extends StatelessWidget {
-  const UpdateEmailScreen({super.key});
+class UpdateEmailVerificationScreen extends StatelessWidget {
+  const UpdateEmailVerificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,13 +23,13 @@ class UpdateEmailScreen extends StatelessWidget {
                 VerticalSpaceBox(50.h),
 
                 // Title and sub-title
-                const TitleContent(
-                    "Update email", "Change your account's email address !"),
+                const TitleContent("Verification",
+                    "Please enter the code sent to your current email"),
 
-                VerticalSpaceBox(20.h),
+                VerticalSpaceBox(40.h),
 
-                // Update email content
-                const UpdateEmailContent(),
+                // Verification input field and button
+                const NewEmailVerificationContents(),
               ],
             ),
           ),
