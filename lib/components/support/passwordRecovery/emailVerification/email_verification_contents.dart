@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
-import 'package:sample/controllers/passwordRecovery/email_verification_controller.dart';
+import 'package:sample/controllers/support/passwordRecovery/email_verification_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';

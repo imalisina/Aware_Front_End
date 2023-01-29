@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
-import 'package:sample/controllers/personalSettings/personal_settings_controller.dart';
+import 'package:sample/controllers/settings/personalSettings/personal_settings_controller.dart';
 
 class EditPersonalToggle extends StatelessWidget {
   const EditPersonalToggle({super.key});

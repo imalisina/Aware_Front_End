@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // GetX package
 import 'package:get/get.dart';
 import 'package:sample/configs/route_names.dart';
-import 'package:sample/controllers/passwordRecovery/email_method_controller.dart';
+import 'package:sample/controllers/support/passwordRecovery/email_method_controller.dart';
 
 // Other package
 import 'package:sample/configs/theme.dart';

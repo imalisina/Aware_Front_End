@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // GetX package
 import 'package:get/get.dart';
 import 'package:sample/configs/theme.dart';
-import 'package:sample/controllers/contactUs/contact_us_controller.dart';
+import 'package:sample/controllers/support/contactUs/contact_us_controller.dart';
 import 'package:sample/packages/flush_bar_method.dart';
 
 // Other packages

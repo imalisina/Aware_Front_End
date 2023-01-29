@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // GetX package
 import 'package:get/get.dart';
 import 'package:sample/controllers/auth/password_field_controller.dart';
-import 'package:sample/controllers/passwordRecovery/reset_password_controller.dart';
+import 'package:sample/controllers/support/passwordRecovery/reset_password_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';

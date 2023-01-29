@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // GetX packages
 import 'package:get/get.dart';
 import 'package:sample/controllers/auth/password_field_controller.dart';
-import 'package:sample/controllers/diary/diary_password_controller.dart';
+import 'package:sample/controllers/settings/diarySettings/diary_password_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';

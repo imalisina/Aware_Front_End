@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
-import 'package:sample/controllers/passwordRecovery/secure_code_controller.dart';
+import 'package:sample/controllers/support/passwordRecovery/secure_code_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
