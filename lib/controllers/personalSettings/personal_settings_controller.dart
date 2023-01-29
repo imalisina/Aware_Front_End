@@ -61,7 +61,7 @@ class PersonalSettingsController extends GetxController {
 
   // GENDER INPUT SECTION
   // Define static list of gender
-  List<String> genders = <String>["- Select -", "Female", "Male", "Others"];
+  List<String> genders = <String>["Male", "Female", "Others"];
   // Define variable to store the ID of selected gender
   var genderID = 1.obs;
   // Define variable to store the name of selected gender
@@ -97,7 +97,6 @@ class PersonalSettingsController extends GetxController {
   // ETHNICITY INPUT SECTION
   // Define static list of ethnicity
   List<String> ethnicities = <String>[
-    "- Select -",
     "White",
     "Black",
     "Middle East",
@@ -140,7 +139,6 @@ class PersonalSettingsController extends GetxController {
   // FAVOURITE FASHION STYLE SECTION
   // Define static list of fashion styles
   List<String> fashionStyles = <String>[
-    "- Select -",
     "Casual",
     "Elegant (Formal)",
     "Sport",
