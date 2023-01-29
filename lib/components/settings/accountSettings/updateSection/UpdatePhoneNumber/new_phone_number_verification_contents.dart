@@ -4,24 +4,25 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX packages
 import 'package:get/get.dart';
-import 'package:sample/controllers/settings/updateEmail/update_email_controller.dart';
-import 'package:sample/controllers/settings/updateEmail/new_email_validation_controller.dart';
+import 'package:sample/controllers/settings/updatePhoneNumber/new_phone_number_verification_controller.dart';
+import 'package:sample/controllers/settings/updatePhoneNumber/update_phone_number_controller.dart';
 
 // Other packages
-import 'package:sample/app/app_container.dart';
 import 'package:sample/configs/theme.dart';
+import 'package:sample/app/app_container.dart';
 import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
 
-class NewEmailVerificationContents extends StatelessWidget {
-  const NewEmailVerificationContents({super.key});
+class NewPhoneNumberVerificationContents extends StatelessWidget {
+  const NewPhoneNumberVerificationContents({super.key});
 
-  // Define new email verification controller
-  static final newEmailVerificationController =
-      Get.put(NewEmailVerificationController());
+  // Define new phone number verification controller
+  static final newPhoneNumberVerificationController =
+      Get.put(NewPhoneNumberVerificationController());
 
-  // Define update email controller
-  static final updateEmailController = Get.put(UpdateEmailController());
+  // Define update phone number controller
+  static final updatePhoneNumberController =
+      Get.put(UpdatePhoneNumberController());
 
   @override
   Widget build(BuildContext context) {
@@ -35,19 +36,20 @@ class NewEmailVerificationContents extends StatelessWidget {
             child: CupertinoTextField(
               keyboardType: TextInputType.number,
               onChanged: (value) {
-                newEmailVerificationController.storeVerificationCode(value);
+                newPhoneNumberVerificationController
+                    .storeVerificationCode(value);
               },
               placeholder: "Enter the verification code",
-              prefix: Obx(() =>
-                  newEmailVerificationController.verificationCodeHasError.value
-                      ? Container(
-                          margin: EdgeInsets.only(left: 10.w),
-                          child: const Icon(
-                            CupertinoIcons.clear_thick_circled,
-                            color: ERROR_COLOR,
-                          ),
-                        )
-                      : const EmptyBox()),
+              prefix: Obx(() => newPhoneNumberVerificationController
+                      .verificationCodeHasError.value
+                  ? Container(
+                      margin: EdgeInsets.only(left: 10.w),
+                      child: const Icon(
+                        CupertinoIcons.clear_thick_circled,
+                        color: ERROR_COLOR,
+                      ),
+                    )
+                  : const EmptyBox()),
               textInputAction: TextInputAction.done,
               placeholderStyle: inputPlaceholderStyle,
             ),
@@ -55,7 +57,8 @@ class NewEmailVerificationContents extends StatelessWidget {
 
           // Verification code erro handler widget
           Obx(
-            () => newEmailVerificationController.verificationCodeHasError.value
+            () => newPhoneNumberVerificationController
+                    .verificationCodeHasError.value
                 ? Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -81,29 +84,31 @@ class NewEmailVerificationContents extends StatelessWidget {
             width: double.maxFinite,
             child: Obx(
               () => CupertinoButton.filled(
-                child: newEmailVerificationController.spinnerStatus.value
+                child: newPhoneNumberVerificationController.spinnerStatus.value
                     ? const CupertinoActivityIndicator(
                         color: BACKGROUND_COLOR,
                       )
                     : const Text("Verify"),
                 onPressed: () {
                   // Perform validation process
-                  newEmailVerificationController.validateVerificationCode();
+                  newPhoneNumberVerificationController
+                      .validateVerificationCode();
                   // Open redirection gateway
-                  newEmailVerificationController.setAuthorized();
+                  newPhoneNumberVerificationController.setAuthorized();
 
                   // Redirect to reset password screen
-                  if (newEmailVerificationController.hasPermission.isTrue) {
+                  if (newPhoneNumberVerificationController
+                      .hasPermission.isTrue) {
                     // Toggle method to display spinner during API calls
-                    newEmailVerificationController.toggleLoading();
-                    updateEmailController.updateEmail();
+                    newPhoneNumberVerificationController.toggleLoading();
+                    updatePhoneNumberController.updatePhoneNumber();
                     Timer(
                       const Duration(seconds: 3),
                       () {
                         // Redirection route
                         Get.off(const AppContainer());
-                        showSnackBar(
-                            context, "Email has been updated successfully !");
+                        showSnackBar(context,
+                            "Phone number has been updated successfully !");
                       },
                     );
                   }

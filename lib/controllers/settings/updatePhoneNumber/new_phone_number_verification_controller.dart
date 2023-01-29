@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class NewEmailVerificationController extends GetxController {
+class NewPhoneNumberVerificationController extends GetxController {
   // Define variable to store the verification code value
   var verificationCode = "".obs;
 
