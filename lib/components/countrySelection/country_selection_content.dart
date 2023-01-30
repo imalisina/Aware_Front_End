@@ -33,37 +33,39 @@ class CountrySelectionContent extends StatelessWidget {
 
             // Select country button section
             CupertinoButton.filled(
-                onPressed: () => showCupertinoModalPopup(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return CupertinoPopupSurface(
-                        child: Container(
-                          color: BACKGROUND_COLOR,
-                          alignment: Alignment.center,
-                          width: double.maxFinite,
-                          height: 600.h,
-                          child: Column(
-                            children: [
-                              CupertinoButton(
-                                child: const Text(
-                                  "Close",
-                                  style: TextStyle(color: SECONDARY_COLOR),
-                                ),
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                              ),
-                              const Expanded(
-                                child: CountryList(),
-                              )
-                            ],
+              onPressed: () => showCupertinoModalPopup(
+                context: context,
+                builder: (BuildContext context) {
+                  return CupertinoPopupSurface(
+                    child: Container(
+                      color: BACKGROUND_COLOR,
+                      alignment: Alignment.center,
+                      width: double.maxFinite,
+                      height: 600.h,
+                      child: Column(
+                        children: [
+                          CupertinoButton(
+                            child: const Text(
+                              "Close",
+                              style: TextStyle(color: SECONDARY_COLOR),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
                           ),
-                        ),
-                      );
-                    }),
-                child: const Text(
-                  "Select your region",
-                ))
+                          const Expanded(
+                            child: CountryList(),
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+              child: const Text(
+                "Select your region",
+              ),
+            )
           ],
         ),
       ),

@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -39,17 +38,10 @@ class ValidatePersonalDetailsButton extends StatelessWidget {
             personalSettingsController.updateLocationDetails();
 
             // Redirect to profile confirmation screen
-            if (personalSettingsController.hasPermission.isTrue) {
+            if (personalSettingsController.isUpdatable.isTrue) {
               // Togge method to display spinner during API calls
-              personalSettingsController.toggleLoading();
               showSnackBar(
                   context, "Personal details has been edited successfully !");
-              Timer(
-                const Duration(milliseconds: 500),
-                () {
-                  personalSettingsController.toggleLoading();
-                },
-              );
             }
           },
           child: personalSettingsController.spinnerStatus.value
