@@ -56,6 +56,10 @@ const String accountSettings = "/settings/account/details";
 const String updateEmail = "/settings/account/update/email";
 const String verifyNewEmail = "/settings/account/update/email/verify";
 const String updatePhoneNumber = "/settings/account/update/phone_number";
-const String verifyNewPhoneNumber = "/settings/account/update/phone_number/update";
+const String verifyNewPhoneNumber =
+    "/settings/account/update/phone_number/update";
 const String locationSettings = "/settings/account/details/location";
 const String personalSettings = "/settings/account/details/personal";
+
+// Collections routes
+const String collections = "/collections/menu";
