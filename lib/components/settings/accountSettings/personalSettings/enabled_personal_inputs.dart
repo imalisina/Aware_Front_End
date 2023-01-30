@@ -328,7 +328,7 @@ class EnabledPersonalInputs extends StatelessWidget {
                 },
                 placeholder: personalSettingsController.name.isEmpty
                     ? "Enter your full name"
-                    : "Enter new name",
+                    : "Enter a new name",
                 prefix: personalSettingsController.nameHasError.value
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
@@ -375,7 +375,7 @@ class EnabledPersonalInputs extends StatelessWidget {
                 // ignore: unrelated_type_equality_checks
                 placeholder: personalSettingsController.weight.isEmpty
                     ? "Enter your weight : e.g. 30"
-                    : "Enter new weight",
+                    : "Enter a new weight",
                 prefix: personalSettingsController.weightHasError.value
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
@@ -421,7 +421,7 @@ class EnabledPersonalInputs extends StatelessWidget {
                 },
                 placeholder: personalSettingsController.height.isEmpty
                     ? "Enter your height : e.g. 180"
-                    : "Enter new height",
+                    : "Enter a new height",
                 prefix: personalSettingsController.heightHasError.value
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),

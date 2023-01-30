@@ -136,7 +136,7 @@ class EnabledLocationInputs extends StatelessWidget {
                 },
                 placeholder: locationSettingsController.zip.isEmpty
                     ? "Enter your ZIP code"
-                    : "Enter new ZIP code",
+                    : "Enter a new ZIP code",
                 prefix: locationSettingsController.zipHasError.value
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
@@ -181,7 +181,7 @@ class EnabledLocationInputs extends StatelessWidget {
                 },
                 placeholder: locationSettingsController.address.isEmpty
                     ? "Enter your home address"
-                    : "Enter new address",
+                    : "Enter a new address",
                 prefix: locationSettingsController.addressHasError.value
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
