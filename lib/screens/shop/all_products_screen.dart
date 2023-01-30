@@ -1,10 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+// GetX packages
 import 'package:get/get.dart';
 import 'package:sample/controllers/product/products_controller.dart';
-import 'package:sample/packages/navbars/navbar_with_back_button.dart';
-import 'package:sample/packages/space_box_container.dart';
+
+// Other packages
 import 'package:sample/packages/title_content.dart';
+import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/components/products/allProducts/all_products_list.dart';
 
 class AllProductsScreen extends StatelessWidget {
@@ -28,9 +32,7 @@ class AllProductsScreen extends StatelessWidget {
               const TitleContent(
                   "Discounts", "Buy anything with special discount codes !"),
 
-              VerticalSpaceBox(10.h),
-
-              VerticalSpaceBox(20.h),
+              VerticalSpaceBox(30.h),
 
               // All products list
               const AllProductsList(),

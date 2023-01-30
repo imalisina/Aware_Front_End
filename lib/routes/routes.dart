@@ -1,11 +1,15 @@
+// GetX package
 import 'package:get/get.dart';
-import 'package:sample/app/app_container.dart';
-import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateSections/updateEmail/update_email_screen.dart';
-import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateSections/updateEmail/update_email_verification_screen.dart';
-import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateSections/updatePhoneNumber/update_phone_number_screen.dart';
+
+// Route names
 import 'package:sample/configs/route_names.dart';
 
 // UI screens
+import 'package:sample/app/app_container.dart';
+import 'package:sample/screens/collections/collections_screen.dart';
+import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateSections/updateEmail/update_email_screen.dart';
+import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateSections/updateEmail/update_email_verification_screen.dart';
+import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateSections/updatePhoneNumber/update_phone_number_screen.dart';
 import 'package:sample/screens/appDetails/app_details_screen.dart';
 import 'package:sample/screens/appDetails/subScreens/privacy_policy_screen.dart';
 import 'package:sample/screens/appDetails/subScreens/terms_of_use_screen.dart';
@@ -118,5 +122,8 @@ class RoutesClass {
         page: () => const UpdatePhoneNumberVerificationScreen()),
     GetPage(name: locationSettings, page: () => const LocationSettingsScreen()),
     GetPage(name: personalSettings, page: () => const PersonalSettingsScreen()),
+
+    // Collections
+    GetPage(name: collections, page: () => const CollectionsScreen()),
   ];
 }
