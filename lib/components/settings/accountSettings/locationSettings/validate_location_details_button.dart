@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -14,7 +13,8 @@ class ValidateLocationDetailsButton extends StatelessWidget {
   const ValidateLocationDetailsButton({super.key});
 
 // Define location settings controller
-  static final locationSettingsController = Get.put(LocationSettingsController());
+  static final locationSettingsController =
+      Get.put(LocationSettingsController());
 
   @override
   Widget build(BuildContext context) {
@@ -42,17 +42,10 @@ class ValidateLocationDetailsButton extends StatelessWidget {
             locationSettingsController.updateLocationDetails();
 
             // Redirect to profile confirmation screen
-            if (locationSettingsController.hasPermission.isTrue) {
+            if (locationSettingsController.isUpdatable.isTrue) {
               // Togge method to display spinner during API calls
-              locationSettingsController.toggleLoading();
               showSnackBar(
                   context, "Location details has been edited successfully !");
-              Timer(
-                const Duration(milliseconds: 500),
-                () {
-                  locationSettingsController.toggleLoading();
-                },
-              );
             }
           },
         ),

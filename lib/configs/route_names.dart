@@ -63,3 +63,4 @@ const String personalSettings = "/settings/account/details/personal";
 
 // Collections routes
 const String collections = "/collections/menu";
+const String relations = "/collections/menu/relations";

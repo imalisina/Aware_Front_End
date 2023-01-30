@@ -3,68 +3,43 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX packages
 import 'package:get/get.dart';
-import 'package:sample/components/settings/accountSettings/locationSettings/validate_location_details_button.dart';
+import 'package:sample/controllers/collections/relations/relations_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
-import 'package:sample/controllers/settings/locationSettings/location_settings_controller.dart';
 import 'package:sample/packages/space_box_container.dart';
 
-class EnabledLocationInputs extends StatelessWidget {
-  const EnabledLocationInputs({super.key});
+class RelationUpdateForm extends StatelessWidget {
+  // Define variables to store prop values
+  final String name, age;
+  // Getting details from relations_list.dart
+  // ignore: use_key_in_widget_constructors
+  const RelationUpdateForm({required this.name, required this.age});
 
-  // Define location settings controller
-  static final locationSettingsController =
-      Get.put(LocationSettingsController());
+  // Define relations controller
+  static final relationsController = Get.put(RelationsController());
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      padding: EdgeInsets.only(left: 30.w, right: 30.w),
       child: Obx(
         () => Column(
           children: [
-            // Country dropdown menu section
+            // Gender dropdown menu section
             SizedBox(
               child: Row(
                 children: [
-                  const Text(
-                    "Country : ",
-                    style: TextStyle(color: INPUT_PLACEHOLDER),
-                  ),
-                  CupertinoButton(
-                    padding: EdgeInsets.zero,
-                    onPressed: null,
-                    child: Row(
-                      children: [
-                        Text(
-                          style: dropDownStyleDefault,
-                          locationSettingsController.selectedCountryName,
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-
-            VerticalSpaceBox(10.h),
-
-            // State dropdown menu section
-            SizedBox(
-              child: Row(
-                children: [
-                  locationSettingsController.stateHasError.value
+                  relationsController.genderHasError.value
                       ? const Icon(
                           CupertinoIcons.clear_circled_solid,
                           color: ERROR_COLOR,
                         )
                       : const EmptyBox(),
                   HorizontalSpaceBox(
-                      locationSettingsController.stateHasError.value
-                          ? 4.w
-                          : 0.w),
+                      relationsController.genderHasError.value ? 4.w : 0.w),
                   const Text(
-                    "State : ",
+                    "Gender : ",
                     style: TextStyle(color: INPUT_PLACEHOLDER),
                   ),
                   CupertinoButton(
@@ -72,18 +47,18 @@ class EnabledLocationInputs extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          style: locationSettingsController.stateHasError.value
+                          style: relationsController.genderHasError.value
                               ? dropDownStyleError
                               : dropDownStyleDefault,
-                          !locationSettingsController.isStateSelected.value
-                              ? "Select your state"
-                              : locationSettingsController.stateName.value,
+                          !relationsController.isGenderSelected.value
+                              ? "Select a new gender"
+                              : relationsController.genderName.value,
                         ),
                         HorizontalSpaceBox(7.w),
                         Icon(
                           CupertinoIcons.chevron_down,
                           size: 21.sp,
-                          color: locationSettingsController.stateHasError.value
+                          color: relationsController.genderHasError.value
                               ? ERROR_COLOR
                               : PRIMARY_COLOR,
                         ),
@@ -101,20 +76,17 @@ class EnabledLocationInputs extends StatelessWidget {
                           itemExtent: 35.h,
                           scrollController: FixedExtentScrollController(),
                           children: List<Widget>.generate(
-                            locationSettingsController
-                                .selectedCountryStates.length,
+                            relationsController.genderOptions.length,
                             (int index) {
                               return Center(
                                 child: Text(
-                                  locationSettingsController
-                                      .selectedCountryStates[index],
+                                  relationsController.genderOptions[index],
                                 ),
                               );
                             },
                           ),
                           onSelectedItemChanged: (int value) {
-                            locationSettingsController
-                                .storeSelectedStateID(value);
+                            relationsController.storeGenderId(value);
                           },
                         ),
                       ),
@@ -126,18 +98,88 @@ class EnabledLocationInputs extends StatelessWidget {
 
             VerticalSpaceBox(20.h),
 
-            // ZIP Code input field
+            // Relation dropdown menu section
+            SizedBox(
+              child: Row(
+                children: [
+                  relationsController.relationHasError.value
+                      ? const Icon(
+                          CupertinoIcons.clear_circled_solid,
+                          color: ERROR_COLOR,
+                        )
+                      : const EmptyBox(),
+                  HorizontalSpaceBox(
+                      relationsController.relationHasError.value ? 4.w : 0.w),
+                  const Text(
+                    "Relation : ",
+                    style: TextStyle(color: INPUT_PLACEHOLDER),
+                  ),
+                  CupertinoButton(
+                    padding: EdgeInsets.zero,
+                    child: Row(
+                      children: [
+                        Text(
+                          style: relationsController.relationHasError.value
+                              ? dropDownStyleError
+                              : dropDownStyleDefault,
+                          !relationsController.isRelationSelected.value
+                              ? "Select a new relation"
+                              : relationsController.relationName.value,
+                        ),
+                        HorizontalSpaceBox(7.w),
+                        Icon(
+                          CupertinoIcons.chevron_down,
+                          size: 21.sp,
+                          color: relationsController.relationHasError.value
+                              ? ERROR_COLOR
+                              : PRIMARY_COLOR,
+                        ),
+                      ],
+                    ),
+
+                    // Dropdown modal section
+                    onPressed: () => showCupertinoModalPopup(
+                      context: context,
+                      builder: (_) => SizedBox(
+                        width: double.maxFinite,
+                        height: 400.h,
+                        child: CupertinoPicker(
+                          backgroundColor: BACKGROUND_COLOR,
+                          itemExtent: 35.h,
+                          scrollController: FixedExtentScrollController(),
+                          children: List<Widget>.generate(
+                            relationsController.relationOptions.length,
+                            (int index) {
+                              return Center(
+                                child: Text(
+                                  relationsController.relationOptions[index],
+                                ),
+                              );
+                            },
+                          ),
+                          onSelectedItemChanged: (int value) {
+                            relationsController.storeRelationId(value);
+                          },
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            VerticalSpaceBox(20.h),
+
+            // Name input field
             SizedBox(
               height: 55.h,
               child: CupertinoTextField(
-                keyboardType: TextInputType.number,
+                keyboardType: TextInputType.text,
                 onChanged: (value) {
-                  locationSettingsController.storeZipCode(value);
+                  relationsController.storeName(value);
                 },
-                placeholder: locationSettingsController.zip.isEmpty
-                    ? "Enter your ZIP code"
-                    : "Enter a new ZIP code",
-                prefix: locationSettingsController.zipHasError.value
+                placeholder: "Name : $name",
+                prefix: relationsController.nameHasError.value
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
                         child: const Icon(
@@ -146,19 +188,19 @@ class EnabledLocationInputs extends StatelessWidget {
                         ),
                       )
                     : const EmptyBox(),
-                textInputAction: TextInputAction.next,
+                textInputAction: TextInputAction.done,
                 placeholderStyle: inputPlaceholderStyle,
               ),
             ),
 
-            locationSettingsController.zipHasError.value
+            relationsController.nameHasError.value
                 ? Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         margin: EdgeInsets.only(top: 6.h),
                         child: Text(
-                          "Enter a valid ZIP Code",
+                          "Enter a valid name !",
                           style: TextStyle(
                               color: ERROR_COLOR,
                               fontSize: 12.sp,
@@ -171,18 +213,16 @@ class EnabledLocationInputs extends StatelessWidget {
 
             VerticalSpaceBox(20.h),
 
-            // Address input field
+            // Age input field
             SizedBox(
-              height: 80.h,
+              height: 55.h,
               child: CupertinoTextField(
-                keyboardType: TextInputType.text,
+                keyboardType: TextInputType.number,
                 onChanged: (value) {
-                  locationSettingsController.storeAddress(value);
+                  relationsController.storeAge(value);
                 },
-                placeholder: locationSettingsController.address.isEmpty
-                    ? "Enter your home address"
-                    : "Enter a new address",
-                prefix: locationSettingsController.addressHasError.value
+                placeholder: "$age years old",
+                prefix: relationsController.ageHasError.value
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
                         child: const Icon(
@@ -198,14 +238,14 @@ class EnabledLocationInputs extends StatelessWidget {
             ),
 
             // Address error handler widget
-            locationSettingsController.addressHasError.value
+            relationsController.ageHasError.value
                 ? Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         margin: EdgeInsets.only(top: 6.h),
                         child: Text(
-                          "Enter a valid address, it will be used in contests",
+                          "Enter a valid age !",
                           style: TextStyle(
                               color: ERROR_COLOR,
                               fontSize: 12.sp,
@@ -215,11 +255,6 @@ class EnabledLocationInputs extends StatelessWidget {
                     ],
                   )
                 : const EmptyBox(),
-
-            VerticalSpaceBox(20.h),
-
-            // Validate updated location details
-            const ValidateLocationDetailsButton(),
           ],
         ),
       ),

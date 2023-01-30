@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
 import 'package:get/get.dart';
+import 'package:sample/configs/route_names.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
@@ -39,7 +40,7 @@ class CollectionsMenu extends StatelessWidget {
 
   // Collection menu routes
   static final List<String> collectionMenuRoutes = <String>[
-    "",
+    relations,
     "",
     "",
     "",

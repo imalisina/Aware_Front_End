@@ -130,18 +130,4 @@ class LocationDetailsController extends GetxController {
       hasPermission.value = true;
     }
   }
-
-  // Define a variable to store update validation status
-  var isUpdatable = true.obs;
-
-  // Method to validate the upadted location details
-  void updateLocationDetails() {
-    if (stateHasError.isTrue || zipHasError.isTrue || addressHasError.isTrue) {
-      isUpdatable.value = false;
-      isReadOnly.value = false;
-    } else {
-      isUpdatable.value = true;
-      isReadOnly.value = true;
-    }
-  }
 }
