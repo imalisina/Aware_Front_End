@@ -2,37 +2,37 @@ import 'package:flutter/cupertino.dart';
 
 // GetX packages
 import 'package:get/get.dart';
-import 'package:sample/controllers/collections/places/places_controller.dart';
+import 'package:sample/controllers/collections/outfits/outfits_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
-import 'package:sample/models/places.dart';
+import 'package:sample/models/outfits.dart';
 import 'package:sample/packages/flush_bar_method.dart';
 
-class DeletePlaceDialog extends StatelessWidget {
+class DeleteOutfitDialog extends StatelessWidget {
   // Define a variable to store the state values
-  final int placeId;
-  // Getting props from places_list.dart
+  final int outfitId;
+  // Getting props from accessories_list.dart
   // ignore: use_key_in_widget_constructors
-  const DeletePlaceDialog({required this.placeId});
+  const DeleteOutfitDialog({required this.outfitId});
 
-  // Define places controller
-  static final placesController = Get.put(PlacesController());
+  // Define outfits controller
+  static final outfitsController = Get.put(OutfitsController());
 
   @override
   Widget build(BuildContext context) {
     return CupertinoAlertDialog(
-      title: Text("Remove ${Places().places[placeId].placeName}"),
+      title: Text("Remove ${Outfits().outfits[outfitId].name}"),
       content: Text(
-          "Do you want to remove ${Places().places[placeId].placeName} from your places ?"),
+          "Do you want to remove ${Outfits().outfits[outfitId].name} from your outfits ?"),
       actions: [
         // Confirm button
         CupertinoDialogAction(
           onPressed: () {
-            placesController.deletePlace(placeId);
+            outfitsController.deleteOutfit(outfitId);
             Navigator.pop(context);
             showSnackBar(context,
-                "The place has been successfully removed from your places list !");
+                "The outfit has been successfully removed from your collections !");
           },
           child: const Text("Yes"),
         ),

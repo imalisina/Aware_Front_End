@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sample/components/collections/accessoriesSection/delete_accessory_dialog.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
@@ -78,7 +79,12 @@ class AccessoriesList extends StatelessWidget {
                     // Accessory delete button
                     CupertinoButton(
                       padding: EdgeInsets.zero,
-                      onPressed: () {},
+                      onPressed: () => showCupertinoDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return DeleteAccessoryDialog(accessoryId: index);
+                        },
+                      ),
                       child: const Icon(
                         Icons.delete_forever_rounded,
                         color: ERROR_COLOR,

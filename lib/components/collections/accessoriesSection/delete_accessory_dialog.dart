@@ -2,37 +2,37 @@ import 'package:flutter/cupertino.dart';
 
 // GetX packages
 import 'package:get/get.dart';
-import 'package:sample/controllers/collections/places/places_controller.dart';
+import 'package:sample/controllers/collections/accessories/accessories_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
-import 'package:sample/models/places.dart';
+import 'package:sample/models/accessories.dart';
 import 'package:sample/packages/flush_bar_method.dart';
 
-class DeletePlaceDialog extends StatelessWidget {
+class DeleteAccessoryDialog extends StatelessWidget {
   // Define a variable to store the state values
-  final int placeId;
-  // Getting props from places_list.dart
+  final int accessoryId;
+  // Getting props from accessories_list.dart
   // ignore: use_key_in_widget_constructors
-  const DeletePlaceDialog({required this.placeId});
+  const DeleteAccessoryDialog({required this.accessoryId});
 
-  // Define places controller
-  static final placesController = Get.put(PlacesController());
+  // Define accessories controller
+  static final accessoriesController = Get.put(AccessoriesController());
 
   @override
   Widget build(BuildContext context) {
     return CupertinoAlertDialog(
-      title: Text("Remove ${Places().places[placeId].placeName}"),
+      title: Text("Remove ${Accessories().accessories[accessoryId].name}"),
       content: Text(
-          "Do you want to remove ${Places().places[placeId].placeName} from your places ?"),
+          "Do you want to remove ${Accessories().accessories[accessoryId].name} from your accessories ?"),
       actions: [
         // Confirm button
         CupertinoDialogAction(
           onPressed: () {
-            placesController.deletePlace(placeId);
+            accessoriesController.deleteAccessory(accessoryId);
             Navigator.pop(context);
             showSnackBar(context,
-                "The place has been successfully removed from your places list !");
+                "The accessory has been successfully removed from your collections !");
           },
           child: const Text("Yes"),
         ),

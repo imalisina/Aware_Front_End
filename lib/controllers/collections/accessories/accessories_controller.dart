@@ -68,6 +68,14 @@ class AccessoriesController extends GetxController {
     }
   }
 
+  // Define a variable to store the status of confirm delete
+  var confirmedToDelete = false.obs;
+
+  // Method to delete accessory
+  void deleteAccessory(int index) {
+    confirmedToDelete.value = true;
+  }
+
   // Define a variable to store update validation status
   var isUpdatable = true.obs;
 
