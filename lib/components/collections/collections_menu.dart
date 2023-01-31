@@ -42,7 +42,7 @@ class CollectionsMenu extends StatelessWidget {
   static final List<String> collectionMenuRoutes = <String>[
     relations,
     outfits,
-    "",
+    accessories,
     "",
   ];
 

@@ -7,6 +7,7 @@ import 'package:sample/configs/route_names.dart';
 // UI screens
 import 'package:sample/app/app_container.dart';
 import 'package:sample/screens/collections/collections_screen.dart';
+import 'package:sample/screens/collections/menuScreens/accessoriesCard/accessories_screen.dart';
 import 'package:sample/screens/collections/menuScreens/outfitsCard/outfits_screen.dart';
 import 'package:sample/screens/collections/menuScreens/relationsCard/relations_screen.dart';
 import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateSections/updateEmail/update_email_screen.dart';
@@ -129,5 +130,6 @@ class RoutesClass {
     GetPage(name: collections, page: () => const CollectionsScreen()),
     GetPage(name: relations, page: () => const RelationsScreen()),
     GetPage(name: outfits, page: () => const OutfitsScreen()),
+    GetPage(name: accessories, page: () => const AccessoriesScreen()),
   ];
 }

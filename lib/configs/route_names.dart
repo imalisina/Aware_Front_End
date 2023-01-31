@@ -65,3 +65,4 @@ const String personalSettings = "/settings/account/details/personal";
 const String collections = "/collections/menu";
 const String relations = "/collections/menu/relations";
 const String outfits = "/collections/menu/outfits";
+const String accessories = "/collections/menu/accessories";
