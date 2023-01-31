@@ -74,6 +74,14 @@ class RelationsController extends GetxController {
     relationName.value = relationOptions[relationID.value];
   }
 
+  // Define a variable to store the status of confirm delete
+  var confirmedToDelete = false.obs;
+
+  // Method to delete relation
+  void deleteRelation(int index) {
+    confirmedToDelete.value = true;
+  }
+
   // Validate name input value
   void validateName() {
     if (name.isEmpty || !GetUtils.isAlphabetOnly(name.value)) {

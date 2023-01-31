@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
@@ -11,9 +10,9 @@ import 'package:sample/controllers/collections/relations/relations_controller.da
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/models/relations.dart';
-import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/components/collections/relationSection/relation_update_form.dart';
+import 'package:sample/components/collections/relationSection/edit_relation_modal.dart';
+import 'package:sample/components/collections/relationSection/delete_relation_dialog.dart';
 import 'package:sample/components/collections/relationSection/relation_details_section.dart';
 
 class RelationsList extends StatelessWidget {
@@ -42,104 +41,52 @@ class RelationsList extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                // Relation details
                 RelationDetailsSection(
                   name: friend.name,
                   gender: friend.gender,
                   age: friend.age,
                   relation: friend.relation,
                 ),
-                CupertinoButton(
-                  padding: EdgeInsets.zero,
-                  // Opens a model to change the details of selected relation/friend
-                  onPressed: () => showCupertinoModalPopup(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return CupertinoPopupSurface(
-                        child: Container(
-                          color: BACKGROUND_COLOR,
-                          width: double.maxFinite,
-                          height: 750.h,
-                          child: SingleChildScrollView(
-                            child: Column(
-                              children: [
-                                CupertinoButton(
-                                  child: const Text(
-                                    "Close",
-                                    style: TextStyle(color: SECONDARY_COLOR),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                                RelationUpdateForm(
-                                  name: friend.name,
-                                  age: friend.age,
-                                ),
 
-                                VerticalSpaceBox(20.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    // Relation edit button
+                    CupertinoButton(
+                      padding: EdgeInsets.zero,
+                      // Opens a model to change the details of selected relation/friend
+                      onPressed: () => showCupertinoModalPopup(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return EditRelationModal(
+                            name: friend.name,
+                            age: friend.age,
+                          );
+                        },
+                      ),
+                      child: const Icon(
+                        Icons.edit,
+                        color: INPUT_PLACEHOLDER,
+                      ),
+                    ),
 
-                                // Validate updated relation's details
-                                SizedBox(
-                                  width: 100.w,
-                                  child: Obx(
-                                    () => CupertinoButton.filled(
-                                      padding: EdgeInsets.only(
-                                          left: 40.w,
-                                          right: 40.w,
-                                          top: 10.h,
-                                          bottom: 10.h),
-                                      child: relationsController
-                                              .spinnerStatus.value
-                                          ? const CupertinoActivityIndicator(
-                                              color: BACKGROUND_COLOR,
-                                            )
-                                          : Icon(
-                                              CupertinoIcons.checkmark_alt,
-                                              size: 30.sp,
-                                            ),
-                                      onPressed: () {
-                                        // Perform validation process
-                                        relationsController.validateName();
-                                        relationsController.validateAge();
-                                        relationsController.validateGender();
-                                        relationsController.validateRelation();
-                                        // Open redirection gateway
-                                        relationsController
-                                            .updateFriendDetails();
-
-                                        // Redirect to profile confirmation screen
-                                        if (relationsController
-                                            .isUpdatable.isTrue) {
-                                          // Togge method to display spinner during API calls
-                                          relationsController.toggleLoading();
-                                          showSnackBar(context,
-                                              "Relation details has been edited successfully !");
-                                          Timer(
-                                            const Duration(milliseconds: 1000),
-                                            () {
-                                              Get.back();
-                                              Get.back();
-                                              relationsController
-                                                  .toggleLoading();
-                                            },
-                                          );
-                                        }
-                                      },
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                  child: const Icon(
-                    Icons.edit,
-                    color: INPUT_PLACEHOLDER,
-                  ),
-                ),
+                    // Relation delete button
+                    CupertinoButton(
+                      padding: EdgeInsets.zero,
+                      onPressed: () => showCupertinoDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return DeleteRelationDialog(relationId: index);
+                        },
+                      ),
+                      child: const Icon(
+                        Icons.delete_forever_rounded,
+                        color: ERROR_COLOR,
+                      ),
+                    )
+                  ],
+                )
               ],
             ),
           );

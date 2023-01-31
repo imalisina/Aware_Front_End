@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sample/components/collections/add_new_collection_button.dart';
 
 // Other packages
 import 'package:sample/packages/title_content.dart';
@@ -25,7 +27,13 @@ class RelationsScreen extends StatelessWidget {
               const TitleContent(
                   "Relations", "List of your relations and friends"),
 
-              VerticalSpaceBox(40.h),
+              VerticalSpaceBox(10.h),
+
+              // Add new relation button
+              const AddNewCollectionButton(
+                  buttonIcon: Icons.person_add_alt_rounded, buttonRoute: ""),
+
+              VerticalSpaceBox(20.h),
 
               // Relations list
               const RelationsList(),
