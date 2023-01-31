@@ -7,9 +7,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/configs/theme.dart';
 import 'package:sample/models/outfits.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/components/collections/outfitsSection/outfit_additional_details.dart';
-import 'package:sample/components/collections/outfitsSection/outfit_main_details.dart';
 import 'package:sample/components/collections/outfitsSection/edit_outfit_modal.dart';
+import 'package:sample/components/collections/outfitsSection/outfit_main_details.dart';
+import 'package:sample/components/collections/outfitsSection/delete_outfit_dialog.dart';
+import 'package:sample/components/collections/outfitsSection/outfit_additional_details.dart';
 
 class OutfitsList extends StatelessWidget {
   const OutfitsList({super.key});
@@ -78,7 +79,12 @@ class OutfitsList extends StatelessWidget {
                     // Outfit delete button
                     CupertinoButton(
                       padding: EdgeInsets.zero,
-                      onPressed: () {},
+                      onPressed: () => showCupertinoDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return DeleteOutfitDialog(outfitId: index);
+                        },
+                      ),
                       child: const Icon(
                         Icons.delete_forever_rounded,
                         color: ERROR_COLOR,
