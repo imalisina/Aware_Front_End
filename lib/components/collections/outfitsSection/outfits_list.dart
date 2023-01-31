@@ -5,14 +5,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
-import 'package:sample/models/relations.dart';
+import 'package:sample/models/outfits.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/components/collections/relationSection/edit_relation_modal.dart';
-import 'package:sample/components/collections/relationSection/delete_relation_dialog.dart';
-import 'package:sample/components/collections/relationSection/relation_details_section.dart';
+import 'package:sample/components/collections/outfitsSection/outfit_additional_details.dart';
+import 'package:sample/components/collections/outfitsSection/outfit_main_details_section.dart';
+import 'package:sample/components/collections/outfitsSection/edit_outfit_modal.dart';
 
-class RelationsList extends StatelessWidget {
-  const RelationsList({super.key});
+class OutfitsList extends StatelessWidget {
+  const OutfitsList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +20,13 @@ class RelationsList extends StatelessWidget {
       padding: EdgeInsets.only(left: 20.w, right: 20.w),
       height: 600.h,
       child: ListView.separated(
-        itemCount: Relations().relations.length,
+        itemCount: Outfits().outfits.length,
         separatorBuilder: (context, _) => VerticalSpaceBox(10.h),
         itemBuilder: (context, index) {
-          final friend = Relations().relations[index];
+          final outfit = Outfits().outfits[index];
           return DottedBorder(
             padding: EdgeInsets.only(
-                top: 20.h, bottom: 20.h, left: 10.w, right: 10.w),
+                left: 10.w, right: 10.w, top: 10.h, bottom: 10.h),
             borderType: BorderType.RRect,
             dashPattern: const [5, 0.1],
             radius: Radius.circular(5.r),
@@ -34,28 +34,38 @@ class RelationsList extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Relation details
-                RelationDetailsSection(
-                  name: friend.name,
-                  gender: friend.gender,
-                  age: friend.age,
-                  relation: friend.relation,
+                // Outfit details
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Outfit main details
+                    OutfitMainDetails(
+                      outfitName: outfit.name,
+                      outfitPictureUrl: outfit.picture,
+                    ),
+
+                    VerticalSpaceBox(8.h),
+
+                    // Outfit additional details
+                    OutfitAdditionalDetails(
+                      outfitCategory: outfit.category,
+                      outfitCategorySubcategory: outfit.subCategory,
+                    ),
+                  ],
                 ),
 
                 // Buttons
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    // Relation edit button
+                    // Outfit edit button
                     CupertinoButton(
                       padding: EdgeInsets.zero,
-                      // Opens a model to change the details of selected relation/friend
                       onPressed: () => showCupertinoModalPopup(
                         context: context,
                         builder: (BuildContext context) {
-                          return EditRelationModal(
-                            name: friend.name,
-                            age: friend.age,
+                          return EditOutfitModal(
+                            name: outfit.name,
                           );
                         },
                       ),
@@ -65,23 +75,17 @@ class RelationsList extends StatelessWidget {
                       ),
                     ),
 
-                    // Relation delete button
+                    // Outfit delete button
                     CupertinoButton(
                       padding: EdgeInsets.zero,
-                      // Opens a dialog to confirm the delete operation
-                      onPressed: () => showCupertinoDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return DeleteRelationDialog(relationId: index);
-                        },
-                      ),
+                      onPressed: () {},
                       child: const Icon(
                         Icons.delete_forever_rounded,
                         color: ERROR_COLOR,
                       ),
-                    )
+                    ),
                   ],
-                )
+                ),
               ],
             ),
           );

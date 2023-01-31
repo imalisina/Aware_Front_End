@@ -4,23 +4,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX packages
 import 'package:get/get.dart';
-import 'package:sample/controllers/collections/relations/relations_controller.dart';
+import 'package:sample/controllers/collections/outfits/outfits_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/components/collections/relationSection/relation_update_form.dart';
+import 'package:sample/components/collections/outfitsSection/outfit_update_form.dart';
 
-class EditRelationModal extends StatelessWidget {
-  // Define variables to store state values
-  final String name, age;
-  // Getting state values from relation_list.dart
+class EditOutfitModal extends StatelessWidget {
+  // Define a variable to store the state value
+  final String name;
+  // Getting props from outfits_list.dart
   // ignore: use_key_in_widget_constructors
-  const EditRelationModal({required this.name, required this.age});
+  const EditOutfitModal({required this.name});
 
-  // Define relations controller
-  static final relationsController = Get.put(RelationsController());
+  // Define outfits controller
+  static final outfitsController = Get.put(OutfitsController());
 
   @override
   Widget build(BuildContext context) {
@@ -28,36 +28,34 @@ class EditRelationModal extends StatelessWidget {
       child: Container(
         color: BACKGROUND_COLOR,
         width: double.maxFinite,
-        height: 750.h,
+        height: 600.h,
         child: SingleChildScrollView(
           child: Column(
             children: [
               CupertinoButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  outfitsController.onDelete;
+                },
                 child: const Text(
                   "Close",
                   style: TextStyle(color: SECONDARY_COLOR),
                 ),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
               ),
 
-              // Relation update form section
-              RelationUpdateForm(
-                name: name,
-                age: age,
-              ),
+              // Outfit update form section
+              OutfitUpdateForm(name: name),
 
-              VerticalSpaceBox(20.h),
+              VerticalSpaceBox(30.h),
 
-              // Validate updated relation's details
+              // Validate updated outfit's details
               SizedBox(
                 width: 100.w,
                 child: Obx(
                   () => CupertinoButton.filled(
                     padding: EdgeInsets.only(
                         left: 40.w, right: 40.w, top: 10.h, bottom: 10.h),
-                    child: relationsController.spinnerStatus.value
+                    child: outfitsController.spinnerStatus.value
                         ? const CupertinoActivityIndicator(
                             color: BACKGROUND_COLOR,
                           )
@@ -67,24 +65,22 @@ class EditRelationModal extends StatelessWidget {
                           ),
                     onPressed: () {
                       // Perform validation process
-                      relationsController.validateName();
-                      relationsController.validateAge();
-                      relationsController.validateGender();
-                      relationsController.validateRelation();
+                      outfitsController.validateName();
+                      outfitsController.validateImage();
                       // Open redirection gateway
-                      relationsController.updateFriendDetails();
+                      outfitsController.updateOutfitDetails();
 
                       // Redirect to profile confirmation screen
-                      if (relationsController.isUpdatable.isTrue) {
+                      if (outfitsController.isUpdatable.isTrue) {
                         // Togge method to display spinner during API calls
-                        relationsController.toggleLoading();
+                        outfitsController.toggleLoading();
                         Timer(
                           const Duration(milliseconds: 1000),
                           () {
                             Get.back();
                             showSnackBar(context,
-                                "Relation details has been edited successfully !");
-                            relationsController.toggleLoading();
+                                "Outfit details has been edited successfully !");
+                            outfitsController.toggleLoading();
                           },
                         );
                       }
