@@ -43,7 +43,7 @@ class CollectionsMenu extends StatelessWidget {
     relations,
     outfits,
     accessories,
-    "",
+    places,
   ];
 
   @override

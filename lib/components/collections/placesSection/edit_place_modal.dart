@@ -4,23 +4,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX packages
 import 'package:get/get.dart';
-import 'package:sample/controllers/collections/relations/relations_controller.dart';
+import 'package:sample/controllers/collections/places/places_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/flush_bar_method.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/components/collections/relationSection/relation_update_form.dart';
+import 'package:sample/components/collections/placesSection/place_update_form.dart';
 
-class EditRelationModal extends StatelessWidget {
+class EditPlaceModal extends StatelessWidget {
   // Define variables to store state values
-  final String name, age;
-  // Getting state values from relation_list.dart
+  final String placeName;
+  // Getting state values from places_list.dart
   // ignore: use_key_in_widget_constructors
-  const EditRelationModal({required this.name, required this.age});
+  const EditPlaceModal({required this.placeName});
 
-  // Define relations controller
-  static final relationsController = Get.put(RelationsController());
+  // Define places controller
+  static final placesController = Get.put(PlacesController());
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class EditRelationModal extends StatelessWidget {
       child: Container(
         color: BACKGROUND_COLOR,
         width: double.maxFinite,
-        height: 750.h,
+        height: 500.h,
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -42,22 +42,21 @@ class EditRelationModal extends StatelessWidget {
                 },
               ),
 
-              // Relation update form section
-              RelationUpdateForm(
-                name: name,
-                age: age,
+              // Place update form section
+              PlaceUpdateForm(
+                placeName: placeName,
               ),
 
               VerticalSpaceBox(20.h),
 
-              // Validate updated relation's details
+              // Validate updated place details
               SizedBox(
                 width: 100.w,
                 child: Obx(
                   () => CupertinoButton.filled(
                     padding: EdgeInsets.only(
                         left: 40.w, right: 40.w, top: 10.h, bottom: 10.h),
-                    child: relationsController.spinnerStatus.value
+                    child: placesController.spinnerStatus.value
                         ? const CupertinoActivityIndicator(
                             color: BACKGROUND_COLOR,
                           )
@@ -67,24 +66,21 @@ class EditRelationModal extends StatelessWidget {
                           ),
                     onPressed: () {
                       // Perform validation process
-                      relationsController.validateName();
-                      relationsController.validateAge();
-                      relationsController.validateGender();
-                      relationsController.validateRelation();
+                      placesController.validateName();
                       // Open redirection gateway
-                      relationsController.updateFriendDetails();
+                      placesController.updatePlaceDetails();
 
                       // Redirect to previous screen
-                      if (relationsController.isUpdatable.isTrue) {
+                      if (placesController.isUpdatable.isTrue) {
                         // Togge method to display spinner during API calls
-                        relationsController.toggleLoading();
+                        placesController.toggleLoading();
                         Timer(
                           const Duration(milliseconds: 1000),
                           () {
                             Get.back();
                             showSnackBar(context,
-                                "Relation details has been edited successfully !");
-                            relationsController.toggleLoading();
+                                "Place details has been edited successfully !");
+                            placesController.toggleLoading();
                           },
                         );
                       }
