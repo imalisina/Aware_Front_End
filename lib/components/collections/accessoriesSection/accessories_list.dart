@@ -1,18 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
-import 'package:sample/models/outfits.dart';
+import 'package:sample/models/accessories.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/components/collections/outfitsSection/outfit_additional_details.dart';
-import 'package:sample/components/collections/outfitsSection/outfit_main_details.dart';
-import 'package:sample/components/collections/outfitsSection/edit_outfit_modal.dart';
+import 'package:sample/components/collections/accessoriesSection/edit_accessory_modal.dart';
+import 'package:sample/components/collections/accessoriesSection/accessory_main_details.dart';
+import 'package:sample/components/collections/accessoriesSection/accessory_additional_details.dart';
 
-class OutfitsList extends StatelessWidget {
-  const OutfitsList({super.key});
+class AccessoriesList extends StatelessWidget {
+  const AccessoriesList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +20,10 @@ class OutfitsList extends StatelessWidget {
       padding: EdgeInsets.only(left: 20.w, right: 20.w),
       height: 600.h,
       child: ListView.separated(
-        itemCount: Outfits().outfits.length,
+        itemCount: Accessories().accessories.length,
         separatorBuilder: (context, _) => VerticalSpaceBox(10.h),
         itemBuilder: (context, index) {
-          final outfit = Outfits().outfits[index];
+          final accessory = Accessories().accessories[index];
           return DottedBorder(
             padding: EdgeInsets.only(
                 left: 10.w, right: 10.w, top: 10.h, bottom: 10.h),
@@ -34,22 +34,22 @@ class OutfitsList extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Outfit details
+                // Accessory details
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Outfit main details
-                    OutfitMainDetails(
-                      outfitName: outfit.name,
-                      outfitPicture: outfit.picture,
+                    // Accessory main details
+                    AccessoryMainDetails(
+                      accessoryName: accessory.name,
+                      accessoryPicture: accessory.picture,
                     ),
 
                     VerticalSpaceBox(8.h),
 
-                    // Outfit additional details
-                    OutfitAdditionalDetails(
-                      outfitCategory: outfit.category,
-                      outfitSubcategory: outfit.subCategory,
+                    // Accessory additional details
+                    AccessoryAdditionalDetails(
+                      accessoryCategory: accessory.category,
+                      accessorySubcategory: accessory.subCategory,
                     ),
                   ],
                 ),
@@ -58,14 +58,14 @@ class OutfitsList extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    // Outfit edit button
+                    // Accessory edit button
                     CupertinoButton(
                       padding: EdgeInsets.zero,
                       onPressed: () => showCupertinoModalPopup(
                         context: context,
                         builder: (BuildContext context) {
-                          return EditOutfitModal(
-                            name: outfit.name,
+                          return EditAccessoryModal(
+                            name: accessory.name,
                           );
                         },
                       ),
@@ -75,7 +75,7 @@ class OutfitsList extends StatelessWidget {
                       ),
                     ),
 
-                    // Outfit delete button
+                    // Accessory delete button
                     CupertinoButton(
                       padding: EdgeInsets.zero,
                       onPressed: () {},

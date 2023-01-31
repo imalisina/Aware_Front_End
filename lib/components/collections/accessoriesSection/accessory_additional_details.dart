@@ -5,13 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 
-class OutfitAdditionalDetails extends StatelessWidget {
+class AccessoryAdditionalDetails extends StatelessWidget {
   // Define states to store different values
-  final String outfitCategory, outfitSubcategory;
-  // Getting props from outfits_list.dart
+  final String accessoryCategory, accessorySubcategory;
+  // Getting props from accessories_list.dart
   // ignore: use_key_in_widget_constructors
-  const OutfitAdditionalDetails(
-      {required this.outfitCategory, required this.outfitSubcategory});
+  const AccessoryAdditionalDetails(
+      {required this.accessoryCategory, required this.accessorySubcategory});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class OutfitAdditionalDetails extends StatelessWidget {
         ),
         HorizontalSpaceBox(3.w),
         Text(
-          outfitCategory,
+          accessoryCategory,
           style: collectionsDetailStyles,
         ),
 
@@ -38,7 +38,7 @@ class OutfitAdditionalDetails extends StatelessWidget {
         ),
         HorizontalSpaceBox(3.w),
         Text(
-          outfitSubcategory,
+          accessorySubcategory,
           style: collectionsDetailStyles,
         ),
       ],

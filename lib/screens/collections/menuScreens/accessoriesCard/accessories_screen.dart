@@ -7,10 +7,10 @@ import 'package:sample/packages/title_content.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 import 'package:sample/components/collections/add_new_collection_button.dart';
-import 'package:sample/components/collections/outfitsSection/outfits_list.dart';
+import 'package:sample/components/collections/accessoriesSection/accessories_list.dart';
 
-class OutfitsScreen extends StatelessWidget {
-  const OutfitsScreen({super.key});
+class AccessoriesScreen extends StatelessWidget {
+  const AccessoriesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,20 +25,20 @@ class OutfitsScreen extends StatelessWidget {
 
               // Title and sub-title
               const TitleContent(
-                  "Outfits", "List of uploaded outfits from your closet"),
+                  "Accessories", "List of uploaded accessories !"),
 
               VerticalSpaceBox(20.h),
 
-              // Add new outfit button
+              // Add new accessory button
               const AddNewCollectionButton(
-                buttonIcon: Icons.checkroom_rounded,
+                buttonIcon: Icons.add_photo_alternate_rounded,
                 buttonRoute: "",
               ),
 
               VerticalSpaceBox(20.h),
 
-              // Outfits list
-              const OutfitsList(),
+              // Accessories list
+              const AccessoriesList(),
             ],
           ),
         ),

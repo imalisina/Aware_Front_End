@@ -5,22 +5,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX packages
 import 'package:get/get.dart';
-import 'package:sample/controllers/collections/outfits/outfits_controller.dart';
+import 'package:sample/controllers/collections/accessories/accessories_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/components/collections/outfitsSection/upload_outfit_image_buttons.dart';
+import 'package:sample/components/collections/accessoriesSection/update_accessory_image_buttons.dart';
 
-class OutfitUpdateForm extends StatelessWidget {
+class AccessoryUpdateForm extends StatelessWidget {
   // Define a variable to store state value
   final String name;
-  // Getting props from edit_outfit_modal.dart
+  // Getting props from edit_accessory_modal.dart
   // ignore: use_key_in_widget_constructors
-  const OutfitUpdateForm({required this.name});
+  const AccessoryUpdateForm({required this.name});
 
-  // Define outfits controller
-  static final outfitsController = Get.put(OutfitsController());
+  // Define accessories controller
+  static final accessoriesController = Get.put(AccessoriesController());
 
   @override
   Widget build(BuildContext context) {
@@ -29,16 +29,16 @@ class OutfitUpdateForm extends StatelessWidget {
       child: Obx(
         () => Column(
           children: [
-            // Outfit name input field
+            // Accessory name input field
             SizedBox(
               height: 55.h,
               child: CupertinoTextField(
                 keyboardType: TextInputType.text,
                 onChanged: (value) {
-                  outfitsController.storeName(value);
+                  accessoriesController.storeName(value);
                 },
                 placeholder: "Name : $name",
-                prefix: outfitsController.nameHasError.value
+                prefix: accessoriesController.nameHasError.value
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
                         child: const Icon(
@@ -52,8 +52,8 @@ class OutfitUpdateForm extends StatelessWidget {
               ),
             ),
 
-            // Outfit name error handler widget
-            outfitsController.nameHasError.value
+            // Accessory name error handler widget
+            accessoriesController.nameHasError.value
                 ? Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -82,12 +82,12 @@ class OutfitUpdateForm extends StatelessWidget {
             VerticalSpaceBox(20.h),
 
             // Pick image or take picture buttons
-            const UpdateOutfitImageButtons(),
+            const UpdateAccessoryImageButtons(),
 
             VerticalSpaceBox(20.h),
 
             // Display uploaded image section
-            outfitsController.uploadedImagePath.value == ''
+            accessoriesController.uploadedImagePath.value == ''
                 ? const EmptyBox()
                 : Column(
                     children: [
@@ -100,7 +100,7 @@ class OutfitUpdateForm extends StatelessWidget {
                           radius: Radius.circular(3.r),
                           strokeWidth: 2.w,
                           child: Image.file(
-                            File(outfitsController.uploadedImagePath.value),
+                            File(accessoriesController.uploadedImagePath.value),
                             width: 150.w,
                             height: 150.h,
                             fit: BoxFit.fill,
@@ -112,7 +112,7 @@ class OutfitUpdateForm extends StatelessWidget {
                       CupertinoButton(
                         padding: EdgeInsets.zero,
                         onPressed: () {
-                          outfitsController.removeUploadedImage();
+                          accessoriesController.removeUploadedImage();
                         },
                         child: Text(
                           "Remove",
@@ -127,7 +127,7 @@ class OutfitUpdateForm extends StatelessWidget {
                   ),
 
             // Uploaded image error handler widget
-            outfitsController.imageHasError.value
+            accessoriesController.imageHasError.value
                 ? SizedBox(
                     child: Text(
                       "An error occurred while uploading, please try again !",
