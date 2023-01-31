@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sample/components/collections/add_new_collection_button.dart';
+import 'package:sample/components/collections/outfitsSection/outfits_list.dart';
 
 // Other packages
 import 'package:sample/packages/title_content.dart';
 import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/components/collections/relationSection/relations_list.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
+import 'package:sample/components/collections/add_new_collection_button.dart';
 
-class RelationsScreen extends StatelessWidget {
-  const RelationsScreen({super.key});
+class OutfitsScreen extends StatelessWidget {
+  const OutfitsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,20 +25,20 @@ class RelationsScreen extends StatelessWidget {
 
               // Title and sub-title
               const TitleContent(
-                  "Relations", "List of your relations and friends"),
+                  "Outfits", "List of uploaded outfits from your closet"),
 
               VerticalSpaceBox(20.h),
 
-              // Add new relation button
+              // Add new outfit button
               const AddNewCollectionButton(
-                buttonIcon: Icons.person_add_alt_rounded,
+                buttonIcon: Icons.add_photo_alternate_rounded,
                 buttonRoute: "",
               ),
 
               VerticalSpaceBox(20.h),
 
-              // Relations list
-              const RelationsList(),
+              // Clothes list
+              const OutfitsList(),
             ],
           ),
         ),

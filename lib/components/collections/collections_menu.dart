@@ -17,7 +17,7 @@ class CollectionsMenu extends StatelessWidget {
   // Collection menu titles
   static final List<String> collectionMenuTitle = <String>[
     "Relations",
-    "Clothes",
+    "Outfits",
     "Accessories",
     "Places",
   ];
@@ -41,7 +41,7 @@ class CollectionsMenu extends StatelessWidget {
   // Collection menu routes
   static final List<String> collectionMenuRoutes = <String>[
     relations,
-    "",
+    outfits,
     "",
     "",
   ];

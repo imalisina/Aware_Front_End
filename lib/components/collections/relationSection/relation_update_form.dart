@@ -10,9 +10,9 @@ import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
 
 class RelationUpdateForm extends StatelessWidget {
-  // Define variables to store prop values
+  // Define variables to store state values
   final String name, age;
-  // Getting details from relations_list.dart
+  // Getting details from edit_relation_modal.dart
   // ignore: use_key_in_widget_constructors
   const RelationUpdateForm({required this.name, required this.age});
 
@@ -170,7 +170,7 @@ class RelationUpdateForm extends StatelessWidget {
 
             VerticalSpaceBox(20.h),
 
-            // Name input field
+            // Person name input field
             SizedBox(
               height: 55.h,
               child: CupertinoTextField(
@@ -233,7 +233,6 @@ class RelationUpdateForm extends StatelessWidget {
                     : const EmptyBox(),
                 textInputAction: TextInputAction.done,
                 placeholderStyle: inputPlaceholderStyle,
-                maxLines: 5,
               ),
             ),
 

@@ -22,49 +22,79 @@ class RelationDetailsSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // Display friend's name
-        Text(name),
+        SizedBox(
+          width: 240.w,
+          child: Text(
+            name,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
 
         VerticalSpaceBox(8.h),
 
         // Display icons and more details
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Gender section
-            Icon(
-              Icons.face_6_rounded,
-              size: 18.sp,
-            ),
-            HorizontalSpaceBox(3.w),
-            Text(
-              gender,
-              style: relationDetailStyles,
+            Row(
+              children: [
+                // Gender section
+                Icon(
+                  Icons.face_6_rounded,
+                  size: 18.sp,
+                ),
+                HorizontalSpaceBox(3.w),
+                SizedBox(
+                  width: 100.w,
+                  child: Text(
+                    gender,
+                    overflow: TextOverflow.ellipsis,
+                    style: collectionsDetailStyles,
+                  ),
+                ),
+              ],
             ),
 
-            HorizontalSpaceBox(6.w),
+            VerticalSpaceBox(6.h),
 
             // Age section
-            Icon(
-              Icons.today_rounded,
-              size: 18.sp,
-            ),
-            HorizontalSpaceBox(3.w),
-            Text(
-              "$age years old",
-              style: relationDetailStyles,
+            Row(
+              children: [
+                Icon(
+                  Icons.today_rounded,
+                  size: 18.sp,
+                ),
+                HorizontalSpaceBox(3.w),
+                SizedBox(
+                  width: 100.w,
+                  child: Text(
+                    "$age years old",
+                    overflow: TextOverflow.ellipsis,
+                    style: collectionsDetailStyles,
+                  ),
+                ),
+              ],
             ),
 
-            HorizontalSpaceBox(6.w),
+            VerticalSpaceBox(6.h),
 
             // Relation section
-            Icon(
-              Icons.diversity_1_rounded,
-              size: 18.sp,
-            ),
-            HorizontalSpaceBox(5.w),
-            Text(
-              relation,
-              style: relationDetailStyles,
+            Row(
+              children: [
+                Icon(
+                  Icons.diversity_1_rounded,
+                  size: 18.sp,
+                ),
+                HorizontalSpaceBox(5.w),
+                SizedBox(
+                  width: 100.w,
+                  child: Text(
+                    relation,
+                    overflow: TextOverflow.ellipsis,
+                    style: collectionsDetailStyles,
+                  ),
+                ),
+              ],
             ),
           ],
         ),

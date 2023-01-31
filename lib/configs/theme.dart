@@ -36,5 +36,5 @@ const dropDownStyleDefault = TextStyle(color: PRIMARY_COLOR);
 const dropDownStyleError = TextStyle(color: ERROR_COLOR);
 TextStyle sectionTitle = TextStyle(
     color: INPUT_PLACEHOLDER, fontSize: 22.sp, fontWeight: FontWeight.w500);
-TextStyle relationDetailStyles = TextStyle(color: SECONDARY_COLOR, fontSize: 12.sp);
-const relationTitleStyle = TextStyle(color: SECONDARY_COLOR, fontWeight: FontWeight.w400);
+TextStyle collectionsDetailStyles =
+    TextStyle(color: SECONDARY_COLOR, fontSize: 12.sp);

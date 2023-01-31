@@ -109,7 +109,7 @@ const data = [
   },
   {
     "id": 4,
-    "title": "Sweat Femme Tate ",
+    "title": "Sweat Femme Tate",
     "brand": "Smallable",
     "price": "171",
     "market": "https://www.smallable.com",

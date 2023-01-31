@@ -7,7 +7,7 @@ class RelationsController extends GetxController {
   var age = "".obs;
   var relationID = 0.obs;
 
-  // Define variable to get the name of relation and gender
+  // Define variables to get the name of relation and gender
   var genderName = "".obs;
   var relationName = "".obs;
 
