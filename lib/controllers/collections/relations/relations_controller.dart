@@ -144,7 +144,7 @@ class RelationsController extends GetxController {
   // Define a variable to store update validation status
   var isUpdatable = true.obs;
 
-  // Method to validate the updated location details
+  // Method to validate the updated relation details
   void updateFriendDetails() {
     if (nameHasError.isTrue ||
         ageHasError.isTrue ||
