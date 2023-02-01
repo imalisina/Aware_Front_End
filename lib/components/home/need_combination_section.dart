@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
@@ -24,6 +24,7 @@ class NeedCombinationSection extends StatelessWidget {
         },
         // Title, sub-title and Icon elements
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Icon(
               Icons.tips_and_updates_rounded,

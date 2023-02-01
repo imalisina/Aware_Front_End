@@ -18,13 +18,19 @@ class FashionContestMenu extends StatelessWidget {
         children: [
           // Details & instructions section
           const CardContent(
-              "Instructions & Rules", Icons.assignment_rounded, ""),
+            "Instructions & Rules",
+            Icons.assignment_rounded,
+            contestInstructions,
+          ),
 
           const Divider(),
 
           // Awards section
           const CardContent(
-              "Awards", Icons.military_tech_rounded, contestAwards),
+            "Awards",
+            Icons.military_tech_rounded,
+            contestAwards,
+          ),
 
           VerticalSpaceBox(15.h),
 
