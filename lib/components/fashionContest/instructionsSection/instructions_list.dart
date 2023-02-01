@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sample/packages/space_box_container.dart';
-import 'package:sample/components/fashionContest/instructionsSection/jury_details.dart';
 
 class InstructionsList extends StatelessWidget {
   const InstructionsList({super.key});
@@ -13,8 +11,6 @@ class InstructionsList extends StatelessWidget {
       child: Column(
         children: [
           // Instructions and rules section
-          const JuryDetails(),
-          VerticalSpaceBox(10.h),
         ],
       ),
     );

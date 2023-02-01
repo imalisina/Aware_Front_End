@@ -29,7 +29,7 @@ class SuggestedProductsList extends StatelessWidget {
         itemCount: SuggestedProducts().suggestedProducts.length,
         separatorBuilder: (context, _) => HorizontalSpaceBox(10.w),
         itemBuilder: (context, index) {
-          var product = SuggestedProducts().suggestedProducts[index];
+          final product = SuggestedProducts().suggestedProducts[index];
           return CupertinoButton(
             padding: EdgeInsets.zero,
             // Store product index and handle routing
