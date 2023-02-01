@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -32,7 +33,7 @@ class SingleBookmarkedTipFooter extends StatelessWidget {
           );
         },
         child: Icon(
-          CupertinoIcons.globe,
+          Icons.public,
           size: 30.sp,
           color: BACKGROUND_COLOR,
         ),

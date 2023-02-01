@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
@@ -31,7 +32,7 @@ class PersonalDetailsContent extends StatelessWidget {
                 children: [
                   personalDetailsController.birthDateHasError.value
                       ? const Icon(
-                          CupertinoIcons.clear_circled_solid,
+                          Icons.cancel_rounded,
                           color: ERROR_COLOR,
                         )
                       : const EmptyBox(),
@@ -100,7 +101,7 @@ class PersonalDetailsContent extends StatelessWidget {
                 children: [
                   personalDetailsController.genderHasError.value
                       ? const Icon(
-                          CupertinoIcons.clear_circled_solid,
+                          Icons.cancel_rounded,
                           color: ERROR_COLOR,
                         )
                       : const EmptyBox(),
@@ -176,7 +177,7 @@ class PersonalDetailsContent extends StatelessWidget {
                 children: [
                   personalDetailsController.ethnicityHasError.value
                       ? const Icon(
-                          CupertinoIcons.clear_circled_solid,
+                          Icons.cancel_rounded,
                           color: ERROR_COLOR,
                         )
                       : const EmptyBox(),
@@ -254,7 +255,7 @@ class PersonalDetailsContent extends StatelessWidget {
                 children: [
                   personalDetailsController.ethnicityHasError.value
                       ? const Icon(
-                          CupertinoIcons.clear_circled_solid,
+                          Icons.cancel_rounded,
                           color: ERROR_COLOR,
                         )
                       : const EmptyBox(),
@@ -341,7 +342,7 @@ class PersonalDetailsContent extends StatelessWidget {
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
                         child: const Icon(
-                          CupertinoIcons.clear_thick_circled,
+                          Icons.cancel_rounded,
                           color: ERROR_COLOR,
                         ),
                       )
@@ -389,7 +390,7 @@ class PersonalDetailsContent extends StatelessWidget {
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
                         child: const Icon(
-                          CupertinoIcons.clear_thick_circled,
+                          Icons.cancel_rounded,
                           color: ERROR_COLOR,
                         ),
                       )

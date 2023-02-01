@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
@@ -47,7 +48,7 @@ class RegisterContents extends StatelessWidget {
                   ? Container(
                       margin: EdgeInsets.only(left: 10.w),
                       child: const Icon(
-                        CupertinoIcons.clear_thick_circled,
+                        Icons.cancel_rounded,
                         color: ERROR_COLOR,
                       ),
                     )
@@ -93,7 +94,7 @@ class RegisterContents extends StatelessWidget {
                   ? Container(
                       margin: EdgeInsets.only(left: 10.w),
                       child: const Icon(
-                        CupertinoIcons.clear_thick_circled,
+                        Icons.cancel_rounded,
                         color: ERROR_COLOR,
                       ),
                     )
@@ -140,7 +141,7 @@ class RegisterContents extends StatelessWidget {
                   ? Container(
                       margin: EdgeInsets.only(left: 10.w),
                       child: const Icon(
-                        CupertinoIcons.clear_thick_circled,
+                        Icons.cancel_rounded,
                         color: ERROR_COLOR,
                       ),
                     )
@@ -188,8 +189,8 @@ class RegisterContents extends StatelessWidget {
                     ? CupertinoButton(
                         child: Icon(
                           passwordController.isPassword.value
-                              ? CupertinoIcons.eye
-                              : CupertinoIcons.eye_slash,
+                              ? Icons.visibility_rounded
+                              : Icons.visibility_off_rounded,
                           color: SECONDARY_COLOR,
                           size: 21.sp,
                         ),
@@ -203,7 +204,7 @@ class RegisterContents extends StatelessWidget {
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
                         child: const Icon(
-                          CupertinoIcons.clear_thick_circled,
+                          Icons.cancel_rounded,
                           color: ERROR_COLOR,
                         ),
                       )

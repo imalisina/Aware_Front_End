@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // Other packages
@@ -17,24 +16,24 @@ class AccountSettingsMenu extends StatelessWidget {
         children: const [
           // Personal details
           CardContent(
-              "Personal details", CupertinoIcons.person_2, personalSettings),
+              "Personal details", Icons.group_rounded, personalSettings),
 
           Divider(),
 
           // Location details
           CardContent(
-              "Location details", CupertinoIcons.placemark, locationSettings),
+              "Location details", Icons.location_on_rounded, locationSettings),
 
           Divider(),
 
           // Change email section
-          CardContent("Change account email", CupertinoIcons.at, updateEmail),
+          CardContent("Change account email", Icons.email_rounded, updateEmail),
 
           Divider(),
 
           // Change email section
           CardContent(
-              "Change phone number", CupertinoIcons.phone, updatePhoneNumber),
+              "Change phone number", Icons.phone_rounded, updatePhoneNumber),
         ],
       ),
     );

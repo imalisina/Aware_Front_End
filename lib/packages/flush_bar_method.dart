@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_flushbar/flutter_flushbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/configs/theme.dart';
@@ -11,7 +11,7 @@ void showSnackBar(BuildContext widgetContext, String snackBarMessage) =>
       message: snackBarMessage,
       backgroundColor: PRIMARY_COLOR,
       icon: const Icon(
-        CupertinoIcons.checkmark_alt_circle_fill,
+        Icons.done_all_rounded,
         color: MAIN_COLOR,
       ),
       borderRadius: BorderRadius.circular(10.r),

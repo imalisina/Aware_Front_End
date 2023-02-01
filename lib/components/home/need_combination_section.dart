@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:dotted_border/dotted_border.dart';
 
@@ -25,7 +26,7 @@ class NeedCombinationSection extends StatelessWidget {
         child: Column(
           children: [
             Icon(
-              CupertinoIcons.cube_box_fill,
+              Icons.tips_and_updates_rounded,
               color: PRIMARY_COLOR,
               size: 50.sp,
             ),

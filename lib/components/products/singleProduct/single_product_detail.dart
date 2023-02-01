@@ -58,7 +58,7 @@ class SingleProductDetail extends StatelessWidget {
               // Checking whether the detail is marketUrl or not
               detailTitleIndex == 1
                   ? Icon(
-                      CupertinoIcons.checkmark_seal_fill,
+                      Icons.verified_rounded,
                       size: 18.sp,
                     )
                   : const EmptyBox(),
@@ -70,8 +70,8 @@ class SingleProductDetail extends StatelessWidget {
                       child: Obx(
                         () => Icon(
                           suggestedProductController.isCopied.isFalse
-                              ? CupertinoIcons.doc_on_clipboard_fill
-                              : CupertinoIcons.checkmark_alt_circle_fill,
+                              ? Icons.file_copy_rounded
+                              : Icons.check_circle_rounded,
                           color: suggestedProductController.isCopied.isFalse
                               ? GHOST_COLOR
                               : AGREE_COLOR,

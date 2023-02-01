@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX packages
@@ -45,7 +46,7 @@ class NewPhoneNumberVerificationContents extends StatelessWidget {
                   ? Container(
                       margin: EdgeInsets.only(left: 10.w),
                       child: const Icon(
-                        CupertinoIcons.clear_thick_circled,
+                        Icons.cancel_rounded,
                         color: ERROR_COLOR,
                       ),
                     )

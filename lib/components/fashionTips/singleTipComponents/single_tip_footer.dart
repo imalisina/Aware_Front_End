@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sample/configs/theme.dart';
@@ -27,7 +28,7 @@ class SingleFashionTipFooter extends StatelessWidget {
           );
         },
         child: Icon(
-          CupertinoIcons.globe,
+          Icons.public,
           size: 30.sp,
           color: BACKGROUND_COLOR,
         ),

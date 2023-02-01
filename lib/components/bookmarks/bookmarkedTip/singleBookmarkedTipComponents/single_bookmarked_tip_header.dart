@@ -99,7 +99,7 @@ class SingleBookmarkedTipHeader extends StatelessWidget {
                 ),
               ),
 
-              HorizontalSpaceBox(8.w),
+              HorizontalSpaceBox(6.w),
 
               // Share button
               CupertinoButton(

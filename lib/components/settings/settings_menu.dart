@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // Other packages
@@ -16,8 +15,7 @@ class SettingsMenu extends StatelessWidget {
           // Account details section
           CardContent(
             "Account details",
-            // CupertinoIcons.doc_person,
-            CupertinoIcons.person,
+            Icons.manage_accounts_rounded,
             accountSettings,
           ),
 
@@ -26,7 +24,7 @@ class SettingsMenu extends StatelessWidget {
           // Password recovery section
           CardContent(
             "Password recovery",
-            CupertinoIcons.lock_open,
+            Icons.lock_rounded,
             passwordRecovery,
           ),
 
@@ -35,21 +33,25 @@ class SettingsMenu extends StatelessWidget {
           // Diary settings
           CardContent(
             "Reset diary password",
-            CupertinoIcons.pencil_ellipsis_rectangle,
+            Icons.password_rounded,
             resetDiaryPassword,
           ),
 
           Divider(),
 
           // Secure code section
-          CardContent("Get Secure code", CupertinoIcons.burst, getSecureCode),
+          CardContent(
+            "Get Secure code",
+            Icons.security_rounded,
+            getSecureCode,
+          ),
 
           Divider(),
 
           // Contact us section
           CardContent(
             "Contact us",
-            CupertinoIcons.text_bubble,
+            Icons.headset_rounded,
             contactUs,
           ),
         ],

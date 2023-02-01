@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sample/configs/route_names.dart';
 
 // Other packages
+import 'package:sample/configs/route_names.dart';
 import 'package:sample/packages/horizontal_card_button.dart';
 
 class SupportMenu extends StatelessWidget {
@@ -18,7 +17,7 @@ class SupportMenu extends StatelessWidget {
           // Password recovery section
           CardContent(
             "Password recovery",
-            CupertinoIcons.lock_rotation,
+            Icons.lock_rounded,
             passwordRecovery,
           ),
 
@@ -27,7 +26,7 @@ class SupportMenu extends StatelessWidget {
           // Contact us section
           CardContent(
             "Contact us",
-            CupertinoIcons.text_bubble,
+            Icons.headset_rounded,
             contactUs,
           ),
         ],
