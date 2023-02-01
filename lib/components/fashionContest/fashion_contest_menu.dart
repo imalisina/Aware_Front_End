@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sample/components/fashionContest/contest_participate_button.dart';
-import 'package:sample/packages/horizontal_card_button.dart';
+
+// Other packages
 import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/packages/horizontal_card_button.dart';
+import 'package:sample/components/fashionContest/contest_participate_button.dart';
 
 class FashionContestMenu extends StatelessWidget {
   const FashionContestMenu({super.key});
@@ -15,7 +17,7 @@ class FashionContestMenu extends StatelessWidget {
         children: [
           // Details & instructions section
           const CardContent(
-              "Details & Instructions", Icons.assignment_rounded, ""),
+              "Instructions & Rules", Icons.assignment_rounded, ""),
 
           const Divider(),
 

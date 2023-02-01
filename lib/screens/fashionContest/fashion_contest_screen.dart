@@ -23,13 +23,25 @@ class FashionContestScreen extends StatelessWidget {
                 VerticalSpaceBox(50.h),
 
                 // Title and sub-title
-                const TitleContent(
-                    "Fashion contest", "Reach to your goals, become famous !"),
+                const TitleContent("Fashion contest",
+                    "Win more than \$5000, reach to your goals !"),
 
                 VerticalSpaceBox(40.h),
 
                 // Fashion contest menu section
                 const FashionContestMenu(),
+
+                VerticalSpaceBox(80.h),
+
+                // Fashion contest image
+                Container(
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    "assets/images/fashion_contest.gif",
+                    width: 350.w,
+                    height: 350.h,
+                  ),
+                ),
               ],
             ),
           ),
