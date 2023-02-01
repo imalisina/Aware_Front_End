@@ -38,3 +38,7 @@ TextStyle sectionTitle = TextStyle(
     color: INPUT_PLACEHOLDER, fontSize: 22.sp, fontWeight: FontWeight.w500);
 TextStyle collectionsDetailStyles =
     TextStyle(color: SECONDARY_COLOR, fontSize: 12.sp);
+TextStyle contestAwardDetailsTitle =
+    TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w500);
+TextStyle contestAwardDetailStyles =
+    TextStyle(color: SECONDARY_COLOR, fontSize: 18.sp);

@@ -5,10 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/packages/title_content.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
-import 'package:sample/components/fashionContest/fashion_contest_menu.dart';
+import 'package:sample/components/fashionContest/awardsSection/awards_list.dart';
 
-class FashionContestScreen extends StatelessWidget {
-  const FashionContestScreen({super.key});
+class ContestAwardsScreen extends StatelessWidget {
+  const ContestAwardsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,25 +23,13 @@ class FashionContestScreen extends StatelessWidget {
                 VerticalSpaceBox(50.h),
 
                 // Title and sub-title
-                const TitleContent("Fashion contest",
-                    "Win more than \$5000, reach to your goals !"),
+                const TitleContent("Awards",
+                    "List of awards for 1st, 2nd, 3rd for this contest"),
 
                 VerticalSpaceBox(40.h),
 
-                // Fashion contest menu section
-                const FashionContestMenu(),
-
-                VerticalSpaceBox(80.h),
-
-                // Fashion contest image
-                Container(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    "assets/images/fashion_contest.gif",
-                    width: 350.w,
-                    height: 350.h,
-                  ),
-                ),
+                // Award details section
+                const AwardsList(),
               ],
             ),
           ),

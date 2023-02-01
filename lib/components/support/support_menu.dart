@@ -10,7 +10,7 @@ class SupportMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: EdgeInsets.only(left: 20.w, right: 20.w),
       child: Column(
         children: const [
