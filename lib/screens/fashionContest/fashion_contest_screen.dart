@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sample/components/fashionContest/fashion_contest_menu.dart';
 
 // Other packages
 import 'package:sample/packages/title_content.dart';
@@ -28,6 +29,7 @@ class FashionContestScreen extends StatelessWidget {
                 VerticalSpaceBox(40.h),
 
                 // Fashion contest menu section
+                const FashionContestMenu(),
               ],
             ),
           ),
