@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sample/packages/space_box_container.dart';
+
+// Other packages
 import 'package:sample/packages/title_content.dart';
+import 'package:sample/packages/space_box_container.dart';
+import 'package:sample/packages/navbars/navbar_with_back_button.dart';
 
 class FashionContestScreen extends StatelessWidget {
   const FashionContestScreen({super.key});
@@ -10,6 +13,7 @@ class FashionContestScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: CupertinoPageScaffold(
+        navigationBar: navbarWithBackButton,
         child: SizedBox(
           child: SingleChildScrollView(
             child: Column(
