@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
-import 'package:sample/packages/navbars/navbar_without_back_button.dart';
+import 'package:sample/packages/navbars/main_screen_navbar.dart';
 import 'package:sample/screens/collections/collections_screen.dart';
 import 'package:sample/screens/home/home_screen.dart';
 import 'package:sample/screens/settings/settings_screen.dart';
@@ -28,7 +28,7 @@ class _AppContainerState extends State<AppContainer> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: CupertinoPageScaffold(
-        navigationBar: navbarWithoutBackButton,
+        navigationBar: mainScreenNavbar,
         child: CupertinoTabScaffold(
           tabBar: CupertinoTabBar(
             backgroundColor: BACKGROUND_COLOR,

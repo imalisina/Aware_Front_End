@@ -11,6 +11,7 @@ import 'package:sample/screens/collections/menuScreens/accessoriesCard/accessori
 import 'package:sample/screens/collections/menuScreens/outfitsCard/outfits_screen.dart';
 import 'package:sample/screens/collections/menuScreens/placesCard/places_screen.dart';
 import 'package:sample/screens/collections/menuScreens/relationsCard/relations_screen.dart';
+import 'package:sample/screens/fashionContest/fashion_contest_screen.dart';
 import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateSections/updateEmail/update_email_screen.dart';
 import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateSections/updateEmail/update_email_verification_screen.dart';
 import 'package:sample/screens/settings/menuScreens/accountDetailsSettings/updateSections/updatePhoneNumber/update_phone_number_screen.dart';
@@ -133,5 +134,8 @@ class RoutesClass {
     GetPage(name: outfits, page: () => const OutfitsScreen()),
     GetPage(name: accessories, page: () => const AccessoriesScreen()),
     GetPage(name: places, page: () => const PlacesScreen()),
+
+    // Fashion contest
+    GetPage(name: fashionContest, page: () => const FashionContestScreen()),
   ];
 }
