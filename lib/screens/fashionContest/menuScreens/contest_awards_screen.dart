@@ -23,8 +23,8 @@ class ContestAwardsScreen extends StatelessWidget {
                 VerticalSpaceBox(50.h),
 
                 // Title and sub-title
-                const TitleContent("Awards",
-                    "List of awards for 1st, 2nd, 3rd for this contest"),
+                const TitleContent(
+                    "Awards", "List of awards for 1st, 2nd, 3rd winners"),
 
                 VerticalSpaceBox(40.h),
 

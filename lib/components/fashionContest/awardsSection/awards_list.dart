@@ -17,7 +17,7 @@ class AwardsList extends StatelessWidget {
       height: 600.h,
       child: Column(
         children: [
-          // First winner award details section
+          // Winners award details section
           const FirstWinnerAwardDetails(),
           VerticalSpaceBox(10.h),
           const SecondWinnerAwardDetails(),
