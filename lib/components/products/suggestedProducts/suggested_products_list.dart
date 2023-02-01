@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX packages
@@ -79,7 +80,7 @@ class SuggestedProductsList extends StatelessWidget {
                     children: [
                       // Product brand logo icon
                       Icon(
-                        CupertinoIcons.bag_fill,
+                        Icons.local_mall_rounded,
                         size: 15.sp,
                         color: GHOST_COLOR,
                       ),
@@ -97,7 +98,7 @@ class SuggestedProductsList extends StatelessWidget {
 
                       // Product price icon
                       Icon(
-                        CupertinoIcons.tag_fill,
+                        Icons.local_offer_rounded,
                         size: 15.sp,
                         color: GHOST_COLOR,
                       ),

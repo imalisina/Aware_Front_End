@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
@@ -22,15 +23,14 @@ class ValidateLocationDetailsButton extends StatelessWidget {
       width: 100.w,
       child: Obx(
         () => CupertinoButton.filled(
-          padding:
-              EdgeInsets.only(left: 40.w, right: 40.w, top: 10.h, bottom: 10.h),
+          padding: EdgeInsets.only(top: 10.h, bottom: 10.h),
           borderRadius: BorderRadius.circular(40.r),
           child: locationSettingsController.spinnerStatus.value
               ? const CupertinoActivityIndicator(
                   color: BACKGROUND_COLOR,
                 )
               : Icon(
-                  CupertinoIcons.checkmark_alt,
+                  Icons.check_rounded,
                   size: 30.sp,
                 ),
           onPressed: () {

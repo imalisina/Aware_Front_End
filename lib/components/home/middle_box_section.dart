@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:sample/configs/route_names.dart';
 import 'package:sample/configs/theme.dart';
 import 'package:sample/components/dailyQuote/next_quote_loading.dart';
@@ -56,10 +57,10 @@ class MiddleBoxSection extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 25.sp, fontWeight: FontWeight.w500),
                       ),
-                      // Share button - Right side
+                      // Daily quote button - Right side
                       CupertinoButton(
                         child: Icon(
-                          CupertinoIcons.share_solid,
+                          Icons.share_rounded,
                           color: PRIMARY_COLOR,
                           size: 22.sp,
                         ),

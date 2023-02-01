@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
@@ -33,7 +33,7 @@ class SettingsHeader extends StatelessWidget {
               margin: EdgeInsets.only(
                   left: 10.w, right: 10.w, top: 10.h, bottom: 10.h),
               child: Icon(
-                CupertinoIcons.person_fill,
+                Icons.person_rounded,
                 color: INPUT_PLACEHOLDER,
                 size: 45.sp,
               ),
@@ -64,7 +64,7 @@ class SettingsHeader extends StatelessWidget {
                 Row(
                   children: [
                     Icon(
-                      CupertinoIcons.rosette,
+                      Icons.cake_rounded,
                       size: 22.sp,
                       color: userController.daysLeft != 0
                           ? INPUT_PLACEHOLDER

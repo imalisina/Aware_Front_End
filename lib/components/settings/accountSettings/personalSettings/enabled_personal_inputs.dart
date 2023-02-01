@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX packages
@@ -29,7 +30,7 @@ class EnabledPersonalInputs extends StatelessWidget {
                 children: [
                   personalSettingsController.birthDateHasError.value
                       ? const Icon(
-                          CupertinoIcons.clear_circled_solid,
+                          Icons.cancel_rounded,
                           color: ERROR_COLOR,
                         )
                       : const EmptyBox(),
@@ -96,7 +97,7 @@ class EnabledPersonalInputs extends StatelessWidget {
                 children: [
                   personalSettingsController.genderHasError.value
                       ? const Icon(
-                          CupertinoIcons.clear_circled_solid,
+                          Icons.cancel_rounded,
                           color: ERROR_COLOR,
                         )
                       : const EmptyBox(),
@@ -170,7 +171,7 @@ class EnabledPersonalInputs extends StatelessWidget {
                 children: [
                   personalSettingsController.ethnicityHasError.value
                       ? const Icon(
-                          CupertinoIcons.clear_circled_solid,
+                          Icons.cancel_rounded,
                           color: ERROR_COLOR,
                         )
                       : const EmptyBox(),
@@ -246,7 +247,7 @@ class EnabledPersonalInputs extends StatelessWidget {
                 children: [
                   personalSettingsController.ethnicityHasError.value
                       ? const Icon(
-                          CupertinoIcons.clear_circled_solid,
+                          Icons.cancel_rounded,
                           color: ERROR_COLOR,
                         )
                       : const EmptyBox(),
@@ -333,7 +334,7 @@ class EnabledPersonalInputs extends StatelessWidget {
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
                         child: const Icon(
-                          CupertinoIcons.clear_thick_circled,
+                          Icons.cancel_rounded,
                           color: ERROR_COLOR,
                         ),
                       )
@@ -380,7 +381,7 @@ class EnabledPersonalInputs extends StatelessWidget {
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
                         child: const Icon(
-                          CupertinoIcons.clear_thick_circled,
+                          Icons.cancel_rounded,
                           color: ERROR_COLOR,
                         ),
                       )
@@ -426,7 +427,7 @@ class EnabledPersonalInputs extends StatelessWidget {
                     ? Container(
                         margin: EdgeInsets.only(left: 10.w),
                         child: const Icon(
-                          CupertinoIcons.clear_thick_circled,
+                          Icons.cancel_rounded,
                           color: ERROR_COLOR,
                         ),
                       )

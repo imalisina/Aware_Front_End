@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,10 +14,11 @@ class BookmarksMenu extends StatelessWidget {
       padding: EdgeInsets.only(left: 20.w, right: 20.w),
       child: Column(
         children: const [
-          CardContent("Saved Products", CupertinoIcons.bag, bookmarkedProducts),
+          CardContent(
+              "Saved Products", Icons.shopping_bag_rounded, bookmarkedProducts),
           Divider(),
-          CardContent("Saved Fashion Tips", CupertinoIcons.sidebar_left,
-              bookmarkedTips),
+          CardContent(
+              "Saved Fashion Tips", Icons.view_sidebar_rounded, bookmarkedTips),
         ],
       ),
     );

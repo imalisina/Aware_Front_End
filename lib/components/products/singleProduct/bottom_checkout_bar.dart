@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -25,7 +26,7 @@ class BottomCheckoutBar extends StatelessWidget {
             // Item price
             Row(
               children: [
-                const Icon(CupertinoIcons.tag_fill),
+                const Icon(Icons.local_offer_rounded),
                 HorizontalSpaceBox(5.w),
                 Text(
                   "\$$itemPrice",
@@ -50,7 +51,7 @@ class BottomCheckoutBar extends StatelessWidget {
                 );
               },
               child: Icon(
-                CupertinoIcons.cart,
+                Icons.shopping_cart_rounded,
                 color: BACKGROUND_COLOR,
                 size: 30.sp,
               ),

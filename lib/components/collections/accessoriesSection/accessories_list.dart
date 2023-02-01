@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sample/components/collections/accessoriesSection/delete_accessory_dialog.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
@@ -10,6 +9,7 @@ import 'package:sample/models/accessories.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/components/collections/accessoriesSection/edit_accessory_modal.dart';
 import 'package:sample/components/collections/accessoriesSection/accessory_main_details.dart';
+import 'package:sample/components/collections/accessoriesSection/delete_accessory_dialog.dart';
 import 'package:sample/components/collections/accessoriesSection/accessory_additional_details.dart';
 
 class AccessoriesList extends StatelessWidget {

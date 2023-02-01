@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:clipboard/clipboard.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
@@ -37,8 +38,8 @@ class GetSecureCodeContent extends StatelessWidget {
                 child: Obx(
                   () => Icon(
                     userController.isCopied.isFalse
-                        ? CupertinoIcons.doc_on_clipboard
-                        : CupertinoIcons.checkmark_alt_circle_fill,
+                        ? Icons.file_copy_rounded
+                        : Icons.check_circle_rounded,
                     color: userController.isCopied.isFalse
                         ? INPUT_PLACEHOLDER
                         : AGREE_COLOR,

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/configs/theme.dart';
 import 'package:sample/packages/space_box_container.dart';
@@ -15,10 +15,11 @@ class FashionTipsSection extends StatelessWidget {
           Row(
             children: [
               Icon(
-                CupertinoIcons.square_favorites,
+                Icons.fact_check_rounded,
                 color: INPUT_PLACEHOLDER,
                 size: 25.sp,
               ),
+              HorizontalSpaceBox(3.w),
               Text(
                 "Fashion Tips",
                 style: sectionTitle,

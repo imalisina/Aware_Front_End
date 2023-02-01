@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,7 +17,7 @@ ObstructingPreferredSizeWidget? navbarWithBackButton = CupertinoNavigationBar(
     padding: EdgeInsets.zero,
     child: Container(
       margin: EdgeInsets.only(top: 10.h),
-      child: const Icon(CupertinoIcons.chevron_left),
+      child: const Icon(Icons.arrow_back_rounded),
     ),
     onPressed: () {
       Get.back();

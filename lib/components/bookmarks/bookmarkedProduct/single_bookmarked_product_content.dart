@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:like_button/like_button.dart';
 import 'package:sample/packages/flush_bar_method.dart';
 import 'package:share_plus/share_plus.dart';
@@ -115,7 +116,7 @@ class SingleBookmarkedProductContent extends StatelessWidget {
                 Row(
                   children: [
                     Icon(
-                      CupertinoIcons.list_bullet,
+                      Icons.format_list_bulleted_rounded,
                       size: 30.sp,
                     ),
                     HorizontalSpaceBox(5.w),

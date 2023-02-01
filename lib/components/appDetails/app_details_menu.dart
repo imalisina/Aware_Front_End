@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -16,18 +15,16 @@ class AppDetailsMenu extends StatelessWidget {
       child: Column(
         children: const [
           SizedBox(
-            child: CardContent(
-                "Terms of use", CupertinoIcons.exclamationmark_circle, terms),
+            child: CardContent("Terms of use", Icons.help, terms),
           ),
           Divider(),
           SizedBox(
-            child:
-                CardContent("Privacy policy", CupertinoIcons.person, privacy),
+            child: CardContent("Privacy policy", Icons.gavel_rounded, privacy),
           ),
           Divider(),
           SizedBox(
             child: CardContent(
-                "User agreement", CupertinoIcons.doc_text, agreement),
+                "User agreement", Icons.handshake_rounded, agreement),
           )
         ],
       ),

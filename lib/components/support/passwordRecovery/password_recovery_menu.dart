@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sample/configs/route_names.dart';
 
 // Other packages
+import 'package:sample/configs/route_names.dart';
 import 'package:sample/packages/horizontal_card_button.dart';
 
 class PasswordRecoveryMenu extends StatelessWidget {
@@ -16,13 +15,13 @@ class PasswordRecoveryMenu extends StatelessWidget {
       child: Column(
         children: const [
           // Secure code method
-          CardContent("Secure Code", CupertinoIcons.lock_shield, secureCode),
+          CardContent("Secure Code", Icons.vpn_key_rounded, secureCode),
 
           Divider(),
 
           // Email method
           CardContent(
-              "Email verification code", CupertinoIcons.mail, emailMethod),
+              "Email verification code", Icons.mail_lock_rounded, emailMethod),
         ],
       ),
     );

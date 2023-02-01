@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Other packages
@@ -17,7 +18,7 @@ class LogoutButton extends StatelessWidget {
         children: [
           const Text("Logout"),
           HorizontalSpaceBox(10.h),
-          const Icon(CupertinoIcons.power),
+          const Icon(Icons.power_settings_new_rounded),
         ],
       ),
     );

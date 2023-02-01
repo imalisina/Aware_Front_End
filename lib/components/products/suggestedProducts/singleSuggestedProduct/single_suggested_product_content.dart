@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:like_button/like_button.dart';
 import 'package:sample/packages/flush_bar_method.dart';
@@ -116,7 +117,7 @@ class SingleSuggestedProductContent extends StatelessWidget {
                   children: [
                     // More details icon
                     Icon(
-                      CupertinoIcons.list_bullet,
+                      Icons.format_list_bulleted_rounded,
                       size: 30.sp,
                     ),
                     HorizontalSpaceBox(5.w),

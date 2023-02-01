@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Other packages
@@ -17,10 +17,11 @@ class SuggestedProductsSection extends StatelessWidget {
           Row(
             children: [
               Icon(
-                CupertinoIcons.square_favorites_alt,
+                Icons.widgets_rounded,
                 color: INPUT_PLACEHOLDER,
                 size: 25.sp,
               ),
+              HorizontalSpaceBox(2.w),
               Text(
                 "Suggested",
                 style: sectionTitle,

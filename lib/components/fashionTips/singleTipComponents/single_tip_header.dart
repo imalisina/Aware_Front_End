@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
@@ -138,7 +139,7 @@ class SingleFashionTipHeader extends StatelessWidget {
             children: [
               // Publish date
               Icon(
-                CupertinoIcons.calendar,
+                Icons.calendar_month_rounded,
                 size: 18.sp,
                 color: INPUT_PLACEHOLDER,
               ),
@@ -154,7 +155,7 @@ class SingleFashionTipHeader extends StatelessWidget {
 
               // Publish time
               Icon(
-                CupertinoIcons.clock,
+                Icons.schedule_rounded,
                 size: 18.sp,
                 color: INPUT_PLACEHOLDER,
               ),
@@ -170,7 +171,7 @@ class SingleFashionTipHeader extends StatelessWidget {
 
               // Likes
               Icon(
-                CupertinoIcons.heart,
+                Icons.favorite_border_rounded,
                 size: 18.sp,
                 color: INPUT_PLACEHOLDER,
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX package
@@ -26,7 +27,7 @@ class EditLocationToggle extends StatelessWidget {
           padding: EdgeInsets.only(top: 10.h, bottom: 10.h),
           borderRadius: BorderRadius.circular(40.r),
           child: Icon(
-            CupertinoIcons.pen,
+            Icons.drive_file_rename_outline_rounded,
             color: BACKGROUND_COLOR,
             size: 30.sp,
           ),
