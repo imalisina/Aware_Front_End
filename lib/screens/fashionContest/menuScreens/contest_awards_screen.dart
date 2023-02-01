@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sample/packages/title_content.dart';
 import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/packages/navbars/navbar_with_back_button.dart';
-import 'package:sample/components/fashionContest/awardsSection/award_details_section.dart';
+import 'package:sample/components/fashionContest/awardsSection/awards_list.dart';
 
 class ContestAwardsScreen extends StatelessWidget {
   const ContestAwardsScreen({super.key});
@@ -29,7 +29,7 @@ class ContestAwardsScreen extends StatelessWidget {
                 VerticalSpaceBox(40.h),
 
                 // Award details section
-                const AwardDetailsSection(),
+                const AwardsList(),
               ],
             ),
           ),

@@ -1,11 +1,14 @@
 import 'package:get/get.dart';
 
 class ContestAwardsController extends GetxController {
+  // Define a variable to store number of winners
+  final int winnerCount = 3;
+
   // Define a variable to store first winner award details
   final List<String> firstWinnerAwards = <String>[
     "USD \$20,000 cash",
     "Best Of Aware prize",
-    "a Valid certificate from contest Jury",
+    "a valid certificate from contest Jury",
   ];
 
   // Define a variable to store second winner award details
