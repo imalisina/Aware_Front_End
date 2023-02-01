@@ -1,17 +1,17 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:dotted_border/dotted_border.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // GetX packages
 import 'package:get/get.dart';
+import 'package:sample/controllers/product/suggested_product_controller.dart';
 
 // Other packages
 import 'package:sample/configs/theme.dart';
 import 'package:sample/configs/route_names.dart';
-import 'package:sample/controllers/product/suggested_product_controller.dart';
-import 'package:sample/packages/space_box_container.dart';
 import 'package:sample/models/suggested_products.dart';
+import 'package:sample/packages/space_box_container.dart';
 
 class SuggestedProductsList extends StatelessWidget {
   const SuggestedProductsList({super.key});
@@ -29,7 +29,7 @@ class SuggestedProductsList extends StatelessWidget {
         itemCount: SuggestedProducts().suggestedProducts.length,
         separatorBuilder: (context, _) => HorizontalSpaceBox(10.w),
         itemBuilder: (context, index) {
-          var product = SuggestedProducts().suggestedProducts[index];
+          final product = SuggestedProducts().suggestedProducts[index];
           return CupertinoButton(
             padding: EdgeInsets.zero,
             // Store product index and handle routing
