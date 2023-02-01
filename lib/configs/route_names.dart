@@ -70,3 +70,4 @@ const String places = "/collections/menu/places";
 
 // Fashion contest routes
 const String fashionContest = "/contest/menu";
+const String contestAwards = "/contest/menu/awards";

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sample/configs/route_names.dart';
 
 // Other packages
 import 'package:sample/packages/space_box_container.dart';
@@ -22,7 +23,8 @@ class FashionContestMenu extends StatelessWidget {
           const Divider(),
 
           // Awards section
-          const CardContent("Awards", Icons.military_tech_rounded, ""),
+          const CardContent(
+              "Awards", Icons.military_tech_rounded, contestAwards),
 
           VerticalSpaceBox(15.h),
 
