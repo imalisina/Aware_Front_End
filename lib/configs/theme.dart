@@ -42,3 +42,5 @@ TextStyle contestAwardDetailsTitle =
     TextStyle(fontSize: 22.sp, fontWeight: FontWeight.w500);
 TextStyle contestAwardDetailStyles =
     TextStyle(color: SECONDARY_COLOR, fontSize: 18.sp);
+TextStyle contestInstructionsDetailStyle =
+    TextStyle(color: SECONDARY_COLOR, fontSize: 18.sp);
