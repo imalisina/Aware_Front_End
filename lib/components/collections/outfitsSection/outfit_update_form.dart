@@ -74,7 +74,7 @@ class OutfitUpdateForm extends StatelessWidget {
 
             VerticalSpaceBox(30.h),
 
-            // Image picker buttons
+            // Image picker section
             const Text(
               "Pick a new image or take a new picture",
               style: TextStyle(color: INPUT_PLACEHOLDER),

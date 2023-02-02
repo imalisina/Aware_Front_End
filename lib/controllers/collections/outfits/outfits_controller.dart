@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class OutfitsController extends GetxController {
-  // Define a variabel to store the outfit details
+  // Define a variable to store the outfit details
   var name = "".obs;
   var uploadedImagePath = "".obs;
 

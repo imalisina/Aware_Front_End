@@ -72,3 +72,4 @@ const String places = "/collections/menu/places";
 const String fashionContest = "/contest/menu";
 const String contestAwards = "/contest/menu/awards";
 const String contestInstructions = "/contest/menu/instructions";
+const String participate = "/contest/participate";
