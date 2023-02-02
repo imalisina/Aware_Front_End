@@ -11,6 +11,7 @@ import 'package:sample/screens/collections/menuScreens/accessoriesCard/accessori
 import 'package:sample/screens/collections/menuScreens/outfitsCard/outfits_screen.dart';
 import 'package:sample/screens/collections/menuScreens/placesCard/places_screen.dart';
 import 'package:sample/screens/collections/menuScreens/relationsCard/relations_screen.dart';
+import 'package:sample/screens/fashionContest/contestParticipationScreens/contest_participation_screen.dart';
 import 'package:sample/screens/fashionContest/fashion_contest_screen.dart';
 import 'package:sample/screens/fashionContest/menuScreens/contest_awards_screen.dart';
 import 'package:sample/screens/fashionContest/menuScreens/contest_instructions_screen.dart';
@@ -143,5 +144,6 @@ class RoutesClass {
     GetPage(
         name: contestInstructions,
         page: () => const ContestInstructionsScreen()),
+    GetPage(name: participate, page: () => const ContestParticipationScreen()),
   ];
 }
