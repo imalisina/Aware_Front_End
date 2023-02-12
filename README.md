@@ -3,8 +3,8 @@
 ### Tech
 - Dart
 - Flutter
-- SwiftUI (Cupertino Theme)
 - GetX
+- SwiftUI (Cupertino Theme)
 ------------
 
 ### Description
